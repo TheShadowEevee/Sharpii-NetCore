@@ -45,8 +45,8 @@ namespace Sharpii
                     try
                     {
                         Console.Write("\nGrabbing libWiiSharp.dll...");
-                        WebClient DLwadInstaller = new WebClient();
-                        DLwadInstaller.DownloadFile("http://sharpii.googlecode.com/svn/trunk/Sharpii/libWiiSharp.dll", Path.GetDirectoryName(Application.ExecutablePath) + "\\libWiiSharp.dll");
+                        WebClient DLlibWiiSharp = new WebClient();
+                        DLlibWiiSharp.DownloadFile("https://github.com/mogzol/sharpii/raw/master/Sharpii/libWiiSharp.dll", Path.GetDirectoryName(Application.ExecutablePath) + "\\libWiiSharp.dll");
                         Console.Write("Done!\n");
                     }
                     catch (Exception ex)
@@ -321,5 +321,5 @@ namespace Sharpii
     }
     public class Version
     {
-        public static string version = "1.7.2";
+        public static string version = "1.7.3";
     }

@@ -1,5 +1,5 @@
 /------------------------------------------------------------------------------>
-                                 Sharpii 1.7.2
+                                 Sharpii 1.7.3
        <---------------------------------------------------------------->
                                An app by person66
                  libWiiSharp.dll by leathl (mod by scooby74029)                         
@@ -113,7 +113,7 @@ from My Programs.
 /----SOURCE
 /------------------------------>
 
-The source for Sharpii is available at: sharpii.googlecode.com
+The source for Sharpii is available at: https://github.com/mogzol/sharpii
 
 
 /----CREDITS
@@ -122,7 +122,7 @@ The source for Sharpii is available at: sharpii.googlecode.com
 Sharpii uses scooby74029's mod of libWiiSharp.dll by leathl, and 
 it borrows some code from some of the examples included with libWiiSharp.
 
-libWiiSharp can be found at: libwiisharp.googlecode.com
+libWiiSharp can be found at: https://code.google.com/archive/p/libwiisharp/
 
 
 SendWad uses CRAP's installer by WiiCrazy/I.R.on, with any edits that leathl
@@ -144,7 +144,10 @@ See "LICENSE.txt" for more information.
 
 /----CHANGELOG
 /------------------------------>
-
+1.7.3
+  - Still not dead!
+  - Updated URLs for the downloaders to use GitHub instead of
+    Google Code
 1.7.2
   - I am not dead! Yay!
   - Fixed a bug that would prevent you from changing a wad type

@@ -186,7 +186,7 @@ namespace Sharpii
                     {
                         Console.Write("\nGrabbing WadInstaller.dll...");
                         WebClient DLwadInstaller = new WebClient();
-                        DLwadInstaller.DownloadFile("http://sharpii.googlecode.com/files/WadInstaller.dll", Path.GetDirectoryName(Application.ExecutablePath) + "\\WadInstaller.dll");
+                        DLwadInstaller.DownloadFile("https://github.com/mogzol/sharpii/raw/master/Sharpii/WadInstaller.dll", Path.GetDirectoryName(Application.ExecutablePath) + "\\WadInstaller.dll");
                         Console.Write("Done!\n");
                     }
                     catch (Exception ex)
