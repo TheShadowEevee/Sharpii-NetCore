@@ -148,6 +148,7 @@ See "LICENSE.txt" for more information.
   - Still not dead!
   - Updated URLs for the downloaders to use GitHub instead of
     Google Code
+  - WadInstaller.dll is now included in the release zip
 1.7.2
   - I am not dead! Yay!
   - Fixed a bug that would prevent you from changing a wad type
