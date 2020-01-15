@@ -6,7 +6,7 @@
 - Issues/Pull Requests: All issues with this version of Sharpii should go in this fork's issue tracker. The issue is likely with the port and even if it isn't maybe I can fix it as I don't know if the original Sharpii creator is still active here. Pull requests are appreciated if they fix an issue, but it may take a bit to review.
 
 # Repo info
-Sharpii is a command line app for windows that I (person66) made, which uses leathl's libWiiSharp.dll (as of version 1.2 it acutally uses scooby74029's mod of libWiiSharp) to perform tasks such as:
+Sharpii is a command line app for windows that person66 made, which uses leathl's libWiiSharp.dll (as of version 1.2 it acutally uses scooby74029's mod of libWiiSharp) to perform tasks such as:
 - Pack, unpack, or edit .wad files
 - Pack, and unpack U8 archives
 - Patch IOS .wad files with various patches
