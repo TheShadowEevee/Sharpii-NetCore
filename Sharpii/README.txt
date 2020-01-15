@@ -3,6 +3,7 @@
        <---------------------------------------------------------------->
                                An app by person66
                  libWiiSharp.dll by leathl (mod by scooby74029)                         
+               .Net Core port for Unix Systems by TheShadowEevee
 /------------------------------------------------------------------------------>
 
 
@@ -124,6 +125,7 @@ it borrows some code from some of the examples included with libWiiSharp.
 
 libWiiSharp can be found at: https://code.google.com/archive/p/libwiisharp/
 
+.Net Core port by TheShadowEevee
 
 SendWad uses CRAP's installer by WiiCrazy/I.R.on, with any edits that leathl
 may have made when adding it to CustomizeMii (which is where I got the source
