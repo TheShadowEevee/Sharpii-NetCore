@@ -146,6 +146,8 @@ See "LICENSE.txt" for more information.
 
 /----CHANGELOG
 /------------------------------>
+2.0.0-Fork
+  - Forked and Ported to Dot Net Core for use in Mac and Linux by TheShadowEevee
 1.7.3
   - Still not dead!
   - Updated URLs for the downloaders to use GitHub instead of
