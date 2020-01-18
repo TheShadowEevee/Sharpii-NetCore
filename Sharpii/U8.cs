@@ -75,23 +75,23 @@ namespace Sharpii
                 //Load U8
                 U8 U8file = new U8();
 
-                if (Quiet.quiet > 2)
+                if (BeQuiet.quiet > 2)
                     Console.Write("Loading file...");
 
                 U8file.LoadFile(input);
 
-                if (Quiet.quiet > 2)
+                if (BeQuiet.quiet > 2)
                     Console.Write("Done!\n");
 
-                if (Quiet.quiet > 2)
+                if (BeQuiet.quiet > 2)
                     Console.Write("Extracting file...");
 
                 U8file.Extract(output);
 
-                if (Quiet.quiet > 2)
+                if (BeQuiet.quiet > 2)
                     Console.Write("Done!\n");
 
-                if (Quiet.quiet > 1)
+                if (BeQuiet.quiet > 1)
                     Console.WriteLine("Operation completed succesfully!");
             }
             catch (Exception ex)
@@ -151,24 +151,24 @@ namespace Sharpii
             {
                 U8 U8folder = new U8();
                 
-                if (Quiet.quiet > 2)
+                if (BeQuiet.quiet > 2)
                     Console.Write("Loading folder...");
 
                 U8folder.CreateFromDirectory(input);
 
-                if (Quiet.quiet > 2)
+                if (BeQuiet.quiet > 2)
                     Console.Write("Done!\n");
 
                 if (imd5 == true)
                 {
-                    if (Quiet.quiet > 2)
+                    if (BeQuiet.quiet > 2)
                         Console.WriteLine("Adding IMD5 Header");
                     U8folder.AddHeaderImd5();
                 }
 
                 if (imet != "")
                 {
-                    if (Quiet.quiet > 2)
+                    if (BeQuiet.quiet > 2)
                         Console.WriteLine("Adding IMET header with title: {0}", imet);
                     U8folder.AddHeaderImet(false, imet);
                 }
@@ -176,17 +176,17 @@ namespace Sharpii
                 if (lz77 == true)
                 {
                     //Yeah, I know this isnt where it actually compresses it
-                    if (Quiet.quiet > 2)
+                    if (BeQuiet.quiet > 2)
                         Console.WriteLine("Compressing U8 archive");
                     U8folder.Lz77Compress = true;
                 }
 
-                if (Quiet.quiet > 2)
+                if (BeQuiet.quiet > 2)
                     Console.WriteLine("Saving file");
 
                 U8folder.Save(output);
                 
-                if (Quiet.quiet > 1)
+                if (BeQuiet.quiet > 1)
                     Console.WriteLine("Operation completed succesfully!");
             }
             catch (Exception ex)
@@ -201,7 +201,7 @@ namespace Sharpii
         public static void U8_help()
         {
             Console.WriteLine("");
-            Console.WriteLine("Sharpii {0} - U8 - A tool by person66, using libWiiSharp.dll by leathl", Version.version);
+            Console.WriteLine("Sharpii {0} - U8 - A tool by person66, using libWiiSharp.dll by leathl", ProgramVersion.version);
             Console.WriteLine("");
             Console.WriteLine("");
             Console.WriteLine("  Usage:");

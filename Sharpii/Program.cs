@@ -19,7 +19,6 @@ using System;
 using System.IO;
 using System.Net;
 using libWiiSharp;
-using System.Windows.Forms;
 using System.Diagnostics;
 
 namespace Sharpii
@@ -34,10 +33,10 @@ namespace Sharpii
                 Environment.Exit(0);
             }
 
-            if (!File.Exists(Path.GetDirectoryName(Application.ExecutablePath) + "\\libWiiSharp.dll"))
+            if (!File.Exists(Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory) + Path.DirectorySeparatorChar + "libWiiSharp.dll"))
             {
                 Console.WriteLine("ERROR: libWiiSharp.dll not found");
-                Console.WriteLine("\n\nAttemp to download? [Y/N]");
+                Console.WriteLine("\n\nAttempt to download? [Y/N]");
                 Console.Write("\n>>");
                 string ans = Console.ReadLine();
                 if (ans.ToUpper() == "Y")
@@ -46,7 +45,7 @@ namespace Sharpii
                     {
                         Console.Write("\nGrabbing libWiiSharp.dll...");
                         WebClient DLlibWiiSharp = new WebClient();
-                        DLlibWiiSharp.DownloadFile("https://github.com/mogzol/sharpii/raw/master/Sharpii/libWiiSharp.dll", Path.GetDirectoryName(Application.ExecutablePath) + "\\libWiiSharp.dll");
+                        DLlibWiiSharp.DownloadFile("https://github.com/mogzol/sharpii/raw/master/Sharpii/libWiiSharp.dll", Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory) + "\\libWiiSharp.dll");
                         Console.Write("Done!\n");
                     }
                     catch (Exception ex)
@@ -61,13 +60,13 @@ namespace Sharpii
                 switch (args[i].ToUpper())
                 {
                     case "-QUIET":
-                        Quiet.quiet = 1;
+                        BeQuiet.quiet = 1;
                         break;
                     case "-Q":
-                        Quiet.quiet = 1;
+                        BeQuiet.quiet = 1;
                         break;
                     case "-LOTS":
-                        Quiet.quiet = 3;
+                        BeQuiet.quiet = 3;
                         break;
                 }
             }
@@ -159,7 +158,7 @@ namespace Sharpii
 
             string temp = Path.GetTempPath() + "Sharpii.tmp";
             if (Directory.Exists(temp) == true)
-                DeleteDir.DeleteDirectory(temp);
+                DeleteADir.DeleteDirectory(temp);
 
             Environment.Exit(0);
         }
@@ -168,28 +167,28 @@ namespace Sharpii
         {
             try
             {
-                if (Quiet.quiet > 1)
+                if (BeQuiet.quiet > 1)
                     Console.WriteLine("Installing Sharpii...");
-                if (Quiet.quiet > 1)
+                if (BeQuiet.quiet > 1)
                     Console.WriteLine("Adding Variables");
                 Environment.SetEnvironmentVariable("PATH", Environment.GetEnvironmentVariable("PATH", EnvironmentVariableTarget.Machine) +
                 ";" + Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles) + "\\Sharpii\\", EnvironmentVariableTarget.Machine);
 
-                if (Quiet.quiet > 1)
+                if (BeQuiet.quiet > 1)
                     Console.WriteLine("Creating Directory");
                 if (Directory.Exists(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles) + "\\Sharpii\\"))
-                    DeleteDir.DeleteDirectory(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles) + "\\Sharpii\\");
+                    DeleteADir.DeleteDirectory(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles) + "\\Sharpii\\");
                 Directory.CreateDirectory(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles) + "\\Sharpii\\");
 
-                if (Quiet.quiet > 1)
+                if (BeQuiet.quiet > 1)
                     Console.WriteLine("Copying Files");
-                File.Copy(Application.ExecutablePath, Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles) + "\\Sharpii\\Sharpii.exe");
-                if (File.Exists(Path.GetDirectoryName(Application.ExecutablePath) + "\\libWiiSharp.dll"))
-                    File.Copy(Path.GetDirectoryName(Application.ExecutablePath) + "\\libWiiSharp.dll", Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles) + "\\Sharpii\\libWiiSharp.dll");
-                if (File.Exists(Path.GetDirectoryName(Application.ExecutablePath) + "\\WadInstaller.dll"))
-                    File.Copy(Path.GetDirectoryName(Application.ExecutablePath) + "\\WadInstaller.dll", Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles) + "\\Sharpii\\WadInstaller.dll");
+                File.Copy(AppDomain.CurrentDomain.BaseDirectory, Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles) + "\\Sharpii\\Sharpii.exe");
+                if (File.Exists(Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory) + "\\libWiiSharp.dll"))
+                    File.Copy(Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory) + "\\libWiiSharp.dll", Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles) + "\\Sharpii\\libWiiSharp.dll");
+                if (File.Exists(Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory) + "\\WadInstaller.dll"))
+                    File.Copy(Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory) + "\\WadInstaller.dll", Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles) + "\\Sharpii\\WadInstaller.dll");
 
-                if (Quiet.quiet > 1)
+                if (BeQuiet.quiet > 1)
                 {
                     Console.WriteLine("Sharpii was successfully installed to: {0}", Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles) + "\\Sharpii\\");
                     Console.WriteLine("You can now use Sharpii in any directory!");
@@ -208,13 +207,13 @@ namespace Sharpii
         {
             try
             {
-                if (Quiet.quiet > 1)
+                if (BeQuiet.quiet > 1)
                     Console.WriteLine("Uninstalling Sharpii...");
                 string path = Environment.GetEnvironmentVariable("PATH", EnvironmentVariableTarget.Machine);
                 Environment.SetEnvironmentVariable("PATH", path.Replace(";" + Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles) + "\\Sharpii\\", ""), EnvironmentVariableTarget.Machine);
                 Process.Start("cmd.exe", "/C mode con:cols=50 lines=4 & color 0B & echo Finishing Uninstallation... & sleep 2 & rmdir /s /q " + '"' + 
                 Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles) + "\\Sharpii\\" + '"' + " & CLS & echo Sharpii has been successfully uninstalled! & echo. & pause");
-                Application.Exit();
+                Environment.Exit(0);
             }
             catch (Exception ex)
             {
@@ -247,7 +246,7 @@ namespace Sharpii
         private static void help()
         {
             Console.WriteLine("");
-            Console.WriteLine("Sharpii {0} - A tool by person66, using libWiiSharp.dll by leathl", Version.version);
+            Console.WriteLine("Sharpii {0} - A tool by person66, using libWiiSharp.dll by leathl", ProgramVersion.version);
             Console.WriteLine("");
             Console.WriteLine("");
             Console.WriteLine("  Usage:");
@@ -288,38 +287,39 @@ namespace Sharpii
 
         }
     }
-    public class DeleteDir
+public class DeleteADir
+{
+    public static bool DeleteDirectory(string target_dir)
     {
-        public static bool DeleteDirectory(string target_dir)
+        bool result = false;
+
+        string[] files = Directory.GetFiles(target_dir);
+        string[] dirs = Directory.GetDirectories(target_dir);
+
+        foreach (string file in files)
         {
-            bool result = false;
-
-            string[] files = Directory.GetFiles(target_dir);
-            string[] dirs = Directory.GetDirectories(target_dir);
-
-            foreach (string file in files)
-            {
-                File.SetAttributes(file, FileAttributes.Normal);
-                File.Delete(file);
-            }
-
-            foreach (string dir in dirs)
-            {
-                DeleteDirectory(dir);
-            }
-
-            Directory.Delete(target_dir, false);
-
-            return result;
+            File.SetAttributes(file, FileAttributes.Normal);
+            File.Delete(file);
         }
+
+        foreach (string dir in dirs)
+        {
+            DeleteDirectory(dir);
+        }
+
+        Directory.Delete(target_dir, false);
+
+        return result;
     }
-    public class Quiet {
-        //1 = little
-        //2 = normal
-        //3 = lots
-        public static int quiet = 2;
-    }
-    public class Version
-    {
-        public static string version = "1.7.3";
-    }
+}
+public class BeQuiet
+{
+    //1 = little
+    //2 = normal
+    //3 = lots
+    public static int quiet = 2;
+}
+public class ProgramVersion
+{
+    public static string version = "1.7.3; .Net Core Port";
+}

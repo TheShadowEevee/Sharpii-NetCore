@@ -67,24 +67,24 @@ namespace Sharpii
             try
             {
                 //Load tpl
-                if (Quiet.quiet > 2)
+                if (BeQuiet.quiet > 2)
                     Console.Write("Loading file...");
 
                 TPL tplfile = libWiiSharp.TPL.Load(input);
 
-                if (Quiet.quiet > 2)
+                if (BeQuiet.quiet > 2)
                     Console.Write("Done!\n");
 
                 //save image
-                if (Quiet.quiet > 2)
+                if (BeQuiet.quiet > 2)
                     Console.Write("Extracting texture...");
 
                 tplfile.ExtractTexture(output);
 
-                if (Quiet.quiet > 2)
+                if (BeQuiet.quiet > 2)
                     Console.Write("Done!\n");
 
-                if (Quiet.quiet > 1)
+                if (BeQuiet.quiet > 1)
                     Console.WriteLine("Operation completed succesfully!");
             }
             catch (Exception ex)
@@ -162,20 +162,20 @@ namespace Sharpii
                 if (tplFormat == "RGBA8")
                     format = TPL_TextureFormat.RGBA8;
 
-                if (Quiet.quiet > 2)
+                if (BeQuiet.quiet > 2)
                     Console.WriteLine("Format set to: {0}", tplFormat);
 
                 //Make tpl
-                if (Quiet.quiet > 2)
+                if (BeQuiet.quiet > 2)
                     Console.Write("Creating tpl file...");
 
                 TPL tplfile = libWiiSharp.TPL.FromImage(input, format);
 
-                if (Quiet.quiet > 2)
+                if (BeQuiet.quiet > 2)
                     Console.Write("Done!\n");
 
                 //save
-                if (Quiet.quiet > 2)
+                if (BeQuiet.quiet > 2)
                     Console.Write("Saving tpl file...");
 
                 if (output.Substring(output.Length - 4, 4).ToUpper() != ".TPL")
@@ -183,10 +183,10 @@ namespace Sharpii
 
                 tplfile.Save(output);
 
-                if (Quiet.quiet > 2)
+                if (BeQuiet.quiet > 2)
                     Console.Write("Done!\n");
 
-                if (Quiet.quiet > 1)
+                if (BeQuiet.quiet > 1)
                     Console.WriteLine("Operation completed succesfully!");
             }
             catch (Exception ex)
@@ -201,7 +201,7 @@ namespace Sharpii
         public static void TPL_help()
         {
             Console.WriteLine("");
-            Console.WriteLine("Sharpii {0} - TPL - A tool by person66, using libWiiSharp.dll by leathl", Version.version);
+            Console.WriteLine("Sharpii {0} - TPL - A tool by person66, using libWiiSharp.dll by leathl", ProgramVersion.version);
             Console.WriteLine("");
             Console.WriteLine("");
             Console.WriteLine("  Usage:");

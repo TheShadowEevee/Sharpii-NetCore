@@ -175,7 +175,7 @@ namespace Sharpii
 
             if (version == "")
             {
-                if (Quiet.quiet > 2)
+                if (BeQuiet.quiet > 2)
                     Console.WriteLine("No version specified, using latest", version);
                 version = "LATEST";
             }
@@ -187,14 +187,14 @@ namespace Sharpii
                 TMD tmd = grabtmd.DownloadTMD(id, "");
                 version = tmd.TitleVersion.ToString();
 
-                if (Quiet.quiet > 2)
+                if (BeQuiet.quiet > 2)
                     Console.WriteLine("Found latest version: v{0}", version);
             }
 
             if (entered == false) //Will only be false if no store type argument was given
             {
                 store.Add(StoreType.All);
-                if (Quiet.quiet > 2)
+                if (BeQuiet.quiet > 2)
                     Console.WriteLine("No store type specified, using all");
             }
 
@@ -205,7 +205,7 @@ namespace Sharpii
             {
                 wad = true;
                 if (Directory.Exists(temp) == true)
-                    DeleteDir.DeleteDirectory(temp);                
+                    DeleteADir.DeleteDirectory(temp);                
 
                 Directory.CreateDirectory(temp);
             }
@@ -214,7 +214,7 @@ namespace Sharpii
             {
                 NoOut = true;
                 output = ios == "" ? id + "v" + version : ios.Substring(0, ios.Length - 4);
-                if (Quiet.quiet > 2)
+                if (BeQuiet.quiet > 2)
                     Console.WriteLine("No output specified, using {0}", output);
             }
 
@@ -225,7 +225,7 @@ namespace Sharpii
 
                 if (local == true)
                 {
-                    if (Quiet.quiet > 2)
+                    if (BeQuiet.quiet > 2)
                         Console.WriteLine("Using local files if present...");
                     nus.UseLocalFiles = true;
                 }
@@ -233,17 +233,17 @@ namespace Sharpii
 
                 if (content != "")
                 {
-                    if (Quiet.quiet > 1)
+                    if (BeQuiet.quiet > 1)
                         Console.Write("Downloading content...");
 
                     nus.DownloadSingleContent(id, version, content, output);
 
-                    if (Quiet.quiet > 1)
+                    if (BeQuiet.quiet > 1)
                         Console.Write("Done!\n");
                 }
                 else
                 {
-                    if (Quiet.quiet > 1)
+                    if (BeQuiet.quiet > 1)
                         Console.Write("Downloading title...");
                     
                     string realout = output;
@@ -254,11 +254,11 @@ namespace Sharpii
 
                     WadIosNamingStuff(wad, temp, id, version, ios, NoOut, output, realout);
 
-                    if (Quiet.quiet > 1)
+                    if (BeQuiet.quiet > 1)
                         Console.Write("Done!\n");
                 }
 
-                if (Quiet.quiet > 1)
+                if (BeQuiet.quiet > 1)
                     Console.WriteLine("Operation completed succesfully!");
             }
             catch (Exception ex)
@@ -301,7 +301,7 @@ namespace Sharpii
                         File.Delete(realout);
                     File.Move(temp + "\\" + id + "v" + version + ".wad", realout);
                 }
-                DeleteDir.DeleteDirectory(temp);
+                DeleteADir.DeleteDirectory(temp);
             }
             else if (ios != "")
             {
@@ -319,7 +319,7 @@ namespace Sharpii
         public static void NUS_help()
         {
             Console.WriteLine("");
-            Console.WriteLine("Sharpii {0} - NUSD - A tool by person66, using libWiiSharp.dll by leathl", Version.version);
+            Console.WriteLine("Sharpii {0} - NUSD - A tool by person66, using libWiiSharp.dll by leathl", ProgramVersion.version);
             Console.WriteLine("");
             Console.WriteLine("");
             Console.WriteLine("  Usage:");

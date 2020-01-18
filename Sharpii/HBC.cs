@@ -19,7 +19,6 @@ using System;
 using System.IO;
 using System.Net;
 using libWiiSharp;
-using System.Windows.Forms;
 
 namespace Sharpii
 {
@@ -99,7 +98,7 @@ namespace Sharpii
             {
                 if (ip != "" && saveip == true)
                 {
-                    if (Quiet.quiet > 2)
+                    if (BeQuiet.quiet > 2)
                         Console.WriteLine("Saving IP");
                     Environment.SetEnvironmentVariable("SharpiiIP", ip, EnvironmentVariableTarget.Machine);
                 }
@@ -113,40 +112,40 @@ namespace Sharpii
                     Console.WriteLine("ERROR: No IP set");
                     return;
                 }
-                if (noip == true && Quiet.quiet > 2)
+                if (noip == true && BeQuiet.quiet > 2)
                     Console.WriteLine("No IP set, using {0}", ip);
                 
                 libWiiSharp.Protocol proto = Protocol.JODI;
 
-                if (Quiet.quiet > 2 && protocol == "HAXX")
+                if (BeQuiet.quiet > 2 && protocol == "HAXX")
                     Console.WriteLine("Using old protocol");
 
                 if (protocol == "HAXX")
                     proto = Protocol.HAXX;
 
-                if (Quiet.quiet > 2)
+                if (BeQuiet.quiet > 2)
                     Console.Write("Loading File...");
 
                 HbcTransmitter file = new HbcTransmitter(proto, ip);
                 
-                if (Quiet.quiet > 2)
+                if (BeQuiet.quiet > 2)
                     Console.Write("Done!\n");
 
 
-                if (Quiet.quiet > 2 && compress == true)
+                if (BeQuiet.quiet > 2 && compress == true)
                     Console.Write("Compressing File...");
                 
                 file.Compress = compress;
                 
-                if (Quiet.quiet > 2 && compress == true)
+                if (BeQuiet.quiet > 2 && compress == true)
                     Console.Write("Done!\n");
 
-                if (Quiet.quiet > 1)
+                if (BeQuiet.quiet > 1)
                     Console.Write("Sending file...");
 
                 file.TransmitFile(Path.GetFileName(input) + arguments, File.ReadAllBytes(input));
 
-                if (Quiet.quiet > 1)
+                if (BeQuiet.quiet > 1)
                     Console.Write("Done!\n");
             }
             catch (Exception ex)
@@ -174,7 +173,7 @@ namespace Sharpii
                 return false;
             }
 
-            if (!File.Exists(Path.GetDirectoryName(Application.ExecutablePath) + "\\WadInstaller.dll"))
+            if (!File.Exists(Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory) + "\\WadInstaller.dll"))
             {
                 Console.WriteLine("ERROR: WadInstaller.dll not found");
                 Console.WriteLine("\n\nAttemp to download? [Y/N]");
@@ -186,7 +185,7 @@ namespace Sharpii
                     {
                         Console.Write("\nGrabbing WadInstaller.dll...");
                         WebClient DLwadInstaller = new WebClient();
-                        DLwadInstaller.DownloadFile("https://github.com/mogzol/sharpii/raw/master/Sharpii/WadInstaller.dll", Path.GetDirectoryName(Application.ExecutablePath) + "\\WadInstaller.dll");
+                        DLwadInstaller.DownloadFile("https://github.com/mogzol/sharpii/raw/master/Sharpii/WadInstaller.dll", Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory) + "\\WadInstaller.dll");
                         Console.Write("Done!\n");
                     }
                     catch (Exception ex)
@@ -267,14 +266,14 @@ namespace Sharpii
             {
                 if (ip != "" && saveip == true)
                 {
-                    if (Quiet.quiet > 2)
+                    if (BeQuiet.quiet > 2)
                         Console.WriteLine("Saving IP");
                     Environment.SetEnvironmentVariable("SharpiiIP", ip, EnvironmentVariableTarget.Machine);
                 }
 
                 if (ahb == true || ios == "")
                 {
-                    if (Quiet.quiet > 2)
+                    if (BeQuiet.quiet > 2)
                         Console.WriteLine("Using AHBPROT");
                     ios = "0";
                 }
@@ -288,32 +287,32 @@ namespace Sharpii
                     Console.WriteLine("ERROR: No IP set");
                     return;
                 }
-                if (noip == true && Quiet.quiet > 2)
+                if (noip == true && BeQuiet.quiet > 2)
                     Console.WriteLine("No IP set, using {0}", ip);
 
                 libWiiSharp.Protocol proto = Protocol.JODI;
 
-                if (Quiet.quiet > 2 && protocol == "HAXX")
+                if (BeQuiet.quiet > 2 && protocol == "HAXX")
                     Console.WriteLine("Using old protocol");
 
                 if (protocol == "HAXX")
                     proto = Protocol.HAXX;
 
-                if (Quiet.quiet > 2)
+                if (BeQuiet.quiet > 2)
                     Console.Write("Loading File...");
 
                 HbcTransmitter file = new HbcTransmitter(proto, ip);
                 byte[] Installer = WadInstaller.InstallerHelper.CreateInstaller(input, (byte)Convert.ToInt32(ios)).ToArray();
 
-                if (Quiet.quiet > 2)
+                if (BeQuiet.quiet > 2)
                     Console.Write("Done!\n");
 
-                if (Quiet.quiet > 1)
+                if (BeQuiet.quiet > 1)
                     Console.Write("Sending file...");
 
                 file.TransmitFile("WadInstaller.dol", Installer);
 
-                if (Quiet.quiet > 1)
+                if (BeQuiet.quiet > 1)
                     Console.Write("Done!\n");
             }
             catch (Exception ex)
@@ -331,7 +330,7 @@ namespace Sharpii
         private static void SendDol_help()
         {
             Console.WriteLine("");
-            Console.WriteLine("Sharpii {0} - SendDol - A tool by person66, using libWiiSharp.dll by leathl", Version.version);
+            Console.WriteLine("Sharpii {0} - SendDol - A tool by person66, using libWiiSharp.dll by leathl", ProgramVersion.version);
             Console.WriteLine("");
             Console.WriteLine("");
             Console.WriteLine("  Usage:");
@@ -356,7 +355,7 @@ namespace Sharpii
         public static void SendWad_help()
         {
             Console.WriteLine("");
-            Console.WriteLine("Sharpii {0} - SendWad - A tool by person66, using libWiiSharp.dll by leathl,", Version.version);
+            Console.WriteLine("Sharpii {0} - SendWad - A tool by person66, using libWiiSharp.dll by leathl,", ProgramVersion.version);
             Console.WriteLine("                          and CRAP's installer by WiiCrazy/I.R.on");
             Console.WriteLine("");
             Console.WriteLine("  Usage:");

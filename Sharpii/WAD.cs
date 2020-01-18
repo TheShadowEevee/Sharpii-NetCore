@@ -126,15 +126,15 @@ namespace Sharpii
             {
                 WAD wad = new WAD();
 
-                if (Quiet.quiet > 2)
+                if (BeQuiet.quiet > 2)
                     Console.Write("Loading file...");
 
                 wad.LoadFile(input);
 
-                if (Quiet.quiet > 2)
+                if (BeQuiet.quiet > 2)
                     Console.Write("Done!\n");
 
-                if (Quiet.quiet > 1 && output == "")
+                if (BeQuiet.quiet > 1 && output == "")
                 {
                     Console.WriteLine("WAD Info:");
                     Console.WriteLine("");
@@ -161,7 +161,7 @@ namespace Sharpii
                 }
                 else
                 {
-                    if (Quiet.quiet > 2)
+                    if (BeQuiet.quiet > 2)
                         Console.Write("Saving file...");
 
                     if (output.Substring(output.Length - 4, 4).ToUpper() != ".TXT")
@@ -192,10 +192,10 @@ namespace Sharpii
                     txt.WriteLine("Blocks: {0}", wad.NandBlocks);
                     txt.Close();
                     
-                    if (Quiet.quiet > 2)
+                    if (BeQuiet.quiet > 2)
                         Console.Write("Done!\n");
 
-                    if (Quiet.quiet > 1)
+                    if (BeQuiet.quiet > 1)
                         Console.WriteLine("Operation completed succesfully!");
                 }
             }
@@ -358,25 +358,25 @@ namespace Sharpii
 
                 if (edit == true)
                 {
-                    if (Quiet.quiet > 2)
+                    if (BeQuiet.quiet > 2)
                         Console.Write("Loading file...");
                     wad.LoadFile(input);
                 }
                 else
                 {
-                    if (Quiet.quiet > 2)
+                    if (BeQuiet.quiet > 2)
                         Console.Write("Loading folder...");
                     wad.CreateNew(input);
                 }
 
-                if (Quiet.quiet > 2)
+                if (BeQuiet.quiet > 2)
                     Console.Write("Done!\n");
 
                 if (sound != "" || banner != "" || icon != "" || app != "")
                 {
                     string temp = Path.GetTempPath() + "Sharpii.tmp";
                     if (Directory.Exists(temp) == true)
-                        DeleteDir.DeleteDirectory(temp);
+                        DeleteADir.DeleteDirectory(temp);
 
                     Directory.CreateDirectory(temp);
 
@@ -389,7 +389,7 @@ namespace Sharpii
 
                     if (sound != "")
                     {
-                        if (Quiet.quiet > 2)
+                        if (BeQuiet.quiet > 2)
                             Console.Write("Grabbing sound...");
 
                         twad.LoadFile(sound);
@@ -400,12 +400,12 @@ namespace Sharpii
 
                         File.Copy(temp + "\\sound\\00000000\\meta\\sound.bin", temp + "\\main\\00000000\\meta\\sound.bin", true);
 
-                        if (Quiet.quiet > 2)
+                        if (BeQuiet.quiet > 2)
                             Console.Write("Done!\n");
                     }
                     if (banner != "")
                     {
-                        if (Quiet.quiet > 2)
+                        if (BeQuiet.quiet > 2)
                             Console.Write("Grabbing banner...");
 
                         twad.LoadFile(banner);
@@ -416,12 +416,12 @@ namespace Sharpii
 
                         File.Copy(temp + "\\banner\\00000000\\meta\\banner.bin", temp + "\\main\\00000000\\meta\\banner.bin", true);
 
-                        if (Quiet.quiet > 2)
+                        if (BeQuiet.quiet > 2)
                             Console.Write("Done!\n");
                     }
                     if (icon != "")
                     {
-                        if (Quiet.quiet > 2)
+                        if (BeQuiet.quiet > 2)
                             Console.Write("Grabbing icon...");
 
                         twad.LoadFile(icon);
@@ -432,12 +432,12 @@ namespace Sharpii
 
                         File.Copy(temp + "\\icon\\00000000\\meta\\icon.bin", temp + "\\main\\00000000\\meta\\icon.bin", true);
 
-                        if (Quiet.quiet > 2)
+                        if (BeQuiet.quiet > 2)
                             Console.Write("Done!\n");
                     }
                     if (app != "")
                     {
-                        if (Quiet.quiet > 2)
+                        if (BeQuiet.quiet > 2)
                             Console.Write("Grabbing dol...");
 
                         if (app.Substring(app.Length - 4, 4) == ".dol")
@@ -453,19 +453,19 @@ namespace Sharpii
 
                         File.Copy(temp + "\\dol\\00000001.app", temp + "\\main\\00000001.app", true);
 
-                        if (Quiet.quiet > 2)
+                        if (BeQuiet.quiet > 2)
                             Console.Write("Done!\n");
                     }
                     u.ReplaceFile(1, temp + "\\main\\00000000\\meta\\banner.bin");
                     u.ReplaceFile(2, temp + "\\main\\00000000\\meta\\icon.bin");
                     u.ReplaceFile(3, temp + "\\main\\00000000\\meta\\sound.bin");
                     u.Save(temp + "\\main\\00000000.app");
-                    DeleteDir.DeleteDirectory(temp + "\\main\\00000000\\");
+                    DeleteADir.DeleteDirectory(temp + "\\main\\00000000\\");
                     wad.CreateNew(temp + "\\main");
-                    DeleteDir.DeleteDirectory(temp);
+                    DeleteADir.DeleteDirectory(temp);
                 }
 
-                if (Quiet.quiet > 2 && fake == true)
+                if (BeQuiet.quiet > 2 && fake == true)
                     Console.WriteLine("FakeSigning WAD");
                 wad.FakeSign = fake;
 
@@ -473,7 +473,7 @@ namespace Sharpii
                 {
                     if (id != "")
                     {
-                        if (Quiet.quiet > 2)
+                        if (BeQuiet.quiet > 2)
                             Console.WriteLine("Changing channel ID to: {0}", id);
                     }
                     else
@@ -483,7 +483,7 @@ namespace Sharpii
 
                     if (lwrid != "")
                     {
-                        if (Quiet.quiet > 2)
+                        if (BeQuiet.quiet > 2)
                             Console.WriteLine("Changing channel type to: {0}", lwrid);
                     }
                     else
@@ -506,18 +506,18 @@ namespace Sharpii
                 }
                 if (ios > -1)
                 {
-                    if (Quiet.quiet > 2)
+                    if (BeQuiet.quiet > 2)
                         Console.WriteLine("Changing startup IOS to: {0}", ios);
                     wad.ChangeStartupIOS(ios);
                 }
                 if (title != "")
                 {
-                    if (Quiet.quiet > 2)
+                    if (BeQuiet.quiet > 2)
                         Console.WriteLine("Changing channel title to: {0}", title);
                     wad.ChangeChannelTitles(title);
                 }
 
-                if (Quiet.quiet > 2)
+                if (BeQuiet.quiet > 2)
                     Console.Write("Saving file...");
 
                 if (output.Substring(output.Length - 4, 4).ToUpper() != ".WAD")
@@ -525,10 +525,10 @@ namespace Sharpii
 
                 wad.Save(output);
 
-                if (Quiet.quiet > 2)
+                if (BeQuiet.quiet > 2)
                     Console.Write("Done!\n");
 
-                if (Quiet.quiet > 1)
+                if (BeQuiet.quiet > 1)
                     Console.WriteLine("Operation completed succesfully!");
             }
             catch (Exception ex)
@@ -570,23 +570,23 @@ namespace Sharpii
             {
                 WAD wad = new WAD();
 
-                if (Quiet.quiet > 2)
+                if (BeQuiet.quiet > 2)
                     Console.Write("Loading file...");
 
                 wad.LoadFile(input);
 
-                if (Quiet.quiet > 2)
+                if (BeQuiet.quiet > 2)
                     Console.Write("Done!\n");
 
-                if (Quiet.quiet > 2)
+                if (BeQuiet.quiet > 2)
                     Console.Write("Unpacking WAD...");
 
                 wad.Unpack(output, cid);
 
-                if (Quiet.quiet > 2)
+                if (BeQuiet.quiet > 2)
                     Console.Write("Done!\n");
 
-                if (Quiet.quiet > 1)
+                if (BeQuiet.quiet > 1)
                     Console.WriteLine("Operation completed succesfully!");
             }
             catch (Exception ex)
@@ -601,7 +601,7 @@ namespace Sharpii
         public static void WAD_help()
         {
             Console.WriteLine("");
-            Console.WriteLine("Sharpii {0} - WAD - A tool by person66, using libWiiSharp.dll by leathl", Version.version);
+            Console.WriteLine("Sharpii {0} - WAD - A tool by person66, using libWiiSharp.dll by leathl", ProgramVersion.version);
             Console.WriteLine("");
             Console.WriteLine("");
             Console.WriteLine("  Usage:");

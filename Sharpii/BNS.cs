@@ -63,15 +63,15 @@ namespace Sharpii
             try
             {
                 //Now convert it
-                if (Quiet.quiet > 2)
+                if (BeQuiet.quiet > 2)
                     Console.Write("Loading file...");
 
                 Wave WavFile = libWiiSharp.BNS.BnsToWave(input);
 
-                if (Quiet.quiet > 2)
+                if (BeQuiet.quiet > 2)
                     Console.Write("Done!\n");
 
-                if (Quiet.quiet > 2)
+                if (BeQuiet.quiet > 2)
                     Console.Write("Saving wav...");
 
                 if (output.Substring(output.Length - 4, 4).ToUpper() != ".WAV")
@@ -79,10 +79,10 @@ namespace Sharpii
 
                 WavFile.Save(output);
 
-                if (Quiet.quiet > 2)
+                if (BeQuiet.quiet > 2)
                     Console.Write("Done!\n");
 
-                if (Quiet.quiet > 1)
+                if (BeQuiet.quiet > 1)
                     Console.WriteLine("Operation completed succesfully!");
             }
             catch (Exception ex)
@@ -130,28 +130,28 @@ namespace Sharpii
             //Run main part, and check for exceptions
             try
             {
-                if (Quiet.quiet > 2)
+                if (BeQuiet.quiet > 2)
                     Console.Write("Loading file...");
 
                 BNS WavFile = new BNS(input);
 
-                if (Quiet.quiet > 2)
+                if (BeQuiet.quiet > 2)
                     Console.Write("Done!\n");
 
                 if (loop == true)
                 {
-                    if (Quiet.quiet > 2)
+                    if (BeQuiet.quiet > 2)
                         Console.WriteLine("Applying loop");
                     WavFile.SetLoop(1);
                 }
                 if (mono == true)
                 {
-                    if (Quiet.quiet > 2)
+                    if (BeQuiet.quiet > 2)
                         Console.WriteLine("Converting to mono");
                     WavFile.StereoToMono = true;
                 }
 
-                if (Quiet.quiet > 2)
+                if (BeQuiet.quiet > 2)
                     Console.Write("Saving BNS...");
 
                 WavFile.Convert();
@@ -161,10 +161,10 @@ namespace Sharpii
 
                 WavFile.Save(output);
 
-                if (Quiet.quiet > 2)
+                if (BeQuiet.quiet > 2)
                     Console.Write("Done!\n");
 
-                if (Quiet.quiet > 1)
+                if (BeQuiet.quiet > 1)
                     Console.WriteLine("Operation completed succesfully!");
             }
             catch (Exception ex)
@@ -179,7 +179,7 @@ namespace Sharpii
         public static void Wav2BNS_help()
         {
             Console.WriteLine("");
-            Console.WriteLine("Sharpii {0} - BNS - A tool by person66, using libWiiSharp.dll by leathl", Version.version);
+            Console.WriteLine("Sharpii {0} - BNS - A tool by person66, using libWiiSharp.dll by leathl", ProgramVersion.version);
             Console.WriteLine("");
             Console.WriteLine("");
             Console.WriteLine("  Usage:");

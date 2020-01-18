@@ -1,8 +1,10 @@
 # Sharpii - A command line libWiiSharp tool
 
 # Fork Notes
-- Status: Ported locally, but Linux and Mac compiling isn't possible yet. The ported files will be uploaded soon.
-- Purpose: A .Net Core port of Sharpii for use on Mac and Linux, intended for use with my Unix rewrite of the RC24 Patcher [Put Link Here], but it can be used for any purpose when it's done.
+- Status: Ported and working! Mac untested.
+
+- Purpose: A .Net Core port of Sharpii for use on Mac and Linux, intended for use with my Unix rewrite of the RC24 Patcher but it can be used for any purpose.
+
 - Issues/Pull Requests: All issues with this version of Sharpii should go in this fork's issue tracker. The issue is likely with the port and even if it isn't maybe I can fix it as I don't know if the original Sharpii creator is still active here. Pull requests are appreciated if they fix an issue, but it may take a bit to review.
 
 # Repo info
