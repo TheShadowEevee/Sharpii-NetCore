@@ -69,7 +69,7 @@ namespace Sharpii
             if (libWiiSharp.U8.IsU8(input) != true)
             {
                 Console.WriteLine("ERROR: File {0} is not a U8 archive", input);
-                Console.WriteLine("Error: SHARPII_NET_CORE_WAD_NON_U8_01");
+                Console.WriteLine("Error: SHARPII_NET_CORE_U8_NON_U8_01");
                 return;
             }
            
@@ -140,7 +140,7 @@ namespace Sharpii
                         if (i + 1 >= args.Length)
                         {
                             Console.WriteLine("ERROR: No title set");
-                            Console.WriteLine("Error: SHARPII_NET_CORE_WAD_NO_TITLE_01");
+                            Console.WriteLine("Error: SHARPII_NET_CORE_U8_NO_TITLE_01");
                             return;
                         }
                         imet = args[i + 1];
@@ -151,7 +151,7 @@ namespace Sharpii
             if (imd5 == true && imet != "")
             {
                 Console.WriteLine("ERROR: Cannot use IMET and IMD5 at the same time.");
-                Console.WriteLine("Error: SHARPII_NET_CORE_WAD_TWO_HEADERS_01");
+                Console.WriteLine("Error: SHARPII_NET_CORE_U8_TWO_HEADERS_01");
                 return;
             }
 

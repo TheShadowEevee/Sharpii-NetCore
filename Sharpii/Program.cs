@@ -147,6 +147,11 @@ namespace Sharpii
                 gotSomewhere = true;
             }
 
+            if (Function == "ERRORS")
+            {
+                ERROR_Stuff.ERROR(args);
+                gotSomewhere = true;
+            }
             if (Function == "WHICH CAME FIRST" || Function == "WHICH CAME FIRST?" || 
             (Function == "WHICH" && args[1].ToUpper() == "CAME" && args[2].Substring(0,5).ToUpper() == "FIRST"))
             {
@@ -160,6 +165,7 @@ namespace Sharpii
             {
                 //If tuser gets here, they entered something wrong
                 Console.WriteLine("ERROR: The argument {0} is invalid", args[0]);
+                Console.WriteLine("Error: SHARPII_NET_CORE_MAIN_INVALID_ARG_01");
             }
 
             string temp = Path.GetTempPath() + "Sharpii.tmp";
@@ -270,6 +276,7 @@ namespace Sharpii
             Console.WriteLine("       NUSD           Download files from NUS");
             Console.WriteLine("       SendDol        Send a dol to the HBC over wifi");
             Console.WriteLine("       SendWad        Send a wad to the HBC over wifi");
+            Console.WriteLine("       Errors         Get a Sharpii error's description");
             Console.WriteLine("");
             Console.WriteLine("       NOTE: Too see more detailed descriptions of any of the above,");
             Console.WriteLine("             use 'Sharpii [function] -h'");
@@ -335,5 +342,7 @@ public class Logging
     //By default, Sharpii should create a log.
     //Using the option -NoLog will disable it.
     //Everything should check this when it checks the BeQuiet.Quiet variable.
+
+    //This isn't used yet.
     public static int log = 1;
 }

@@ -53,6 +53,7 @@ namespace Sharpii
                         if (i + 1 >= args.Length)
                         {
                             Console.WriteLine("ERROR: No ip set");
+                            Console.WriteLine("Error: SHARPII_NET_CORE_HBC_NO_IP_01");
                             return;
                         }
                         ip = args[i + 1];
@@ -264,7 +265,7 @@ namespace Sharpii
                         if (File.Exists(input) == false)
                         {
                             Console.WriteLine("ERROR: Unable to open file: {0}", input);
-                            Console.WriteLine("Error: SHARPII_NET_CORE_BNS_UNKNOWN_01");
+                            Console.WriteLine("Error: SHARPII_NET_CORE_BNS_FILE_ERR_01");
                             return;
                         }
                         break;
