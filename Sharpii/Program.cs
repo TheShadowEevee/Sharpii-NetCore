@@ -171,22 +171,21 @@ namespace Sharpii
                     Console.WriteLine("Installing Sharpii...");
                 if (BeQuiet.quiet > 1)
                     Console.WriteLine("Adding Variables");
-                Environment.SetEnvironmentVariable("PATH", Environment.GetEnvironmentVariable("PATH", EnvironmentVariableTarget.Machine) +
-                ";" + Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles) + "\\Sharpii\\", EnvironmentVariableTarget.Machine);
+                Environment.SetEnvironmentVariable("PATH", Path.Combine(Environment.GetEnvironmentVariable("PATH", EnvironmentVariableTarget.Machine), ";", Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles), "Sharpii"), EnvironmentVariableTarget.Machine);
 
                 if (BeQuiet.quiet > 1)
                     Console.WriteLine("Creating Directory");
-                if (Directory.Exists(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles) + "\\Sharpii\\"))
-                    DeleteADir.DeleteDirectory(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles) + "\\Sharpii\\");
-                Directory.CreateDirectory(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles) + "\\Sharpii\\");
+                if (Directory.Exists(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles), "Sharpii")))
+                    DeleteADir.DeleteDirectory(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles), "Sharpii"));
+                Directory.CreateDirectory(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles), "Sharpii"));
 
                 if (BeQuiet.quiet > 1)
                     Console.WriteLine("Copying Files");
                 File.Copy(AppDomain.CurrentDomain.BaseDirectory, Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles) + "\\Sharpii\\Sharpii.exe");
-                if (File.Exists(Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory) + "\\libWiiSharp.dll"))
-                    File.Copy(Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory) + "\\libWiiSharp.dll", Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles) + "\\Sharpii\\libWiiSharp.dll");
-                if (File.Exists(Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory) + "\\WadInstaller.dll"))
-                    File.Copy(Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory) + "\\WadInstaller.dll", Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles) + "\\Sharpii\\WadInstaller.dll");
+                if (File.Exists(Path.Combine(Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory), "libWiiSharp.dll")))
+                    File.Copy(Path.Combine(Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory), "libWiiSharp.dll"), Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles), "Sharpii", "libWiiSharp.dll"));
+                if (File.Exists(Path.Combine(Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory), "WadInstaller.dll")))
+                    File.Copy(Path.Combine(Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory), "WadInstaller.dll"), Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles), "Sharpii", "WadInstaller.dll"));
 
                 if (BeQuiet.quiet > 1)
                 {
@@ -247,6 +246,7 @@ namespace Sharpii
         {
             Console.WriteLine("");
             Console.WriteLine("Sharpii {0} - A tool by person66, using libWiiSharp.dll by leathl", ProgramVersion.version);
+            Console.WriteLine("Sharpii .Net Core Port by TheShadowEevee");
             Console.WriteLine("");
             Console.WriteLine("");
             Console.WriteLine("  Usage:");
@@ -321,5 +321,5 @@ public class BeQuiet
 }
 public class ProgramVersion
 {
-    public static string version = "1.7.3; .Net Core Port";
+    public static string version = "1.0.1; .Net Core Port (Based on Sharpii 1.7.3)";
 }

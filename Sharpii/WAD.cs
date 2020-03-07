@@ -380,10 +380,10 @@ namespace Sharpii
 
                     Directory.CreateDirectory(temp);
 
-                    wad.Unpack(temp + "\\main");
+                    wad.Unpack(Path.Combine(temp, "main"));
                     U8 u = new U8();
-                    u.LoadFile(temp + "\\main\\00000000.app");
-                    u.Extract(temp + "\\main\\00000000");
+                    u.LoadFile(Path.Combine(temp, "main", "00000000.app"));
+                    u.Extract(Path.Combine(temp, "main", "00000000"));
 
                     WAD twad = new WAD();
 
@@ -393,12 +393,12 @@ namespace Sharpii
                             Console.Write("Grabbing sound...");
 
                         twad.LoadFile(sound);
-                        twad.Unpack(temp + "\\sound");
+                        twad.Unpack(Path.Combine(temp + "sound"));
                         U8 tu = new U8();
-                        tu.LoadFile(temp + "\\sound\\00000000.app");
-                        tu.Extract(temp + "\\sound\\00000000");
+                        tu.LoadFile(Path.Combine(temp, "sound", "00000000.app"));
+                        tu.Extract(Path.Combine(temp, "sound", "00000000"));
 
-                        File.Copy(temp + "\\sound\\00000000\\meta\\sound.bin", temp + "\\main\\00000000\\meta\\sound.bin", true);
+                        File.Copy(Path.Combine(temp, "sound", "00000000", "meta", "sound.bin"), Path.Combine(temp, "main", "00000000", "meta", "sound.bin"), true);
 
                         if (BeQuiet.quiet > 2)
                             Console.Write("Done!\n");
@@ -409,12 +409,12 @@ namespace Sharpii
                             Console.Write("Grabbing banner...");
 
                         twad.LoadFile(banner);
-                        twad.Unpack(temp + "\\banner");
+                        twad.Unpack(Path.Combine(temp, "banner"));
                         U8 tu = new U8();
-                        tu.LoadFile(temp + "\\banner\\00000000.app");
-                        tu.Extract(temp + "\\banner\\00000000");
+                        tu.LoadFile(Path.Combine(temp, "banner", "00000000.app"));
+                        tu.Extract(Path.Combine(temp, "banner", "00000000"));
 
-                        File.Copy(temp + "\\banner\\00000000\\meta\\banner.bin", temp + "\\main\\00000000\\meta\\banner.bin", true);
+                        File.Copy(Path.Combine(temp, "banner", "00000000", "meta", "banner.bin"), Path.Combine(temp, "main", "00000000", "meta", "banner.bin"), true);
 
                         if (BeQuiet.quiet > 2)
                             Console.Write("Done!\n");
@@ -425,12 +425,12 @@ namespace Sharpii
                             Console.Write("Grabbing icon...");
 
                         twad.LoadFile(icon);
-                        twad.Unpack(temp + "\\icon");
+                        twad.Unpack(Path.Combine(temp, "icon"));
                         U8 tu = new U8();
-                        tu.LoadFile(temp + "\\icon\\00000000.app");
-                        tu.Extract(temp + "\\icon\\00000000");
+                        tu.LoadFile(Path.Combine(temp, "icon", "00000000.app"));
+                        tu.Extract(Path.Combine(temp, "icon", "00000000"));
 
-                        File.Copy(temp + "\\icon\\00000000\\meta\\icon.bin", temp + "\\main\\00000000\\meta\\icon.bin", true);
+                        File.Copy(Path.Combine(temp, "icon", "00000000", "meta", "icon.bin"), Path.Combine(temp, "main", "00000000", "meta", "icon.bin"), true);
 
                         if (BeQuiet.quiet > 2)
                             Console.Write("Done!\n");
@@ -442,8 +442,8 @@ namespace Sharpii
 
                         if (app.Substring(app.Length - 4, 4) == ".dol")
                         {
-                            Directory.CreateDirectory(temp + "\\dol\\");
-                            File.Copy(app, temp + "\\dol\\00000001.app");
+                            Directory.CreateDirectory(Path.Combine(temp, "dol"));
+                            File.Copy(app, Path.Combine(temp, "dol", "00000001.app"));
                         }
                         else
                         {
@@ -451,15 +451,15 @@ namespace Sharpii
                             twad.Unpack(temp + "\\dol");
                         }
 
-                        File.Copy(temp + "\\dol\\00000001.app", temp + "\\main\\00000001.app", true);
+                        File.Copy(Path.Combine(temp, "dol", "00000001.app"), Path.Combine(temp, "main", "00000001.app"), true);
 
                         if (BeQuiet.quiet > 2)
                             Console.Write("Done!\n");
                     }
-                    u.ReplaceFile(1, temp + "\\main\\00000000\\meta\\banner.bin");
-                    u.ReplaceFile(2, temp + "\\main\\00000000\\meta\\icon.bin");
-                    u.ReplaceFile(3, temp + "\\main\\00000000\\meta\\sound.bin");
-                    u.Save(temp + "\\main\\00000000.app");
+                    u.ReplaceFile(1, Path.Combine(temp, "main", "00000000", "meta", "banner.bin"));
+                    u.ReplaceFile(2, Path.Combine(temp, "main", "00000000", "meta", "icon.bin"));
+                    u.ReplaceFile(3, Path.Combine(temp, "main", "00000000", "meta", "sound.bin"));
+                    u.Save(Path.Combine(temp, "main", "00000000.app"));
                     DeleteADir.DeleteDirectory(temp + "\\main\\00000000\\");
                     wad.CreateNew(temp + "\\main");
                     DeleteADir.DeleteDirectory(temp);
@@ -602,6 +602,7 @@ namespace Sharpii
         {
             Console.WriteLine("");
             Console.WriteLine("Sharpii {0} - WAD - A tool by person66, using libWiiSharp.dll by leathl", ProgramVersion.version);
+            Console.WriteLine("Sharpii .Net Core Port by TheShadowEevee");
             Console.WriteLine("");
             Console.WriteLine("");
             Console.WriteLine("  Usage:");

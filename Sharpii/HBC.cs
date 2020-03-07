@@ -173,7 +173,7 @@ namespace Sharpii
                 return false;
             }
 
-            if (!File.Exists(Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory) + "\\WadInstaller.dll"))
+            if (!File.Exists(Path.Combine(Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory), "WadInstaller.dll")))
             {
                 Console.WriteLine("ERROR: WadInstaller.dll not found");
                 Console.WriteLine("\n\nAttemp to download? [Y/N]");
@@ -331,6 +331,7 @@ namespace Sharpii
         {
             Console.WriteLine("");
             Console.WriteLine("Sharpii {0} - SendDol - A tool by person66, using libWiiSharp.dll by leathl", ProgramVersion.version);
+            Console.WriteLine("Sharpii .Net Core Port by TheShadowEevee");
             Console.WriteLine("");
             Console.WriteLine("");
             Console.WriteLine("  Usage:");

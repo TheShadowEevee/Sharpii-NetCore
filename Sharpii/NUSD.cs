@@ -277,7 +277,7 @@ namespace Sharpii
         {
             if (wad == true)
             {
-                if (!File.Exists(temp + "\\" + id + "v" + version + ".wad"))
+                if (!File.Exists(Path.Combine(temp, id + "v" + version + ".wad")))
                 {
                     Console.WriteLine("ERROR: Can't find WAD");
                     return;
@@ -287,19 +287,19 @@ namespace Sharpii
                     int index = realout.LastIndexOf("\\") > realout.LastIndexOf("/") ? realout.LastIndexOf("\\") : realout.LastIndexOf("/");
                     if (File.Exists(realout.Substring(0, index + 1) + ios))
                         File.Delete(realout.Substring(0, index + 1) + ios);
-                    File.Move(temp + "\\" + id + "v" + version + ".wad", realout.Substring(0, index + 1) + ios);
+                    File.Move(Path.Combine(temp, id + "v" + version + ".wad"), realout.Substring(0, index + 1) + ios);
                 }
                 else if (ios == "" && NoOut == true)
                 {
                     if (File.Exists(realout + ".wad"))
                         File.Delete(realout + ".wad");
-                    File.Move(temp + "\\" + id + "v" + version + ".wad", realout + ".wad");
+                    File.Move(Path.Combine(temp, id + "v" + version + ".wad"), realout + ".wad");
                 }
                 else
                 {
                     if (File.Exists(realout))
                         File.Delete(realout);
-                    File.Move(temp + "\\" + id + "v" + version + ".wad", realout);
+                    File.Move(Path.Combine(temp, id + "v" + version + ".wad"), realout);
                 }
                 DeleteADir.DeleteDirectory(temp);
             }
@@ -307,11 +307,11 @@ namespace Sharpii
             {
                 if (output.Substring(output.Length - 1, 1) == "\\" || output.Substring(output.Length - 1, 1) == "/")
                     output = output.Substring(output.Length - 1, 1);
-                if (File.Exists(output + "\\" + id + "v" + version + ".wad"))
+                if (File.Exists(Path.Combine(output, id + "v" + version + ".wad")))
                 {
-                    if (File.Exists(output + "\\" + ios))
-                        File.Delete(output + "\\" + ios);
-                    File.Move(output + "\\" + id + "v" + version + ".wad", output + "\\" + ios);
+                    if (File.Exists(Path.Combine(output, ios)))
+                        File.Delete(Path.Combine(output, ios));
+                    File.Move(Path.Combine(output, id + "v" + version + ".wad"), Path.Combine(output, ios));
                 }
             }
         }
@@ -320,6 +320,7 @@ namespace Sharpii
         {
             Console.WriteLine("");
             Console.WriteLine("Sharpii {0} - NUSD - A tool by person66, using libWiiSharp.dll by leathl", ProgramVersion.version);
+            Console.WriteLine("Sharpii .Net Core Port by TheShadowEevee");
             Console.WriteLine("");
             Console.WriteLine("");
             Console.WriteLine("  Usage:");
