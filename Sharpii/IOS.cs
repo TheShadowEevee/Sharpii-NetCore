@@ -43,6 +43,8 @@ namespace Sharpii
             if (File.Exists(input) == false)
             {
                 Console.WriteLine("ERROR: Unable to open file: {0}", input);
+                Console.WriteLine("Either the file doesn't exist, or Sharpii doesn't have permission to open it.");
+                Console.WriteLine("Error: SHARPII_NET_CORE_IOS_FILE_ERR_01");
                 return;
             }
 
@@ -67,16 +69,19 @@ namespace Sharpii
                         if (i + 1 >= args.Length)
                         {
                             Console.WriteLine("ERROR: No slot set");
+                            Console.WriteLine("Error: SHARPII_NET_CORE_IOS_NO_SLOT_01");
                             return;
                         }
                         if (!int.TryParse(args[i + 1], out slot))
                         { 
-                            Console.WriteLine("Invalid slot {0}...", args[i + 1]); 
+                            Console.WriteLine("Invalid slot {0}...", args[i + 1]);
+                            Console.WriteLine("Error: SHARPII_NET_CORE_IOS_INVALID_SLOT_01");
                             return; 
                         }
                         if (slot < 3 || slot > 255)
                         { 
-                            Console.WriteLine("Invalid slot {0}...", slot); 
+                            Console.WriteLine("Invalid slot {0}...", slot);
+                            Console.WriteLine("Error: SHARPII_NET_CORE_IOS_INVALID_SLOT_01");
                             return; 
                         }
                         break;
@@ -84,16 +89,19 @@ namespace Sharpii
                         if (i + 1 >= args.Length)
                         {
                             Console.WriteLine("ERROR: No slot set");
+                            Console.WriteLine("Error: SHARPII_NET_CORE_IOS_NO_SLOT_01");
                             return;
                         }
                         if (!int.TryParse(args[i + 1], out slot))
                         {
                             Console.WriteLine("Invalid slot {0}...", args[i + 1]);
+                            Console.WriteLine("Error: SHARPII_NET_CORE_IOS_INVALID_SLOT_01");
                             return;
                         }
                         if (slot < 3 || slot > 255)
                         {
                             Console.WriteLine("Invalid slot {0}...", slot);
+                            Console.WriteLine("Error: SHARPII_NET_CORE_IOS_INVALID_SLOT_01");
                             return;
                         }
                         break;
@@ -101,16 +109,19 @@ namespace Sharpii
                         if (i + 1 >= args.Length)
                         {
                             Console.WriteLine("ERROR: No version set");
+                            Console.WriteLine("Error: SHARPII_NET_CORE_IOS_NO_VERSION_01");
                             return;
                         }
                         if (!int.TryParse(args[i + 1], out version))
                         { 
-                            Console.WriteLine("Invalid version {0}...", args[i + 1]); 
+                            Console.WriteLine("Invalid version {0}...", args[i + 1]);
+                            Console.WriteLine("Error: SHARPII_NET_CORE_IOS_INVALID_VERSION_01");
                             return; 
                         }
                         if (version < 0 || version > 65535)
                         { 
-                            Console.WriteLine("Invalid version {0}...", version); 
+                            Console.WriteLine("Invalid version {0}...", version);
+                            Console.WriteLine("Error: SHARPII_NET_CORE_IOS_INVALID_VERSION_01");
                             return; 
                         }
                         break;
@@ -118,6 +129,7 @@ namespace Sharpii
                         if (i + 1 >= args.Length)
                         {
                             Console.WriteLine("ERROR: No output set");
+                            Console.WriteLine("Error: SHARPII_NET_CORE_IOS_NO_OUTPUT_01");
                             return;
                         }
                         output = args[i + 1];
@@ -227,6 +239,7 @@ namespace Sharpii
                 Console.WriteLine("An unknown error occured, please try again");
                 Console.WriteLine("");
                 Console.WriteLine("ERROR DETAILS: {0}", ex.Message);
+                Console.WriteLine("Error: SHARPII_NET_CORE_IOS_UNKNOWN_01");
                 return;
             }
 

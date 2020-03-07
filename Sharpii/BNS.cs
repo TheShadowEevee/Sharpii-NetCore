@@ -56,6 +56,8 @@ namespace Sharpii
             if (File.Exists(input) == false)
             {
                 Console.WriteLine("ERROR: Unable to open file: {0}", input);
+                Console.WriteLine("Either the file doesn't exist, or Sharpii doesn't have permission to open it.");
+                Console.WriteLine("Error: SHARPII_NET_CORE_BNS_FILE_ERR_01");
                 return;
             }
 
@@ -90,6 +92,7 @@ namespace Sharpii
                 Console.WriteLine("An unknown error occured, please try again");
                 Console.WriteLine("");
                 Console.WriteLine("ERROR DETAILS: {0}", ex.Message);
+                Console.WriteLine("Error: SHARPII_NET_CORE_BNS_UNKNOWN_01");
                 return;
             }
         }
@@ -105,6 +108,8 @@ namespace Sharpii
             if (File.Exists(input) == false)
             {
                 Console.WriteLine("ERROR: Unable to open file: {0}", input);
+                Console.WriteLine("Either the file doesn't exist, or Sharpii doesn't have permission to open it.");
+                Console.WriteLine("Error: SHARPII_NET_CORE_BNS_FILE_ERR_01");
                 return;
             }
 
@@ -172,6 +177,7 @@ namespace Sharpii
                 Console.WriteLine("An unknown error occured, please try again");
                 Console.WriteLine("");
                 Console.WriteLine("ERROR DETAILS: {0}", ex.Message);
+                Console.WriteLine("Error: SHARPII_NET_CORE_BNS_UNKNOWN_01");
                 return;
             }
         }

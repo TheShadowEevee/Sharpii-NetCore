@@ -65,6 +65,7 @@ namespace Sharpii
                         if (i + 1 >= args.Length)
                         {
                             Console.WriteLine("ERROR: No dol set");
+                            Console.WriteLine("Error: SHARPII_NET_CORE_HBC_NO_DOL_01");
                             return;
                         }
                         input = args[i + 1];
@@ -72,6 +73,8 @@ namespace Sharpii
                         if (File.Exists(input) == false)
                         {
                             Console.WriteLine("ERROR: Unable to open file: {0}", input);
+                            Console.WriteLine("Either the file doesn't exist, or Sharpii doesn't have permission to open it.");
+                            Console.WriteLine("Error: SHARPII_NET_CORE_HBC_FILE_ERR_01");
                             return;
                         }
 
@@ -110,6 +113,7 @@ namespace Sharpii
                 if (String.IsNullOrEmpty(ip))
                 {
                     Console.WriteLine("ERROR: No IP set");
+                    Console.WriteLine("Error: SHARPII_NET_CORE_HBC_NO_IP_01");
                     return;
                 }
                 if (noip == true && BeQuiet.quiet > 2)
@@ -153,6 +157,7 @@ namespace Sharpii
                 Console.WriteLine("An unknown error occured, please try again");
                 Console.WriteLine("");
                 Console.WriteLine("ERROR DETAILS: {0}", ex.Message);
+                Console.WriteLine("Error: SHARPII_NET_CORE_HBC_UNKNOWN_01");
                 return;
             }
 
@@ -176,6 +181,9 @@ namespace Sharpii
             if (!File.Exists(Path.Combine(Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory), "WadInstaller.dll")))
             {
                 Console.WriteLine("ERROR: WadInstaller.dll not found");
+                Console.WriteLine("This should not appear on the .Net Core port.");
+                Console.WriteLine("If you see this, report how you got here on https://github.com/TheShadowEevee/Sharpii-NetCore/issues.");
+                Console.WriteLine("Error: SHARPII_NET_CORE_HBC_MISSING_DLL_WADINSTALLER_01");
                 Console.WriteLine("\n\nAttemp to download? [Y/N]");
                 Console.Write("\n>>");
                 string ans = Console.ReadLine();
@@ -189,7 +197,7 @@ namespace Sharpii
                         Console.Write("Done!\n");
                     }
                     catch (Exception ex)
-                    { Console.WriteLine("An error occured: {0}", ex.Message); return false; }
+                    { Console.WriteLine("An error occured: {0}", ex.Message); Console.WriteLine("Error: SHARPII_NET_CORE_HBC_UNKNOWN_01"); return false; }
                 }
                 else
                     return false;
@@ -217,12 +225,14 @@ namespace Sharpii
                         if (i + 1 >= args.Length)
                         {
                             Console.WriteLine("ERROR: No ios set");
+                            Console.WriteLine("Error: SHARPII_NET_CORE_HBC_NO_IOS_01");
                             return;
                         }
                         ios = args[i + 1];
                         if (!(Convert.ToInt32(ios) >= 3 && Convert.ToInt32(ios) <= 255))
                         {
                             Console.WriteLine("ERROR: Invalid IOS number");
+                            Console.WriteLine("Error: SHARPII_NET_CORE_HBC_INVALID_IOS_01");
                             return;
                         }
                         break;
@@ -233,6 +243,7 @@ namespace Sharpii
                         if (i + 1 >= args.Length)
                         {
                             Console.WriteLine("ERROR: No ip set");
+                            Console.WriteLine("Error: SHARPII_NET_CORE_HBC_NO_IP_01");
                             return;
                         }
                         ip = args[i + 1];
@@ -245,6 +256,7 @@ namespace Sharpii
                         if (i + 1 >= args.Length)
                         {
                             Console.WriteLine("ERROR: No WAD set");
+                            Console.WriteLine("Error: SHARPII_NET_CORE_HBC_NO_WAD_01");
                             return;
                         }
                         input = args[i + 1];
@@ -252,6 +264,7 @@ namespace Sharpii
                         if (File.Exists(input) == false)
                         {
                             Console.WriteLine("ERROR: Unable to open file: {0}", input);
+                            Console.WriteLine("Error: SHARPII_NET_CORE_BNS_UNKNOWN_01");
                             return;
                         }
                         break;
@@ -285,6 +298,7 @@ namespace Sharpii
                 if (String.IsNullOrEmpty(ip))
                 {
                     Console.WriteLine("ERROR: No IP set");
+                    Console.WriteLine("Error: SHARPII_NET_CORE_HBC_NO_IP_01");
                     return;
                 }
                 if (noip == true && BeQuiet.quiet > 2)
@@ -320,6 +334,7 @@ namespace Sharpii
                 Console.WriteLine("An unknown error occured, please try again");
                 Console.WriteLine("");
                 Console.WriteLine("ERROR DETAILS: {0}", ex.Message);
+                Console.WriteLine("Error: SHARPII_NET_CORE_HBC_UNKNOWN_01");
                 return;
             }
 
@@ -358,6 +373,7 @@ namespace Sharpii
             Console.WriteLine("");
             Console.WriteLine("Sharpii {0} - SendWad - A tool by person66, using libWiiSharp.dll by leathl,", ProgramVersion.version);
             Console.WriteLine("                          and CRAP's installer by WiiCrazy/I.R.on");
+            Console.WriteLine("Sharpii .Net Core Port by TheShadowEevee");
             Console.WriteLine("");
             Console.WriteLine("  Usage:");
             Console.WriteLine("");

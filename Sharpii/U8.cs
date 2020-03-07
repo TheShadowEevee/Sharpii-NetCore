@@ -47,6 +47,7 @@ namespace Sharpii
 
             //If tuser gets here, they entered something wrong
             Console.WriteLine("ERROR: The argument {0} is invalid", args[1]);
+            Console.WriteLine("Error: SHARPII_NET_CORE_U8_INVALID_ARG_01");
             return;
 
         }
@@ -60,12 +61,15 @@ namespace Sharpii
             if (File.Exists(input) == false)
             {
                 Console.WriteLine("ERROR: Unable to open file: {0}", input);
+                Console.WriteLine("Either the file doesn't exist, or Sharpii doesn't have permission to open it.");
+                Console.WriteLine("Error: SHARPII_NET_CORE_U8_FILE_ERR_01");
                 return;
             }
             //Check if file is U8
             if (libWiiSharp.U8.IsU8(input) != true)
             {
                 Console.WriteLine("ERROR: File {0} is not a U8 archive", input);
+                Console.WriteLine("Error: SHARPII_NET_CORE_WAD_NON_U8_01");
                 return;
             }
            
@@ -99,6 +103,7 @@ namespace Sharpii
                 Console.WriteLine("An unknown error occured, please try again");
                 Console.WriteLine("");
                 Console.WriteLine("ERROR DETAILS: {0}", ex.Message);
+                Console.WriteLine("Error: SHARPII_NET_CORE_U8_UNKNOWN_01");
                 return;
             }
         }
@@ -116,6 +121,8 @@ namespace Sharpii
             if (Directory.Exists(input) == false)
             {
                 Console.WriteLine("ERROR: Unable to open Folder: {0}", input);
+                Console.WriteLine("Either the folder doesn't exist, or Sharpii doesn't have permission to open it.");
+                Console.WriteLine("Error: SHARPII_NET_CORE_U8_FOLDER_ERR_01");
                 return;
             }
 
@@ -133,6 +140,7 @@ namespace Sharpii
                         if (i + 1 >= args.Length)
                         {
                             Console.WriteLine("ERROR: No title set");
+                            Console.WriteLine("Error: SHARPII_NET_CORE_WAD_NO_TITLE_01");
                             return;
                         }
                         imet = args[i + 1];
@@ -143,6 +151,7 @@ namespace Sharpii
             if (imd5 == true && imet != "")
             {
                 Console.WriteLine("ERROR: Cannot use IMET and IMD5 at the same time.");
+                Console.WriteLine("Error: SHARPII_NET_CORE_WAD_TWO_HEADERS_01");
                 return;
             }
 
@@ -194,6 +203,7 @@ namespace Sharpii
                 Console.WriteLine("An unknown error occured, please try again");
                 Console.WriteLine("");
                 Console.WriteLine("ERROR DETAILS: {0}", ex.Message);
+                Console.WriteLine("Error: SHARPII_NET_CORE_U8_UNKNOWN_01");
                 return;
             }
         }

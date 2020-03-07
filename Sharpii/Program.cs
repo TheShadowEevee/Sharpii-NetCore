@@ -36,6 +36,9 @@ namespace Sharpii
             if (!File.Exists(Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory) + Path.DirectorySeparatorChar + "libWiiSharp.dll"))
             {
                 Console.WriteLine("ERROR: libWiiSharp.dll not found");
+                Console.WriteLine("This should not appear on the .Net Core port.");
+                Console.WriteLine("If you see this, report how you got here on https://github.com/TheShadowEevee/Sharpii-NetCore/issues.");
+                Console.WriteLine("Error: SHARPII_NET_CORE_MAIN_MISSING_DLL_LIBWIISHARP_01");
                 Console.WriteLine("\n\nAttempt to download? [Y/N]");
                 Console.Write("\n>>");
                 string ans = Console.ReadLine();
@@ -49,7 +52,7 @@ namespace Sharpii
                         Console.Write("Done!\n");
                     }
                     catch (Exception ex)
-                    { Console.WriteLine("An error occured: {0}", ex.Message); Environment.Exit(0); }
+                    { Console.WriteLine("An error occured: {0}", ex.Message); Console.WriteLine("Error: SHARPII_NET_CORE_MAIN_UNKNOWN_01"); Environment.Exit(0); }
                 }
                 else
                     Environment.Exit(0);
@@ -67,6 +70,9 @@ namespace Sharpii
                         break;
                     case "-LOTS":
                         BeQuiet.quiet = 3;
+                        break;
+                    case "-NOLOG":
+                        Logging.log = 0;
                         break;
                 }
             }
@@ -280,6 +286,7 @@ namespace Sharpii
             Console.WriteLine("");
             Console.WriteLine("       -quiet | -q    Try not to display any output");
             Console.WriteLine("       -lots          Display lots of output");
+            Console.WriteLine("       -nolog         Don't create a log file");
             Console.WriteLine("");
 
 
@@ -322,4 +329,11 @@ public class BeQuiet
 public class ProgramVersion
 {
     public static string version = "1.0.1; .Net Core Port (Based on Sharpii 1.7.3)";
+}
+public class Logging
+{
+    //By default, Sharpii should create a log.
+    //Using the option -NoLog will disable it.
+    //Everything should check this when it checks the BeQuiet.Quiet variable.
+    public static int log = 1;
 }
