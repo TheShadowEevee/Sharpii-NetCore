@@ -39,23 +39,7 @@ namespace Sharpii
                 Console.WriteLine("This should not appear on the .Net Core port.");
                 Console.WriteLine("If you see this, report how you got here on https://github.com/TheShadowEevee/Sharpii-NetCore/issues.");
                 Console.WriteLine("Error: SHARPII_NET_CORE_MAIN_MISSING_DLL_LIBWIISHARP_01");
-                Console.WriteLine("\n\nAttempt to download? [Y/N]");
-                Console.Write("\n>>");
-                string ans = Console.ReadLine();
-                if (ans.ToUpper() == "Y")
-                {
-                    try
-                    {
-                        Console.Write("\nGrabbing libWiiSharp.dll...");
-                        WebClient DLlibWiiSharp = new WebClient();
-                        DLlibWiiSharp.DownloadFile("https://github.com/mogzol/sharpii/raw/master/Sharpii/libWiiSharp.dll", Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory) + "\\libWiiSharp.dll");
-                        Console.Write("Done!\n");
-                    }
-                    catch (Exception ex)
-                    { Console.WriteLine("An error occured: {0}", ex.Message); Console.WriteLine("Error: SHARPII_NET_CORE_MAIN_UNKNOWN_01"); Environment.Exit(0); }
-                }
-                else
-                    Environment.Exit(0);
+                Environment.Exit(0x0000064F);
             }
 
             for (int i = 1; i < args.Length; i++)
@@ -152,6 +136,13 @@ namespace Sharpii
                 ERROR_Stuff.ERROR(args);
                 gotSomewhere = true;
             }
+
+            if (Function == "EXITCODES")
+            {
+                ERRORCODE_Stuff.ERRORCODE(args);
+                gotSomewhere = true;
+            }
+
             if (Function == "WHICH CAME FIRST" || Function == "WHICH CAME FIRST?" || 
             (Function == "WHICH" && args[1].ToUpper() == "CAME" && args[2].Substring(0,5).ToUpper() == "FIRST"))
             {
@@ -166,6 +157,7 @@ namespace Sharpii
                 //If tuser gets here, they entered something wrong
                 Console.WriteLine("ERROR: The argument {0} is invalid", args[0]);
                 Console.WriteLine("Error: SHARPII_NET_CORE_MAIN_INVALID_ARG_01");
+                Environment.Exit(0x00000650);
             }
 
             string temp = Path.GetTempPath() + "Sharpii.tmp";
@@ -210,6 +202,7 @@ namespace Sharpii
             catch (Exception ex)
             {
                 Console.WriteLine("An unknown error occured, please try again\n\nERROR DETAILS: {0}", ex.Message);
+                Environment.Exit(0x00000642);
                 return;
             }
         }
@@ -229,6 +222,7 @@ namespace Sharpii
             catch (Exception ex)
             {
                 Console.WriteLine("An unknown error occured, please try again\n\nERROR DETAILS: {0}", ex.Message);
+                Environment.Exit(0x00000642);
                 return;
             }
         }
@@ -277,6 +271,7 @@ namespace Sharpii
             Console.WriteLine("       SendDol        Send a dol to the HBC over wifi");
             Console.WriteLine("       SendWad        Send a wad to the HBC over wifi");
             Console.WriteLine("       Errors         Get a Sharpii error's description");
+            Console.WriteLine("       ExitCodes      List of all Sharpii exit codes");
             Console.WriteLine("");
             Console.WriteLine("       NOTE: Too see more detailed descriptions of any of the above,");
             Console.WriteLine("             use 'Sharpii [function] -h'");
@@ -284,9 +279,9 @@ namespace Sharpii
             Console.WriteLine("");
             Console.WriteLine("  Other Functions:");
             Console.WriteLine("");
-            Console.WriteLine("       Install        Install Sharpii to your computer so you can run it");
-            Console.WriteLine("                      from anywhere without needing the exe");
-            Console.WriteLine("       Uninstall      Uninstall Sharpii from your computer");
+            //Console.WriteLine("       Install        Install Sharpii to your computer so you can run it");
+            //Console.WriteLine("                      from anywhere without needing the exe");
+            //Console.WriteLine("       Uninstall      Uninstall Sharpii from your computer");
             Console.WriteLine("");
             Console.WriteLine("");
             Console.WriteLine("  Global Arguments:");
@@ -295,8 +290,7 @@ namespace Sharpii
             Console.WriteLine("       -lots          Display lots of output");
             Console.WriteLine("       -nolog         Don't create a log file");
             Console.WriteLine("");
-
-
+            Environment.Exit(0x0000064E);
         }
 
         }

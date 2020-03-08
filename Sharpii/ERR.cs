@@ -37,7 +37,6 @@ namespace Sharpii
                     Console.WriteLine("https://github.com/TheShadowEevee/Sharpii-NetCore/issues");
                     Console.WriteLine("");
                     ErrCodeFound = 1;
-                    return;
                 }
                 if (args[1] == "SHARPII_NET_CORE_HBC_FILE_ERR_01")
                 {
@@ -48,7 +47,6 @@ namespace Sharpii
                     Console.WriteLine("https://github.com/TheShadowEevee/Sharpii-NetCore/issues");
                     Console.WriteLine("");
                     ErrCodeFound = 1;
-                    return;
                 }
 
                 if (args[1] == "SHARPII_NET_CORE_IOS_FILE_ERR_01")
@@ -60,7 +58,6 @@ namespace Sharpii
                     Console.WriteLine("https://github.com/TheShadowEevee/Sharpii-NetCore/issues");
                     Console.WriteLine("");
                     ErrCodeFound = 1;
-                    return;
                 }
 
                 if (args[1] == "SHARPII_NET_CORE_NUSD_FILE_ERR_01")
@@ -72,7 +69,6 @@ namespace Sharpii
                     Console.WriteLine("https://github.com/TheShadowEevee/Sharpii-NetCore/issues");
                     Console.WriteLine("");
                     ErrCodeFound = 1;
-                    return;
                 }
 
                 if (args[1] == "SHARPII_NET_CORE_TPL_FILE_ERR_01")
@@ -84,7 +80,6 @@ namespace Sharpii
                     Console.WriteLine("https://github.com/TheShadowEevee/Sharpii-NetCore/issues");
                     Console.WriteLine("");
                     ErrCodeFound = 1;
-                    return;
                 }
 
                 if (args[1] == "SHARPII_NET_CORE_U8_FILE_ERR_01")
@@ -96,7 +91,6 @@ namespace Sharpii
                     Console.WriteLine("https://github.com/TheShadowEevee/Sharpii-NetCore/issues");
                     Console.WriteLine("");
                     ErrCodeFound = 1;
-                    return;
                 }
                 if (args[1] == "SHARPII_NET_CORE_WAD_FILE_ERR_01")
                 {
@@ -107,7 +101,6 @@ namespace Sharpii
                     Console.WriteLine("https://github.com/TheShadowEevee/Sharpii-NetCore/issues");
                     Console.WriteLine("");
                     ErrCodeFound = 1;
-                    return;
                 }
                 if (args[1] == "SHARPII_NET_CORE_BNS_UNKNOWN_01")
                 {
@@ -118,7 +111,6 @@ namespace Sharpii
                     Console.WriteLine("https://github.com/TheShadowEevee/Sharpii-NetCore/issues");
                     Console.WriteLine("");
                     ErrCodeFound = 1;
-                    return;
                 }
                 if (args[1] == "SHARPII_NET_CORE_HBC_UNKNOWN_01")
                 {
@@ -129,7 +121,6 @@ namespace Sharpii
                     Console.WriteLine("https://github.com/TheShadowEevee/Sharpii-NetCore/issues");
                     Console.WriteLine("");
                     ErrCodeFound = 1;
-                    return;
                 }
                 if (args[1] == "SHARPII_NET_CORE_IOS_UNKNOWN_01")
                 {
@@ -140,7 +131,6 @@ namespace Sharpii
                     Console.WriteLine("https://github.com/TheShadowEevee/Sharpii-NetCore/issues");
                     Console.WriteLine("");
                     ErrCodeFound = 1;
-                    return;
                 }
                 if (args[1] == "SHARPII_NET_CORE_NUSD_UNKNOWN_01")
                 {
@@ -151,7 +141,6 @@ namespace Sharpii
                     Console.WriteLine("https://github.com/TheShadowEevee/Sharpii-NetCore/issues");
                     Console.WriteLine("");
                     ErrCodeFound = 1;
-                    return;
                 }
                 if (args[1] == "SHARPII_NET_CORE_MAIN_UNKNOWN_01")
                 {
@@ -162,7 +151,6 @@ namespace Sharpii
                     Console.WriteLine("https://github.com/TheShadowEevee/Sharpii-NetCore/issues");
                     Console.WriteLine("");
                     ErrCodeFound = 1;
-                    return;
                 }
                 if (args[1] == "SHARPII_NET_CORE_TPL_UNKNOWN_01")
                 {
@@ -173,7 +161,6 @@ namespace Sharpii
                     Console.WriteLine("https://github.com/TheShadowEevee/Sharpii-NetCore/issues");
                     Console.WriteLine("");
                     ErrCodeFound = 1;
-                    return;
                 }
                 if (args[1] == "SHARPII_NET_CORE_U8_UNKNOWN_01")
                 {
@@ -184,7 +171,6 @@ namespace Sharpii
                     Console.WriteLine("https://github.com/TheShadowEevee/Sharpii-NetCore/issues");
                     Console.WriteLine("");
                     ErrCodeFound = 1;
-                    return;
                 }
                 if (args[1] == "SHARPII_NET_CORE_WAD_UNKNOWN_01")
                 {
@@ -195,7 +181,6 @@ namespace Sharpii
                     Console.WriteLine("https://github.com/TheShadowEevee/Sharpii-NetCore/issues");
                     Console.WriteLine("");
                     ErrCodeFound = 1;
-                    return;
                 }
                 if (args[1] == "SHARPII_NET_CORE_HBC_NO_IP_01")
                 {
@@ -206,7 +191,6 @@ namespace Sharpii
                     Console.WriteLine("https://github.com/TheShadowEevee/Sharpii-NetCore/issues");
                     Console.WriteLine("");
                     ErrCodeFound = 1;
-                    return;
                 }
                 if (args[1] == "SHARPII_NET_CORE_HBC_NO_DOL_01")
                 {
@@ -217,7 +201,6 @@ namespace Sharpii
                     Console.WriteLine("https://github.com/TheShadowEevee/Sharpii-NetCore/issues");
                     Console.WriteLine("");
                     ErrCodeFound = 1;
-                    return;
                 }
                 if (args[1] == "SHARPII_NET_CORE_HBC_MISSING_DLL_WADINSTALLER_01")
                 {
@@ -228,7 +211,6 @@ namespace Sharpii
                     Console.WriteLine("https://github.com/TheShadowEevee/Sharpii-NetCore/issues");
                     Console.WriteLine("");
                     ErrCodeFound = 1;
-                    return;
                 }
                 if (args[1] == "SHARPII_NET_CORE_HBC_NO_IOS_01")
                 {
@@ -239,7 +221,6 @@ namespace Sharpii
                     Console.WriteLine("https://github.com/TheShadowEevee/Sharpii-NetCore/issues");
                     Console.WriteLine("");
                     ErrCodeFound = 1;
-                    return;
                 }
                 if (args[1] == "SHARPII_NET_CORE_HBC_INVALID_IOS_01")
                 {
@@ -250,7 +231,6 @@ namespace Sharpii
                     Console.WriteLine("https://github.com/TheShadowEevee/Sharpii-NetCore/issues");
                     Console.WriteLine("");
                     ErrCodeFound = 1;
-                    return;
                 }
                 if (args[1] == "SHARPII_NET_CORE_HBC_NO_WAD_01")
                 {
@@ -261,7 +241,6 @@ namespace Sharpii
                     Console.WriteLine("https://github.com/TheShadowEevee/Sharpii-NetCore/issues");
                     Console.WriteLine("");
                     ErrCodeFound = 1;
-                    return;
                 }
                 if (args[1] == "SHARPII_NET_CORE_IOS_NO_SLOT_01")
                 {
@@ -272,7 +251,6 @@ namespace Sharpii
                     Console.WriteLine("https://github.com/TheShadowEevee/Sharpii-NetCore/issues");
                     Console.WriteLine("");
                     ErrCodeFound = 1;
-                    return;
                 }
                 if (args[1] == "SHARPII_NET_CORE_IOS_INVALID_SLOT_01")
                 {
@@ -283,7 +261,6 @@ namespace Sharpii
                     Console.WriteLine("https://github.com/TheShadowEevee/Sharpii-NetCore/issues");
                     Console.WriteLine("");
                     ErrCodeFound = 1;
-                    return;
                 }
                 if (args[1] == "SHARPII_NET_CORE_IOS_NO_VERSION_01")
                 {
@@ -294,7 +271,6 @@ namespace Sharpii
                     Console.WriteLine("https://github.com/TheShadowEevee/Sharpii-NetCore/issues");
                     Console.WriteLine("");
                     ErrCodeFound = 1;
-                    return;
                 }
                 if (args[1] == "SHARPII_NET_CORE_IOS_INVALID_VERSION_01")
                 {
@@ -305,7 +281,6 @@ namespace Sharpii
                     Console.WriteLine("https://github.com/TheShadowEevee/Sharpii-NetCore/issues");
                     Console.WriteLine("");
                     ErrCodeFound = 1;
-                    return;
                 }
                 if (args[1] == "SHARPII_NET_CORE_IOS_NO_OUTPUT_01")
                 {
@@ -316,7 +291,6 @@ namespace Sharpii
                     Console.WriteLine("https://github.com/TheShadowEevee/Sharpii-NetCore/issues");
                     Console.WriteLine("");
                     ErrCodeFound = 1;
-                    return;
                 }
                 if (args[1] == "SHARPII_NET_CORE_NUSD_NO_VERSION_01")
                 {
@@ -327,7 +301,6 @@ namespace Sharpii
                     Console.WriteLine("https://github.com/TheShadowEevee/Sharpii-NetCore/issues");
                     Console.WriteLine("");
                     ErrCodeFound = 1;
-                    return;
                 }
                 if (args[1] == "SHARPII_NET_CORE_NUSD_INVALID_VERSION_01")
                 {
@@ -338,7 +311,6 @@ namespace Sharpii
                     Console.WriteLine("https://github.com/TheShadowEevee/Sharpii-NetCore/issues");
                     Console.WriteLine("");
                     ErrCodeFound = 1;
-                    return;
                 }
                 if (args[1] == "SHARPII_NET_CORE_NUSD_NO_OUTPUT_01")
                 {
@@ -349,7 +321,6 @@ namespace Sharpii
                     Console.WriteLine("https://github.com/TheShadowEevee/Sharpii-NetCore/issues");
                     Console.WriteLine("");
                     ErrCodeFound = 1;
-                    return;
                 }
                 if (args[1] == "SHARPII_NET_CORE_NUSD_NO_ID_01")
                 {
@@ -360,7 +331,6 @@ namespace Sharpii
                     Console.WriteLine("https://github.com/TheShadowEevee/Sharpii-NetCore/issues");
                     Console.WriteLine("");
                     ErrCodeFound = 1;
-                    return;
                 }
                 if (args[1] == "SHARPII_NET_CORE_NUSD_NO_IOS_01")
                 {
@@ -371,7 +341,6 @@ namespace Sharpii
                     Console.WriteLine("https://github.com/TheShadowEevee/Sharpii-NetCore/issues");
                     Console.WriteLine("");
                     ErrCodeFound = 1;
-                    return;
                 }
                 if (args[1] == "SHARPII_NET_CORE_MAIN_MISSING_DLL_LIBWIISHARP_01")
                 {
@@ -382,7 +351,6 @@ namespace Sharpii
                     Console.WriteLine("https://github.com/TheShadowEevee/Sharpii-NetCore/issues");
                     Console.WriteLine("");
                     ErrCodeFound = 1;
-                    return;
                 }
                 if (args[1] == "SHARPII_NET_CORE_MAIN_INVALID_ARG_01")
                 {
@@ -393,7 +361,6 @@ namespace Sharpii
                     Console.WriteLine("https://github.com/TheShadowEevee/Sharpii-NetCore/issues");
                     Console.WriteLine("");
                     ErrCodeFound = 1;
-                    return;
                 }
                 if (args[1] == "SHARPII_NET_CORE_TPL_INVALID_ARG_01")
                 {
@@ -404,7 +371,6 @@ namespace Sharpii
                     Console.WriteLine("https://github.com/TheShadowEevee/Sharpii-NetCore/issues");
                     Console.WriteLine("");
                     ErrCodeFound = 1;
-                    return;
                 }
                 if (args[1] == "SHARPII_NET_CORE_U8_INVALID_ARG_01")
                 {
@@ -415,7 +381,6 @@ namespace Sharpii
                     Console.WriteLine("https://github.com/TheShadowEevee/Sharpii-NetCore/issues");
                     Console.WriteLine("");
                     ErrCodeFound = 1;
-                    return;
                 }
                 if (args[1] == "SHARPII_NET_CORE_WAD_INVALID_ARG_01")
                 {
@@ -426,7 +391,6 @@ namespace Sharpii
                     Console.WriteLine("https://github.com/TheShadowEevee/Sharpii-NetCore/issues");
                     Console.WriteLine("");
                     ErrCodeFound = 1;
-                    return;
                 }
                 if (args[1] == "SHARPII_NET_CORE_TPL_NO_FORMAT_01")
                 {
@@ -588,21 +552,21 @@ namespace Sharpii
                     Console.WriteLine("");
                     ErrCodeFound = 1;
                 }
-                if (args[1] == "SHARPII_NET_CORE_WAD_NO_ICON_01")
-                {
-                    Console.WriteLine("");
-                    Console.WriteLine("You used the -ICON flag, but no wad file to provide an icon was provided.");
-                    Console.WriteLine("Provide a proper wad.");
-                    Console.WriteLine("If that doesn't help, open an issue on GitHub!");
-                    Console.WriteLine("https://github.com/TheShadowEevee/Sharpii-NetCore/issues");
-                    Console.WriteLine("");
-                    ErrCodeFound = 1;
-                }
                 if (args[1] == "SHARPII_NET_CORE_WAD_NO_DOL_01")
                 {
                     Console.WriteLine("");
                     Console.WriteLine("You used the -DOL flag, but no wad or dol file was provided.");
                     Console.WriteLine("Provide a proper wad or dol file.");
+                    Console.WriteLine("If that doesn't help, open an issue on GitHub!");
+                    Console.WriteLine("https://github.com/TheShadowEevee/Sharpii-NetCore/issues");
+                    Console.WriteLine("");
+                    ErrCodeFound = 1;
+                }
+                if (args[1] == "SHARPII_NET_CORE_NUSD_BAD_ID_01")
+                {
+                    Console.WriteLine("");
+                    Console.WriteLine("You used the -ID flag, but an invalid id was provided.");
+                    Console.WriteLine("Provide a proper id.");
                     Console.WriteLine("If that doesn't help, open an issue on GitHub!");
                     Console.WriteLine("https://github.com/TheShadowEevee/Sharpii-NetCore/issues");
                     Console.WriteLine("");

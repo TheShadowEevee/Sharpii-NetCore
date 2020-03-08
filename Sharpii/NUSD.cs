@@ -88,6 +88,7 @@ namespace Sharpii
                         {
                             Console.WriteLine("ERROR: No version set");
                             Console.WriteLine("Error: SHARPII_NET_CORE_NUSD_NO_VERSION_01");
+                            Environment.Exit(0x0000064B);
                             return;
                         }
                         version = args[i + 1];
@@ -97,12 +98,14 @@ namespace Sharpii
                         {
                             Console.WriteLine("Invalid version {0}...", args[i + 1]);
                             Console.WriteLine("Error: SHARPII_NET_CORE_NUSD_INVALID_VERSION_01");
+                            Environment.Exit(0x0000064C);
                             return;
                         }
                         if (intver < 0 || intver > 65535)
                         {
                             Console.WriteLine("Invalid version {0}...", version);
                             Console.WriteLine("Error: SHARPII_NET_CORE_NUSD_INVALID_VERSION_01");
+                            Environment.Exit(0x0000064C);
                             return;
                         }
                         break;
@@ -111,6 +114,7 @@ namespace Sharpii
                         {
                             Console.WriteLine("ERROR: No version set");
                             Console.WriteLine("Error: SHARPII_NET_CORE_NUSD_NO_VERSION_01");
+                            Environment.Exit(0x0000064B);
                             return;
                         }
                         version = args[i + 1];
@@ -120,12 +124,14 @@ namespace Sharpii
                         {
                             Console.WriteLine("Invalid version {0}...", args[i + 1]);
                             Console.WriteLine("Error: SHARPII_NET_CORE_NUSD_INVALID_VERSION_01");
+                            Environment.Exit(0x0000064C);
                             return;
                         }
                         if (intver < 0 || intver > 65535)
                         {
                             Console.WriteLine("Invalid version {0}...", version);
                             Console.WriteLine("Error: SHARPII_NET_CORE_NUSD_INVALID_VERSION_01");
+                            Environment.Exit(0x0000064C);
                             return;
                         }
                         break;
@@ -134,6 +140,7 @@ namespace Sharpii
                         {
                             Console.WriteLine("ERROR: No output set");
                             Console.WriteLine("Error: SHARPII_NET_CORE_NUSD_NO_OUTPUT_01");
+                            Environment.Exit(0x0000064D);
                             return;
                         }
                         output = args[i + 1];
@@ -143,6 +150,7 @@ namespace Sharpii
                         {
                             Console.WriteLine("ERROR: No ID specified");
                             Console.WriteLine("Error: SHARPII_NET_CORE_NUSD_NO_ID_01");
+                            Environment.Exit(0x0000064E);
                             return;
                         }
                         id = args[i + 1];
@@ -152,6 +160,7 @@ namespace Sharpii
                         {
                             Console.WriteLine("ERROR: No IOS specified");
                             Console.WriteLine("Error: SHARPII_NET_CORE_NUSD_NO_IOS_01");
+                            Environment.Exit(0x00000646);
                             return;
                         }
                         id = "00000001000000" + Convert.ToInt32(args[i + 1]).ToString("X2");
@@ -161,6 +170,7 @@ namespace Sharpii
                         {
                             Console.WriteLine("ERROR: No ID specified");
                             Console.WriteLine("Error: SHARPII_NET_CORE_NUSD_NO_ID_01");
+                            Environment.Exit(0x0000064E);
                             return;
                         }
                         content = args[i + 1];
@@ -170,6 +180,7 @@ namespace Sharpii
                         {
                             Console.WriteLine("ERROR: No ID specified");
                             Console.WriteLine("Error: SHARPII_NET_CORE_NUSD_NO_ID_01");
+                            Environment.Exit(0x0000064E);
                             return;
                         }
                         content = args[i + 1];
@@ -182,6 +193,7 @@ namespace Sharpii
             {
                 Console.WriteLine("ERROR: No ID specified");
                 Console.WriteLine("Error: SHARPII_NET_CORE_NUSD_NO_ID_01");
+                Environment.Exit(0x0000064E);
                 return;
             }
 
@@ -192,16 +204,41 @@ namespace Sharpii
                 version = "LATEST";
             }
 
-            if (version.ToUpper() == "LATEST")
+            try
             {
-                //Grab the TMD and get the latest version
-                NusClient grabtmd = new NusClient();
-                TMD tmd = grabtmd.DownloadTMD(id, "");
-                version = tmd.TitleVersion.ToString();
-
-                if (BeQuiet.quiet > 2)
-                    Console.WriteLine("Found latest version: v{0}", version);
+                if (version.ToUpper() == "LATEST")
+                {
+                    //Grab the TMD and get the latest version
+                    NusClient grabtmd = new NusClient();
+                    TMD tmd = grabtmd.DownloadTMD(id, "");
+                    version = tmd.TitleVersion.ToString();
+                }
             }
+            catch (Exception ex)
+            {
+                if (ex.Message == "Title ID must be 16 characters long!")
+                {
+                    Console.WriteLine("");
+                    Console.WriteLine("The ID needs to be 16 Characters.");
+                    Console.WriteLine("");
+                    Console.WriteLine("Error: SHARPII_NET_CORE_NUSD_BAD_ID_01");
+                    Console.WriteLine("");
+                    Environment.Exit(0x0000065C);
+                    return;
+                }
+                if (ex.Message == "The remote server returned an error: (404) Not Found.")
+                {
+                    Console.WriteLine("");
+                    Console.WriteLine("The ID is not a valid title ID");
+                    Console.WriteLine("");
+                    Console.WriteLine("Error: SHARPII_NET_CORE_NUSD_BAD_ID_01");
+                    Console.WriteLine("");
+                    Environment.Exit(0x0000065C);
+                    return;
+                }
+            }
+            if (BeQuiet.quiet > 2)
+                Console.WriteLine("Found latest version: v{0}", version);
 
             if (entered == false) //Will only be false if no store type argument was given
             {
@@ -279,6 +316,7 @@ namespace Sharpii
                 Console.WriteLine("");
                 Console.WriteLine("ERROR DETAILS: {0}", ex.Message);
                 Console.WriteLine("Error: SHARPII_NET_CORE_NUSD_UNKNOWN_01");
+                Environment.Exit(0x00000642);
                 return;
             }
 
@@ -295,6 +333,7 @@ namespace Sharpii
                     Console.WriteLine("ERROR: Can't find WAD");
                     Console.WriteLine("Either the file doesn't exist, or Sharpii doesn't have permission to open it.");
                     Console.WriteLine("Error: SHARPII_NET_CORE_NUSD_FILE_ERR_01");
+                    Environment.Exit(0x00000641);
                     return;
                 }
                 if (ios != "" && NoOut == true)
