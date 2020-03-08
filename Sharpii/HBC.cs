@@ -54,7 +54,7 @@ namespace Sharpii
                         {
                             Console.WriteLine("ERROR: No ip set");
                             Console.WriteLine("Error: SHARPII_NET_CORE_HBC_NO_IP_01");
-                            Environment.Exit(0x00000643);
+                            Environment.Exit(0x00003E83);
                             return;
                         }
                         ip = args[i + 1];
@@ -68,7 +68,7 @@ namespace Sharpii
                         {
                             Console.WriteLine("ERROR: No dol set");
                             Console.WriteLine("Error: SHARPII_NET_CORE_HBC_NO_DOL_01");
-                            Environment.Exit(0x00000644);
+                            Environment.Exit(0x00003E84);
                             return;
                         }
                         input = args[i + 1];
@@ -78,7 +78,7 @@ namespace Sharpii
                             Console.WriteLine("ERROR: Unable to open file: {0}", input);
                             Console.WriteLine("Either the file doesn't exist, or Sharpii doesn't have permission to open it.");
                             Console.WriteLine("Error: SHARPII_NET_CORE_HBC_FILE_ERR_01");
-                            Environment.Exit(0x00000641);
+                            Environment.Exit(0x00003E81);
                             return;
                         }
 
@@ -118,7 +118,7 @@ namespace Sharpii
                 {
                     Console.WriteLine("ERROR: No IP set");
                     Console.WriteLine("Error: SHARPII_NET_CORE_HBC_NO_IP_01");
-                    Environment.Exit(0x00000643);
+                    Environment.Exit(0x00003E83);
                     return;
                 }
                 if (noip == true && BeQuiet.quiet > 2)
@@ -163,7 +163,7 @@ namespace Sharpii
                 Console.WriteLine("");
                 Console.WriteLine("ERROR DETAILS: {0}", ex.Message);
                 Console.WriteLine("Error: SHARPII_NET_CORE_HBC_UNKNOWN_01");
-                Environment.Exit(0x00000642);
+                Environment.Exit(0x00003E82);
                 return;
             }
 
@@ -190,7 +190,7 @@ namespace Sharpii
                 Console.WriteLine("This should not appear on the .Net Core port.");
                 Console.WriteLine("If you see this, report how you got here on https://github.com/TheShadowEevee/Sharpii-NetCore/issues.");
                 Console.WriteLine("Error: SHARPII_NET_CORE_HBC_MISSING_DLL_WADINSTALLER_01");
-                Environment.Exit(0x00000645);
+                Environment.Exit(0x00003E85);
             }
 
             return true;
@@ -216,7 +216,7 @@ namespace Sharpii
                         {
                             Console.WriteLine("ERROR: No ios set");
                             Console.WriteLine("Error: SHARPII_NET_CORE_HBC_NO_IOS_01");
-                            Environment.Exit(0x00000646);
+                            Environment.Exit(0x00003E86);
                             return;
                         }
                         ios = args[i + 1];
@@ -224,7 +224,7 @@ namespace Sharpii
                         {
                             Console.WriteLine("ERROR: Invalid IOS number");
                             Console.WriteLine("Error: SHARPII_NET_CORE_HBC_INVALID_IOS_01");
-                            Environment.Exit(0x00000647);
+                            Environment.Exit(0x00003E87);
                             return;
                         }
                         break;
@@ -236,7 +236,7 @@ namespace Sharpii
                         {
                             Console.WriteLine("ERROR: No ip set");
                             Console.WriteLine("Error: SHARPII_NET_CORE_HBC_NO_IP_01");
-                            Environment.Exit(0x00000643);
+                            Environment.Exit(0x00003E83);
                             return;
                         }
                         ip = args[i + 1];
@@ -250,7 +250,7 @@ namespace Sharpii
                         {
                             Console.WriteLine("ERROR: No WAD set");
                             Console.WriteLine("Error: SHARPII_NET_CORE_HBC_NO_WAD_01");
-                            Environment.Exit(0x00000648);
+                            Environment.Exit(0x00003E88);
                             return;
                         }
                         input = args[i + 1];
@@ -259,7 +259,7 @@ namespace Sharpii
                         {
                             Console.WriteLine("ERROR: Unable to open file: {0}", input);
                             Console.WriteLine("Error: SHARPII_NET_CORE_BNS_FILE_ERR_01");
-                            Environment.Exit(0x00000641);
+                            Environment.Exit(0x00003E81);
                             return;
                         }
                         break;
@@ -294,7 +294,7 @@ namespace Sharpii
                 {
                     Console.WriteLine("ERROR: No IP set");
                     Console.WriteLine("Error: SHARPII_NET_CORE_HBC_NO_IP_01");
-                    Environment.Exit(0x00000643);
+                    Environment.Exit(0x00003E83);
                     return;
                 }
                 if (noip == true && BeQuiet.quiet > 2)
@@ -331,7 +331,7 @@ namespace Sharpii
                 Console.WriteLine("");
                 Console.WriteLine("ERROR DETAILS: {0}", ex.Message);
                 Console.WriteLine("Error: SHARPII_NET_CORE_HBC_UNKNOWN_01");
-                Environment.Exit(0x00000642);
+                Environment.Exit(0x00003E82);
                 return;
             }
 

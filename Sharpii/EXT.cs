@@ -59,7 +59,7 @@ namespace Sharpii
                     ErrCodeFound = 1;
                 }
                 
-                if (args[1] == "1603")
+                if (args[1] == "16003")
                 {
                     Console.WriteLine("");
                     Console.WriteLine("No IP was provided for remote Wii access. (SHARPII_NET_CORE_HBC_NO_IP_01)");
@@ -70,7 +70,7 @@ namespace Sharpii
                     Console.WriteLine("");
                     ErrCodeFound = 1;
                 }
-                if (args[1] == "1604")
+                if (args[1] == "16004")
                 {
                     Console.WriteLine("DOL Flag was used, but no file provided. (SHARPII_NET_CORE_xxx_NO_DOL_01)");
                     Console.WriteLine("You used the -DOL flag, but no DOL file was provided.");
@@ -80,7 +80,7 @@ namespace Sharpii
                     Console.WriteLine("");
                     ErrCodeFound = 1;
                 }
-                if (args[1] == "1605")
+                if (args[1] == "16005")
                 {
                     Console.WriteLine("");
                     Console.WriteLine("A Critical DLL (WadInstaller.dll) couldn't be found. (SHARPII_NET_CORE_HBC_MISSING_DLL_WADINSTALLER_01)");
@@ -91,7 +91,7 @@ namespace Sharpii
                     Console.WriteLine("");
                     ErrCodeFound = 1;
                 }
-                if (args[1] == "1606")
+                if (args[1] == "16006")
                 {
                     Console.WriteLine("");
                     Console.WriteLine("IOS Flag was used, but no IOS provided. (SHARPII_NET_CORE_xxx_NO_IOS_01)");
@@ -102,7 +102,7 @@ namespace Sharpii
                     Console.WriteLine("");
                     ErrCodeFound = 1;
                 }
-                if (args[1] == "1607")
+                if (args[1] == "16007")
                 {
                     Console.WriteLine("");
                     Console.WriteLine("IOS Flag was used, but an invalid IOS provided. (SHARPII_NET_CORE_xxx_INVALID_IOS_01)");
@@ -113,7 +113,7 @@ namespace Sharpii
                     Console.WriteLine("");
                     ErrCodeFound = 1;
                 }
-                if (args[1] == "1608")
+                if (args[1] == "16008")
                 {
                     Console.WriteLine("");
                     Console.WriteLine("WAD Flag was used, but no wad provided. (SHARPII_NET_CORE_HBC_NO_WAD_01)");
@@ -124,7 +124,7 @@ namespace Sharpii
                     Console.WriteLine("");
                     ErrCodeFound = 1;
                 }
-                if (args[1] == "1609")
+                if (args[1] == "16009")
                 {
                     Console.WriteLine("");
                     Console.WriteLine("Slot Flag was used, but no slot provided. (SHARPII_NET_CORE_IOS_NO_SLOT_01)");
@@ -135,7 +135,7 @@ namespace Sharpii
                     Console.WriteLine("");
                     ErrCodeFound = 1;
                 }
-                if (args[1] == "1610")
+                if (args[1] == "16010")
                 {
                     Console.WriteLine("");
                     Console.WriteLine("Slot Flag was used, but an invalid slot provided. (SHARPII_NET_CORE_xxx_INVALID_SLOT_01)");
@@ -146,7 +146,7 @@ namespace Sharpii
                     Console.WriteLine("");
                     ErrCodeFound = 1;
                 }
-                if (args[1] == "1611")
+                if (args[1] == "16011")
                 {
                     Console.WriteLine("");
                     Console.WriteLine("V Flag was used, but no version provided. (SHARPII_NET_CORE_xxx_NO_VERSION_01)");
@@ -157,7 +157,7 @@ namespace Sharpii
                     Console.WriteLine("");
                     ErrCodeFound = 1;
                 }
-                if (args[1] == "1612")
+                if (args[1] == "16012")
                 {
                     Console.WriteLine("");
                     Console.WriteLine("V Flag was used, but an invalid version provided. (SHARPII_NET_CORE_xxx_INVALID_VERSION_01)");
@@ -168,7 +168,7 @@ namespace Sharpii
                     Console.WriteLine("");
                     ErrCodeFound = 1;
                 }
-                if (args[1] == "1613")
+                if (args[1] == "16013")
                 {
                     Console.WriteLine("");
                     Console.WriteLine("O Flag was used, but no output provided. (SHARPII_NET_CORE_xxx_NO_OUTPUT_01)");
@@ -179,7 +179,7 @@ namespace Sharpii
                     Console.WriteLine("");
                     ErrCodeFound = 1;
                 }
-                if (args[1] == "1614")
+                if (args[1] == "16014")
                 {
                     Console.WriteLine("");
                     Console.WriteLine("ID Flag was used, but no id provided. (SHARPII_NET_CORE_xxx_NO_ID_01)");
@@ -190,7 +190,7 @@ namespace Sharpii
                     Console.WriteLine("");
                     ErrCodeFound = 1;
                 }
-                if (args[1] == "1615")
+                if (args[1] == "16015")
                 {
                     Console.WriteLine("");
                     Console.WriteLine("A Critical DLL (libWiiSharp.dll) couldn't be found. (SHARPII_NET_CORE_HBC_MISSING_DLL_LIBWIISHARP_01)");
@@ -201,7 +201,7 @@ namespace Sharpii
                     Console.WriteLine("");
                     ErrCodeFound = 1;
                 }
-                if (args[1] == "1616")
+                if (args[1] == "16016")
                 {
                     Console.WriteLine("");
                     Console.WriteLine("An invalid argument was passed when starting Sharpii. (SHARPII_NET_CORE_xxx_INVALID_ARG_01)");
@@ -212,7 +212,7 @@ namespace Sharpii
                     Console.WriteLine("");
                     ErrCodeFound = 1;
                 }
-                if (args[1] == "1617")
+                if (args[1] == "16017")
                 {
                     Console.WriteLine("");
                     Console.WriteLine("FORMAT Flag was used, but no format provided. (SHARPII_NET_CORE_TPL_NO_FORMAT_01)");
@@ -223,7 +223,7 @@ namespace Sharpii
                     Console.WriteLine("");
                     ErrCodeFound = 1;
                 }
-                if (args[1] == "1618")
+                if (args[1] == "16018")
                 {
                     Console.WriteLine("");
                     Console.WriteLine("FORMAT Flag was used, but invalid format provided. (SHARPII_NET_CORE_TPL_INVALID_FORMAT_01)");
@@ -234,7 +234,7 @@ namespace Sharpii
                     Console.WriteLine("");
                     ErrCodeFound = 1;
                 }
-                if (args[1] == "1619")
+                if (args[1] == "16019")
                 {
                     Console.WriteLine("");
                     Console.WriteLine("A non U8 archive file was provided. (SHARPII_NET_CORE_U8_NON_U8_01)");
@@ -245,7 +245,7 @@ namespace Sharpii
                     Console.WriteLine("");
                     ErrCodeFound = 1;
                 }
-                if (args[1] == "1620")
+                if (args[1] == "16020")
                 {
                     Console.WriteLine("");
                     Console.WriteLine("Folder Access Issue/Missing Folder. (SHARPII_NET_CORE_xxx_FOLDER_ERR_01)");
@@ -256,7 +256,7 @@ namespace Sharpii
                     Console.WriteLine("");
                     ErrCodeFound = 1;
                 }
-                if (args[1] == "1621")
+                if (args[1] == "16021")
                 {
                     Console.WriteLine("");
                     Console.WriteLine("IMET Flag was used, but no title provided. (SHARPII_NET_CORE_xxx_NO_TITLE_01");
@@ -267,7 +267,7 @@ namespace Sharpii
                     Console.WriteLine("");
                     ErrCodeFound = 1;
                 }
-                if (args[1] == "1622")
+                if (args[1] == "16022")
                 {
                     Console.WriteLine("");
                     Console.WriteLine("IMET and IMD5 Flags were used, but only one can be used. (SHARPII_NET_CORE_U8_TWO_HEADERS");
@@ -278,7 +278,7 @@ namespace Sharpii
                     Console.WriteLine("");
                     ErrCodeFound = 1;
                 }
-                if (args[1] == "1623")
+                if (args[1] == "16023")
                 {
                     Console.WriteLine("");
                     Console.WriteLine("ID Flag was used, but short ID provided. (SHARPII_NET_CORE_WAD_SHORT_ID_01)");
@@ -289,7 +289,7 @@ namespace Sharpii
                     Console.WriteLine("");
                     ErrCodeFound = 1;
                 }
-                if (args[1] == "1624")
+                if (args[1] == "16024")
                 {
                     Console.WriteLine("");
                     Console.WriteLine("TYPE or IOS Flag used, but no type provided. (SHARPII_NET_CORE_WAD_NO_TYPE_01)");
@@ -300,7 +300,7 @@ namespace Sharpii
                     Console.WriteLine("");
                     ErrCodeFound = 1;
                 }
-                if (args[1] == "1625")
+                if (args[1] == "16025")
                 {
                     Console.WriteLine("");
                     Console.WriteLine("TYPE or IOS Flag used, but provided type unknown. (SHARPII_NET_CORE_WAD_UNKNOWN_TYPE_01)");
@@ -311,7 +311,7 @@ namespace Sharpii
                     Console.WriteLine("");
                     ErrCodeFound = 1;
                 }
-                if (args[1] == "1626")
+                if (args[1] == "16026")
                 {
                     Console.WriteLine("");
                     Console.WriteLine("SOUND Flag used, but no wad provided. (SHARPII_NET_CORE_WAD_NO_SOUND)");
@@ -322,7 +322,7 @@ namespace Sharpii
                     Console.WriteLine("");
                     ErrCodeFound = 1;
                 }
-                if (args[1] == "1627")
+                if (args[1] == "16027")
                 {
                     Console.WriteLine("");
                     Console.WriteLine("BANNER Flag used, but no wad provided. (SHARPII_NET_CORE_WAD_NO_BANNER)");
@@ -333,11 +333,7 @@ namespace Sharpii
                     Console.WriteLine("");
                     ErrCodeFound = 1;
                 }
-                if (ErrCodeFound != 1)
-                {
-                    ExitCode_help();
-                }
-                if (args[1] == "1628")
+                if (args[1] == "16028")
                 {
                     Console.WriteLine("");
                     Console.WriteLine("ID Flag was used, but invalid id provided. (SHARPII_NET_CORE_xxx_BAD_ID_01)");
@@ -347,6 +343,10 @@ namespace Sharpii
                     Console.WriteLine("https://github.com/TheShadowEevee/Sharpii-NetCore/issues");
                     Console.WriteLine("");
                     ErrCodeFound = 1;
+                }
+                if (ErrCodeFound != 1)
+                {
+                    ExitCode_help();
                 }
             }
             catch (Exception)

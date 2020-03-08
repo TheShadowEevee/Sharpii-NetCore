@@ -2,145 +2,145 @@
 Exit Code: 0
 No errors reported/Likely successful exit
 
-Exit Code: 1601
+Exit Code: 16001
 File Access Issue/Missing File. (SHARPII_NET_CORE_xxx_FILE_ERR_01)
 Either the file doesn't exist, or Sharpii doesn't have permission to open it.
 Check the file's permissions and that it's in the right place.
 
-Exit Code: 1602
+Exit Code: 16002
 Unknown Error/Untracked Error. (SHARPII_NET_CORE_xxx_UNKNOWN_01)
 An untracked error has occured.
 Use the error text to self-diagnose.
 
-Exit Code: 1603
+Exit Code: 16003
 No IP was provided for remote Wii access. (SHARPII_NET_CORE_HBC_NO_IP_01)
 No IP address was listed for the Wii.
 Furthermore, no IP address is saved from previous uses.
 If this doesn't help, open an issue on GitHub!
 
-Exit Code: 1604
+Exit Code: 16004
 DOL Flag was used, but no file provided. (SHARPII_NET_CORE_xxx_NO_DOL_01)
 You used the -DOL flag, but no DOL file was provided.
 Provide the proper DOL file.
 
-Exit Code: 1605
+Exit Code: 16005
 A Critical DLL (WadInstaller.dll) couldn't be found. (SHARPII_NET_CORE_HBC_MISSING_DLL_WADINSTALLER_01)
 The WadInstaller.dll couldn't be found.
 This error SHOULD NOT APPEAR in this Sharpii port.
 Open an issue on GitHub!
 
-Exit Code: 1606
+Exit Code: 16006
 IOS Flag was used, but no IOS provided. (SHARPII_NET_CORE_xxx_NO_IOS_01)
 You used the -IOS flag, but no IOS was provided.
 Provide a proper IOS.
 
-Exit Code: 1607
+Exit Code: 16007
 IOS Flag was used, but an invalid IOS provided. (SHARPII_NET_CORE_xxx_INVALID_IOS_01)
 You used the -IOS flag, but an invalid IOS was provided.
 Provide a proper IOS.
 
-Exit Code: 1608
+Exit Code: 16008
 WAD Flag was used, but no wad provided. (SHARPII_NET_CORE_HBC_NO_WAD_01)
 You used the -WAD flag, but no WAD was provided.
 Provide a proper WAD.
 
-Exit Code: 1609
+Exit Code: 16009
 Slot Flag was used, but no slot provided. (SHARPII_NET_CORE_IOS_NO_SLOT_01)
 You used the -SLOT flag, but no slot was provided.
 Provide a proper slot.
 
-Exit Code: 1610
+Exit Code: 16010
 Slot Flag was used, but an invalid slot provided. (SHARPII_NET_CORE_xxx_INVALID_SLOT_01)
 You used the -SLOT flag, but an invalid slot was provided.
 Provide a proper slot.
 
-Exit Code: 1611
+Exit Code: 16011
 V Flag was used, but no version provided. (SHARPII_NET_CORE_xxx_NO_VERSION_01)
 You used the -V flag, but no version was provided.
 Provide a proper version.
 
-Exit Code: 1612
+Exit Code: 16012
 V Flag was used, but an invalid version provided. (SHARPII_NET_CORE_xxx_INVALID_VERSION_01)
 You used the -V flag, but no version was provided.
 Provide a proper version.
 
-Exit Code: 1613
+Exit Code: 16013
 O Flag was used, but no output provided. (SHARPII_NET_CORE_xxx_NO_OUTPUT_01)
 You used the -O flag, but no output was provided.
 Provide a proper output.
 
-Exit Code: 1614
+Exit Code: 16014
 ID Flag was used, but no id provided. (SHARPII_NET_CORE_xxx_NO_ID_01)
 You used the -ID flag, but no id was provided.
 Provide a proper id.
 
-Exit Code: 1615
+Exit Code: 16015
 A Critical DLL (libWiiSharp.dll) couldn't be found. (SHARPII_NET_CORE_MAIN_MISSING_DLL_LIBWIISHARP_01)
 The libWiiSharp.dll couldn't be found.
 This error SHOULD NOT APPEAR in this Sharpii port.
 Open an issue on GitHub!
 
-Exit Code: 1616
+Exit Code: 16016
 An invalid argument was passed when starting Sharpii. (SHARPII_NET_CORE_xxx_INVALID_ARG_01)
 An invalid argument was provided.
 Check the options you are using to start Sharpii.
 
-Exit Code: 1617
+Exit Code: 16017
 FORMAT Flag was used, but no format provided. (SHARPII_NET_CORE_TPL_NO_FORMAT_01)
 You used the -FORMAT flag, but no format was provided.
 Provide a proper format.
 
-Exit Code: 1618
+Exit Code: 16018
 FORMAT Flag was used, but invalid format provided. (SHARPII_NET_CORE_TPL_INVALID_FORMAT_01)
 You used the -FORMAT flag, but an invalid format was provided.
 Provide a proper format.
 
-Exit Code: 1619
+Exit Code: 16019
 A non U8 archive file was provided. (SHARPII_NET_CORE_U8_NON_U8_01)
 The provided file is not a U8 archive.
 Provide a U8 archive.
 
-Exit Code: 1620
+Exit Code: 16020
 Folder Access Issue/Missing Folder. (SHARPII_NET_CORE_xxx_FOLDER_ERR_01)
 Either the folder doesn't exist, or Sharpii doesn't have permission to open it.
 Check the folders's permissions and that it's in the right place.
 
-Exit Code: 1621
+Exit Code: 16021
 IMET Flag was used, but no title provided. (SHARPII_NET_CORE_xxx_NO_TITLE_01
 You used the -IMET flag, but no title was provided.
 Provide a proper title.
 
-Exit Code: 1622
+Exit Code: 16022
 IMET and IMD5 Flags were used, but only one can be used. (SHARPII_NET_CORE_U8_TWO_HEADERS
 You used the -IMET and -IMD5 flags, but you can't use two headers.
 Provide only one flag.
 
-Exit Code: 1623
+Exit Code: 16023
 ID Flag was used, but short ID provided. (SHARPII_NET_CORE_WAD_SHORT_ID_01)
 You used the -ID flag, but the provided id was too short to be correct.
 Provide a proper id.
 
-Exit Code: 1624
+Exit Code: 16024
 TYPE or IOS Flag used, but no type provided. (SHARPII_NET_CORE_WAD_NO_TYPE_01)
 You used the -TYPE or -IOS flag, but no type was provided.
 Provide a proper type.
 
-Exit Code: 1625
+Exit Code: 16025
 TYPE or IOS Flag used, but provided type unknown. (SHARPII_NET_CORE_WAD_UNKNOWN_TYPE_01)
 You used the -TYPE flag, but an unknown type was provided.
 Provide a proper type.
 
-Exit Code: 1626
+Exit Code: 16026
 SOUND Flag used, but no wad provided. (SHARPII_NET_CORE_WAD_NO_SOUND)
 You used the -SOUND flag, but no wad file to provide sound was provided.
 Provide a proper wad.
 
-Exit Code: 1627
+Exit Code: 16027
 BANNER Flag used, but no wad provided. (SHARPII_NET_CORE_WAD_NO_BANNER)
 You used the BANNER flag, but no wad file to provide a banner was provided.
 Provide a proper wad.
 
-Exit Code: 1618
+Exit Code: 16028
 ID Flag was used, but invalid id provided. (SHARPII_NET_CORE_xxx_BAD_ID_01)
 You used the -ID flag, but an invalid id was provided.
 Provide a proper id.

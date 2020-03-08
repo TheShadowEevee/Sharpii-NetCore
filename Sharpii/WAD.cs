@@ -80,7 +80,7 @@ namespace Sharpii
             //If tuser gets here, they entered something wrong
             Console.WriteLine("ERROR: The argument {0} is invalid", args[1]);
             Console.WriteLine("Error: SHARPII_NET_CORE_WAD_INVALID_ARG_01");
-            Environment.Exit(0x00000650);
+            Environment.Exit(0x00003E90);
 
             return;
         }
@@ -97,7 +97,7 @@ namespace Sharpii
                 Console.WriteLine("ERROR: Unable to open file: {0}", input);
                 Console.WriteLine("Either the file doesn't exist, or Sharpii doesn't have permission to open it.");
                 Console.WriteLine("Error: SHARPII_NET_CORE_WAD_FILE_ERR_01");
-                Environment.Exit(0x00000641);
+                Environment.Exit(0x00003E81);
                 return;
             }
 
@@ -110,7 +110,7 @@ namespace Sharpii
                         {
                             Console.WriteLine("ERROR: No output set");
                             Console.WriteLine("Error: SHARPII_NET_CORE_WAD_NO_OUTPUT_01");
-                            Environment.Exit(0x0000064D);
+                            Environment.Exit(0x00003E8D);
                             return;
                         }
                         output = args[i + 1];
@@ -120,7 +120,7 @@ namespace Sharpii
                         {
                             Console.WriteLine("ERROR: No output set");
                             Console.WriteLine("Error: SHARPII_NET_CORE_WAD_NO_OUTPUT_01");
-                            Environment.Exit(0x0000064D);
+                            Environment.Exit(0x00003E8D);
                             return;
                         }
                         output = args[i + 1];
@@ -214,7 +214,7 @@ namespace Sharpii
                 Console.WriteLine("");
                 Console.WriteLine("ERROR DETAILS: {0}", ex.Message);
                 Console.WriteLine("Error: SHARPII_NET_CORE_WAD_UNKNOWN_01");
-                Environment.Exit(0x00000642);
+                Environment.Exit(0x00003E82);
                 return;
             }
         }
@@ -241,7 +241,7 @@ namespace Sharpii
                     Console.WriteLine("ERROR: Unable to open file: {0}", input);
                     Console.WriteLine("Either the file doesn't exist, or Sharpii doesn't have permission to open it.");
                     Console.WriteLine("Error: SHARPII_NET_CORE_WAD_FILE_ERR_01");
-                    Environment.Exit(0x00000641);
+                    Environment.Exit(0x00003E81);
                     return;
                 }
             if (edit == false)
@@ -250,7 +250,7 @@ namespace Sharpii
                     Console.WriteLine("ERROR: Unable to open folder: {0}", input);
                     Console.WriteLine("Either the folder doesn't exist, or Sharpii doesn't have permission to open it.");
                     Console.WriteLine("Error: SHARPII_NET_CORE_WAD_FOLDER_ERR_01");
-                    Environment.Exit(0x00000654);
+                    Environment.Exit(0x00003E94);
                     return;
                 }
 
@@ -266,7 +266,7 @@ namespace Sharpii
                         {
                             Console.WriteLine("ERROR: No ID set");
                             Console.WriteLine("Error: SHARPII_NET_CORE_WAD_NO_ID_01");
-                            Environment.Exit(0x0000064E);
+                            Environment.Exit(0x00003E8E);
                             return;
                         }
                         id = args[i + 1];
@@ -274,7 +274,7 @@ namespace Sharpii
                         {
                             Console.WriteLine("ERROR: ID too short");
                             Console.WriteLine("Error: SHARPII_NET_CORE_WAD_SHORT_ID_01");
-                            Environment.Exit(0x00000657);
+                            Environment.Exit(0x00003E97);
                             return;
                         }
                         id = id.Substring(0, 4);
@@ -284,7 +284,7 @@ namespace Sharpii
                         {
                             Console.WriteLine("ERROR: No type set");
                             Console.WriteLine("Error: SHARPII_NET_CORE_WAD_NO_TYPE_01");
-                            Environment.Exit(0x00000658);
+                            Environment.Exit(0x00003E98);
                             return;
                         }
                         lwrid = args[i + 1].ToUpper();
@@ -292,7 +292,7 @@ namespace Sharpii
                         {
                             Console.WriteLine("ERROR: Unknown WAD type: {0}", args[i + 1]);
                             Console.WriteLine("Error: SHARPII_NET_CORE_WAD_UNKNOWN_TYPE_01");
-                            Environment.Exit(0x00000659);
+                            Environment.Exit(0x00003E99);
                             return;
                         }
                         break;
@@ -301,21 +301,21 @@ namespace Sharpii
                         {
                             Console.WriteLine("ERROR: No type set");
                             Console.WriteLine("Error: SHARPII_NET_CORE_WAD_NO_TYPE_01");
-                            Environment.Exit(0x00000658);
+                            Environment.Exit(0x00003E98);
                             return;
                         }
                         if (!int.TryParse(args[i + 1], out ios))
                         {
                             Console.WriteLine("Invalid slot {0}...", args[i + 1]);
                             Console.WriteLine("Error: SHARPII_NET_CORE_WAD_INVALID_SLOT_01");
-                            Environment.Exit(0x0000064A);
+                            Environment.Exit(0x00003E8A);
                             return;
                         }
                         if (ios < 0 || ios > 255)
                         {
                             Console.WriteLine("Invalid slot {0}...", ios);
                             Console.WriteLine("Error: SHARPII_NET_CORE_WAD_INVALID_SLOT_01");
-                            Environment.Exit(0x0000064A);
+                            Environment.Exit(0x00003E8A);
                             return;
                         }
                         break;
@@ -324,7 +324,7 @@ namespace Sharpii
                         {
                             Console.WriteLine("ERROR: No title set");
                             Console.WriteLine("Error: SHARPII_NET_CORE_WAD_NO_TITLE_01");
-                            Environment.Exit(0x00000655);
+                            Environment.Exit(0x00003E95);
                             return;
                         }
                         title = args[i + 1];
@@ -334,7 +334,7 @@ namespace Sharpii
                         {
                             Console.WriteLine("ERROR: No sound set");
                             Console.WriteLine("Error: SHARPII_NET_CORE_WAD_NO_SOUND_01");
-                            Environment.Exit(0x0000065A);
+                            Environment.Exit(0x00003E9A);
                             return;
                         }
                         sound = args[i + 1];
@@ -343,7 +343,7 @@ namespace Sharpii
                             Console.WriteLine("ERROR: Unable to find sound wad");
                             Console.WriteLine("Either the file doesn't exist, or Sharpii doesn't have permission to open it.");
                             Console.WriteLine("Error: SHARPII_NET_CORE_WAD_FILE_ERR_01");
-                            Environment.Exit(0x00000641);
+                            Environment.Exit(0x00003E81);
                             return;
                         }
                         break;
@@ -352,7 +352,7 @@ namespace Sharpii
                         {
                             Console.WriteLine("ERROR: No banner set");
                             Console.WriteLine("Error: SHARPII_NET_CORE_WAD_NO_BANNER_01");
-                            Environment.Exit(0x0000065B);
+                            Environment.Exit(0x00003E9B);
                             return;
                         }
                         banner = args[i + 1];
@@ -361,7 +361,7 @@ namespace Sharpii
                             Console.WriteLine("ERROR: Unable to find banner wad");
                             Console.WriteLine("Either the file doesn't exist, or Sharpii doesn't have permission to open it.");
                             Console.WriteLine("Error: SHARPII_NET_CORE_WAD_FILE_ERR_01");
-                            Environment.Exit(0x00000641);
+                            Environment.Exit(0x00003E81);
                             return;
                         }
                         break;
@@ -370,7 +370,7 @@ namespace Sharpii
                         {
                             Console.WriteLine("ERROR: No sound set");
                             Console.WriteLine("Error: SHARPII_NET_CORE_WAD_NO_SOUND_01");
-                            Environment.Exit(0x0000065A);
+                            Environment.Exit(0x00003E9A);
                             return;
                         }
                         icon = args[i + 1];
@@ -379,7 +379,7 @@ namespace Sharpii
                             Console.WriteLine("ERROR: Unable to find icon wad");
                             Console.WriteLine("Either the file doesn't exist, or Sharpii doesn't have permission to open it.");
                             Console.WriteLine("Error: SHARPII_NET_CORE_WAD_FILE_ERR_01");
-                            Environment.Exit(0x00000641);
+                            Environment.Exit(0x00003E81);
                             return;
                         }
                         break;
@@ -388,7 +388,7 @@ namespace Sharpii
                         {
                             Console.WriteLine("ERROR: No dol set");
                             Console.WriteLine("Error: SHARPII_NET_CORE_WAD_NO_DOL_01");
-                            Environment.Exit(0x00000644);
+                            Environment.Exit(0x00003E84);
                             return;
                         }
                         app = args[i + 1];
@@ -397,7 +397,7 @@ namespace Sharpii
                             Console.WriteLine("ERROR: Unable to find dol wad/file");
                             Console.WriteLine("Either the file doesn't exist, or Sharpii doesn't have permission to open it.");
                             Console.WriteLine("Error: SHARPII_NET_CORE_WAD_FILE_ERR_01");
-                            Environment.Exit(0x00000641);
+                            Environment.Exit(0x00003E81);
                             return;
                         }
                         break;
@@ -590,7 +590,7 @@ namespace Sharpii
                 Console.WriteLine("");
                 Console.WriteLine("ERROR DETAILS: {0}", ex.Message);
                 Console.WriteLine("Error: SHARPII_NET_CORE_WAD_UNKNOWN_01");
-                Environment.Exit(0x00000642);
+                Environment.Exit(0x00003E82);
                 return;
             }
         }
@@ -608,7 +608,7 @@ namespace Sharpii
                 Console.WriteLine("ERROR: Unable to open file: {0}", input);
                 Console.WriteLine("Either the file doesn't exist, or Sharpii doesn't have permission to open it.");
                 Console.WriteLine("Error: SHARPII_NET_CORE_WAD_FILE_ERR_01");
-                Environment.Exit(0x00000641);
+                Environment.Exit(0x00003E81);
                 return;
             }
 
@@ -653,7 +653,7 @@ namespace Sharpii
                 Console.WriteLine("");
                 Console.WriteLine("ERROR DETAILS: {0}", ex.Message);
                 Console.WriteLine("Error: SHARPII_NET_CORE_WAD_UNKNOWN_01");
-                Environment.Exit(0x00000642);
+                Environment.Exit(0x00003E82);
                 return;
             }
         }
