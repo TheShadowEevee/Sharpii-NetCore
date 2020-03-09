@@ -1,7 +1,7 @@
 # Sharpii .Net Core Port - A command line libWiiSharp tool ported for all OS's.
 
 ## Repo info
-Sharpii is a command line app for windows that person66 made and was ported to .Net Core by TheShadowEevee, which uses scooby74029's mod of libWiiSharp to perform tasks such as:
+Sharpii is a command line app for windows that person66 made and was ported to .Net Core by TheShadowEevee, which uses leathl's libWiiSharp to perform tasks such as:
 - Pack, unpack, or edit .wad files
 - Pack, and unpack U8 archives
 - Patch IOS .wad files with various patches
@@ -21,4 +21,4 @@ All issues with this version of Sharpii should go in this fork's issue tracker. 
 
 
 ## Giving Credit
-No credit is needed to use this program! If you do give credit, make sure to put the original creator(s) names first! (person66 for Sharpii, and scooby74029 for the libWiiSharp.dll used)
+No credit is needed to use this program! If you do give credit, make sure to put the original creator(s) names first! (person66 for Sharpii, and leathl for libWiiSharp)
