@@ -35,7 +35,7 @@ namespace Sharpii
                     Console.WriteLine("No errors reported/Likely successful exit");
                     Console.WriteLine("");
                 }
-                if (args[1] == "1601")
+                if (args[1] == "16001")
                 {
                     Console.WriteLine("");
                     Console.WriteLine("File Access Issue/Missing File. (SHARPII_NET_CORE_xxx_FILE_ERR_01)");
@@ -47,7 +47,7 @@ namespace Sharpii
                     ErrCodeFound = 1;
                 }
 
-                if (args[1] == "1602")
+                if (args[1] == "16002")
                 {
                     Console.WriteLine("");
                     Console.WriteLine("Unknown Error/Untracked Error. (SHARPII_NET_CORE_xxx_UNKNOWN_01)");
@@ -193,7 +193,7 @@ namespace Sharpii
                 if (args[1] == "16015")
                 {
                     Console.WriteLine("");
-                    Console.WriteLine("A Critical DLL (libWiiSharp.dll) couldn't be found. (SHARPII_NET_CORE_HBC_MISSING_DLL_LIBWIISHARP_01)");
+                    Console.WriteLine("A Critical DLL (libWiiSharp.dll) couldn't be found. (SHARPII_NET_CORE_MAIN_MISSING_DLL_LIBWIISHARP_01)");
                     Console.WriteLine("The libWiiSharp.dll couldn't be found.");
                     Console.WriteLine("This error SHOULD NOT APPEAR in this Sharpii port.");
                     Console.WriteLine("Open an issue on GitHub!");
@@ -365,7 +365,7 @@ namespace Sharpii
             Console.WriteLine("");
             Console.WriteLine("       Sharpii EXITCODES [Exit]");
             Console.WriteLine("");
-            Console.WriteLine("       Ex. \"Sharpii EXITCODES 1601\"");
+            Console.WriteLine("       Ex. \"Sharpii EXITCODES 16001\"");
             Console.WriteLine("");
         }
     }

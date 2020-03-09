@@ -290,7 +290,6 @@ namespace Sharpii
             Console.WriteLine("       -lots          Display lots of output");
             Console.WriteLine("       -nolog         Don't create a log file");
             Console.WriteLine("");
-            Environment.Exit(0x00003E8E);
         }
 
         }
