@@ -277,13 +277,13 @@ namespace Sharpii
             Console.WriteLine("             use 'Sharpii [function] -h'");
             Console.WriteLine("");
             Console.WriteLine("");
-            Console.WriteLine("  Other Functions:");
-            Console.WriteLine("");
+            //Console.WriteLine("  Other Functions:");
+            //Console.WriteLine("");
             //Console.WriteLine("       Install        Install Sharpii to your computer so you can run it");
             //Console.WriteLine("                      from anywhere without needing the exe");
             //Console.WriteLine("       Uninstall      Uninstall Sharpii from your computer");
-            Console.WriteLine("");
-            Console.WriteLine("");
+            //Console.WriteLine("");
+            //Console.WriteLine("");
             Console.WriteLine("  Global Arguments:");
             Console.WriteLine("");
             Console.WriteLine("       -quiet | -q    Try not to display any output");
