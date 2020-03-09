@@ -144,3 +144,8 @@ Exit Code: 16028
 ID Flag was used, but invalid id provided. (SHARPII_NET_CORE_xxx_BAD_ID_01)
 You used the -ID flag, but an invalid id was provided.
 Provide a proper id.
+
+Exit Code: 16029
+Not all files needed to pack a wad are present. (SHARPII_NET_CORE_NUSD_MISSING_FILES_01)
+You need to have all the required .app files, a tmd file, a tik file, and a cert file to pack a wad.
+Ensure all files are present.

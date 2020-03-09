@@ -344,6 +344,17 @@ namespace Sharpii
                     Console.WriteLine("");
                     ErrCodeFound = 1;
                 }
+                if (args[1] == "16029")
+                {
+                    Console.WriteLine("");
+                    Console.WriteLine("Not all files needed to pack a wad are present. (SHARPII_NET_CORE_NUSD_MISSING_FILES_01)");
+                    Console.WriteLine("You need to have all the required .app files, a tmd file, a tik file, and a cert file to pack a wad.");
+                    Console.WriteLine("Ensure all files are present");
+                    Console.WriteLine("If that doesn't help, open an issue on GitHub!");
+                    Console.WriteLine("https://github.com/TheShadowEevee/Sharpii-NetCore/issues");
+                    Console.WriteLine("");
+                    ErrCodeFound = 1;
+                }
                 if (ErrCodeFound != 1)
                 {
                     ExitCode_help();

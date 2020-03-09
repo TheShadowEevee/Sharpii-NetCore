@@ -23,6 +23,7 @@ namespace Sharpii
 {
     partial class WAD_Stuff
     {
+        public static int ExceptionListRan = 0;
         public static void WAD(string[] args)
         {
             if (args.Length < 3)
@@ -586,12 +587,22 @@ namespace Sharpii
             }
             catch (Exception ex)
             {
-                Console.WriteLine("An unknown error occured, please try again");
-                Console.WriteLine("");
-                Console.WriteLine("ERROR DETAILS: {0}", ex.Message);
-                Console.WriteLine("Error: SHARPII_NET_CORE_WAD_UNKNOWN_01");
-                Environment.Exit(0x00003E82);
-                return;
+                if (ex.Message == "Index was outside the bounds of the array.")
+                {
+                    Console.WriteLine("You need to have all the required .app files, a tmd file, a tik file, and a cert file to do this.");
+                    Console.WriteLine("");
+                    Console.WriteLine("Error: SHARPII_NET_CORE_NUSD_MISSING_FILES_01");
+                    ExceptionListRan = 1;
+                    Environment.Exit(0x00003E9D);
+                }
+                if (ExceptionListRan == 0)
+                {
+                    Console.WriteLine("An unknown error occured, please try again");
+                    Console.WriteLine("");
+                    Console.WriteLine("ERROR DETAILS: {0}", ex.Message);
+                    Console.WriteLine("Error: SHARPII_NET_CORE_WAD_UNKNOWN_01");
+                    Environment.Exit(0x00003E82);
+                }  
             }
         }
 
