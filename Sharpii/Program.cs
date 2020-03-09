@@ -288,7 +288,6 @@ namespace Sharpii
             Console.WriteLine("");
             Console.WriteLine("       -quiet | -q    Try not to display any output");
             Console.WriteLine("       -lots          Display lots of output");
-            Console.WriteLine("       -nolog         Don't create a log file");
             Console.WriteLine("");
         }
 
