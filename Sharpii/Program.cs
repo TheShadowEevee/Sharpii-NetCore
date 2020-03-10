@@ -327,7 +327,7 @@ public class BeQuiet
 }
 public class ProgramVersion
 {
-    public static string version = "1.0.1; .Net Core Port (Based on Sharpii 1.7.3)";
+    public static string version = "1.1.0; .Net Core Port (Based on Sharpii 1.7.3)";
 }
 public class Logging
 {
