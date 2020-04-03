@@ -49,7 +49,14 @@ namespace Sharpii
             //If tuser gets here, they entered something wrong
             Console.WriteLine("ERROR: The argument {0} is invalid", args[1]);
             Console.WriteLine("Error: SHARPII_NET_CORE_U8_INVALID_ARG_01");
-            Environment.Exit(0x00003E90);
+            if (OperatingSystem.Windows())
+            {
+                Environment.Exit(0x00003E90);
+            }
+            else
+            {
+                Environment.Exit(0x00000012);
+            }
             return;
 
         }
@@ -72,7 +79,14 @@ namespace Sharpii
             {
                 Console.WriteLine("ERROR: File {0} is not a U8 archive", input);
                 Console.WriteLine("Error: SHARPII_NET_CORE_U8_NON_U8_01");
-                Environment.Exit(0x00003E93);
+                if (OperatingSystem.Windows())
+                {
+                    Environment.Exit(0x00003E93);
+                }
+                else
+                {
+                    Environment.Exit(0x00000015);
+                }
                 return;
             }
            
@@ -107,7 +121,14 @@ namespace Sharpii
                 Console.WriteLine("");
                 Console.WriteLine("ERROR DETAILS: {0}", ex.Message);
                 Console.WriteLine("Error: SHARPII_NET_CORE_U8_UNKNOWN_01");
-                Environment.Exit(0x00003E82);
+                if (OperatingSystem.Windows())
+                {
+                    Environment.Exit(0x00003E82);
+                }
+                else
+                {
+                    Environment.Exit(0x00000004);
+                }
                 return;
             }
         }
@@ -127,7 +148,14 @@ namespace Sharpii
                 Console.WriteLine("ERROR: Unable to open Folder: {0}", input);
                 Console.WriteLine("Either the folder doesn't exist, or Sharpii doesn't have permission to open it.");
                 Console.WriteLine("Error: SHARPII_NET_CORE_U8_FOLDER_ERR_01");
-                Environment.Exit(0x00003E94);
+                if (OperatingSystem.Windows())
+                {
+                    Environment.Exit(0x00003E94);
+                }
+                else
+                {
+                    Environment.Exit(0x00000016);
+                }
                 return;
             }
 
@@ -146,7 +174,14 @@ namespace Sharpii
                         {
                             Console.WriteLine("ERROR: No title set");
                             Console.WriteLine("Error: SHARPII_NET_CORE_U8_NO_TITLE_01");
-                            Environment.Exit(0x00003E95);
+                            if (OperatingSystem.Windows())
+                            {
+                                Environment.Exit(0x00003E95);
+                            }
+                            else
+                            {
+                                Environment.Exit(0x00000017);
+                            }
                             return;
                         }
                         imet = args[i + 1];
@@ -158,7 +193,14 @@ namespace Sharpii
             {
                 Console.WriteLine("ERROR: Cannot use IMET and IMD5 at the same time.");
                 Console.WriteLine("Error: SHARPII_NET_CORE_U8_TWO_HEADERS_01");
-                Environment.Exit(0x00003E96);
+                if (OperatingSystem.Windows())
+                {
+                    Environment.Exit(0x00003E96);
+                }
+                else
+                {
+                    Environment.Exit(0x00000018);
+                }
                 return;
             }
 
@@ -211,7 +253,14 @@ namespace Sharpii
                 Console.WriteLine("");
                 Console.WriteLine("ERROR DETAILS: {0}", ex.Message);
                 Console.WriteLine("Error: SHARPII_NET_CORE_U8_UNKNOWN_01");
-                Environment.Exit(0x00003E82);
+                if (OperatingSystem.Windows())
+                {
+                    Environment.Exit(0x00003E82);
+                }
+                else
+                {
+                    Environment.Exit(0x00000004);
+                }
                 return;
             }
         }
