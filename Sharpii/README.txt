@@ -1,5 +1,5 @@
 /------------------------------------------------------------------------------>
-                                 Sharpii 1.7.3
+                                 Sharpii-NetCore 1.1.1
        <---------------------------------------------------------------->
                                An app by person66
                  libWiiSharp.dll by leathl (mod by scooby74029)                         
@@ -146,6 +146,9 @@ See "LICENSE.txt" for more information.
 
 /----CHANGELOG
 /------------------------------>
+1.1.1
+  - Fixes exit codes for Non-Windows platforms (Global fix)
+  - Fixes a bug where Sharpii couldn't find a wad if the case of the wad's name when saved was different then the ID provided. (NUSD's -WAD option)
 1.1.0
   - Added many error handling related features
     - Error Code's for easy identification of errors
