@@ -1,5 +1,6 @@
 ﻿/* This file is part of Sharpii.
  * Copyright (C) 2013 Person66
+ * Copyright (C) 2020 Sharpii-NetCore Contributors
  *
  * Sharpii is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,6 +21,7 @@ using System.IO;
 using System.Net;
 using libWiiSharp;
 using System.Diagnostics;
+using System.Runtime.InteropServices;
 
 namespace Sharpii
 {
@@ -337,4 +339,17 @@ public class Logging
 
     //This isn't used yet.
     public static int log = 1;
+}
+
+public static class OperatingSystem
+{
+    //To check the running OS for Exit Code use.
+    public static bool Windows() =>
+        RuntimeInformation.IsOSPlatform(OSPlatform.Windows);
+
+    public static bool Mac() =>
+        RuntimeInformation.IsOSPlatform(OSPlatform.OSX);
+
+    public static bool GNULinux() =>
+        RuntimeInformation.IsOSPlatform(OSPlatform.Linux);
 }

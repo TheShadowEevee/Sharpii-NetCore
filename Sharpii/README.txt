@@ -114,7 +114,7 @@ from My Programs.
 /----SOURCE
 /------------------------------>
 
-The source for Sharpii is available at: https://github.com/mogzol/sharpii
+The source for Sharpii is available at: https://github.com/TheShadowEevee/Sharpii-NetCore
 
 
 /----CREDITS
@@ -146,8 +146,19 @@ See "LICENSE.txt" for more information.
 
 /----CHANGELOG
 /------------------------------>
-2.0.0-Fork
+1.1.0
+  - Added many error handling related features
+    - Error Code's for easy identification of errors
+    - Error Code lookup (Run: `Sharpii Errors [Error Code]`)
+    - Custom exit codes for easy headless script error identification (Uses Exit codes 16001-16029)
+    - Exit Code lookup (Run: `Sharpii ExitCodes [Exit Code]`)
+  - Removed install/uninstall help text (Feature still exists but only works on Windows for now.)
+  - Removed some help text relating to a currently unimplemented feature
+1.0.1
+  - Fixed a file path seperator bug.
+1.0.0-Fork
   - Forked and Ported to Dot Net Core for use in Mac and Linux by TheShadowEevee
+-----Sharpii-NetCore Above, original below-----
 1.7.3
   - Still not dead!
   - Updated URLs for the downloaders to use GitHub instead of

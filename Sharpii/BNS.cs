@@ -1,5 +1,6 @@
 ﻿/* This file is part of Sharpii.
 * Copyright (C) 2013 Person66
+* Copyright (C) 2020 Sharpii-NetCore Contributors
 *
 * Sharpii is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -58,7 +59,14 @@ namespace Sharpii
                 Console.WriteLine("ERROR: Unable to open file: {0}", input);
                 Console.WriteLine("Either the file doesn't exist, or Sharpii doesn't have permission to open it.");
                 Console.WriteLine("Error: SHARPII_NET_CORE_BNS_FILE_ERR_01");
-                Environment.Exit(0x00003E81);
+                if (OperatingSystem.Windows())
+                {
+                    Environment.Exit(0x00003E81);
+                }
+                else
+                {
+                    Environment.Exit(0x00000003);
+                }
                 return;
             }
 
@@ -94,7 +102,14 @@ namespace Sharpii
                 Console.WriteLine("");
                 Console.WriteLine("ERROR DETAILS: {0}", ex.Message);
                 Console.WriteLine("Error: SHARPII_NET_CORE_BNS_UNKNOWN_01");
-                Environment.Exit(0x00003E82);
+                if (OperatingSystem.Windows())
+                {
+                    Environment.Exit(0x00003E82);
+                }
+                else
+                {
+                    Environment.Exit(0x00000004);
+                }
                 return;
             }
         }
@@ -112,7 +127,14 @@ namespace Sharpii
                 Console.WriteLine("ERROR: Unable to open file: {0}", input);
                 Console.WriteLine("Either the file doesn't exist, or Sharpii doesn't have permission to open it.");
                 Console.WriteLine("Error: SHARPII_NET_CORE_BNS_FILE_ERR_01");
-                Environment.Exit(0x00003E81);
+                if (OperatingSystem.Windows())
+                {
+                    Environment.Exit(0x00003E81);
+                }
+                else
+                {
+                    Environment.Exit(0x00000003);
+                }
                 return;
             }
 
@@ -181,7 +203,14 @@ namespace Sharpii
                 Console.WriteLine("");
                 Console.WriteLine("ERROR DETAILS: {0}", ex.Message);
                 Console.WriteLine("Error: SHARPII_NET_CORE_BNS_UNKNOWN_01");
-                Environment.Exit(0x00003E82);
+                if (OperatingSystem.Windows())
+                {
+                    Environment.Exit(0x00003E82);
+                }
+                else
+                {
+                    Environment.Exit(0x00000004);
+                }
                 return;
             }
         }
