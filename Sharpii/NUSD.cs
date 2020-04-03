@@ -1,5 +1,6 @@
 ﻿/* This file is part of Sharpii.
  * Copyright (C) 2013 Person66
+ * Copyright (C) 2020 Sharpii-NetCore Contributors
  *
  * Sharpii is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -154,6 +155,7 @@ namespace Sharpii
                             return;
                         }
                         id = args[i + 1];
+                        id = id.ToUpper();
                         break;
                     case "-IOS":
                         if (i + 1 >= args.Length)
@@ -326,50 +328,111 @@ namespace Sharpii
 
         private static void WadIosNamingStuff(bool wad, string temp, string id, string version, string ios, bool NoOut, string output, string realout)
         {
+            bool LowercaseWad = false;
+            bool OperationDone = false;
             if (wad == true)
             {
-                if (!File.Exists(Path.Combine(temp, id + "v" + version + ".wad")))
+                try
+                {
+                    if (!File.Exists(Path.Combine(temp, id + "v" + version + ".wad")))
+                    {
+                        Console.WriteLine("Can't find WAD using normal conventions. Retrying...");
+                        LowercaseWad = true;
+                        try
+                        {
+                            if (!File.Exists(Path.Combine(temp, id.ToLower() + "v" + version + ".wad")))
+                            {
+                                Console.WriteLine("ERROR: Can't find WAD {0}", id.ToLower());
+                                Console.WriteLine("Try running with out the -WAD or -ALL tag. If it still doesn't work, open an issue on Github.");
+                                Console.WriteLine("Error: SHARPII_NET_CORE_NUSD_FILE_ERR_01");
+                                Environment.Exit(0x00003E81);
+                                return;
+                            }
+                        }
+                        catch (Exception ex2)
+                        {
+                            Console.WriteLine("Still having errors... {0}", ex2.Message);
+                        }
+                    }
+                }
+                catch (Exception ex)
                 {
                     Console.WriteLine("ERROR: Can't find WAD");
-                    Console.WriteLine("Either the file doesn't exist, or Sharpii doesn't have permission to open it.");
+                    Console.WriteLine("Try running with out the -WAD or -ALL tag. If it still doesn't work, open an issue on Github.");
+                    Console.WriteLine("Exact Error: {0}", ex.Message);
                     Console.WriteLine("Error: SHARPII_NET_CORE_NUSD_FILE_ERR_01");
                     Environment.Exit(0x00003E81);
                     return;
                 }
-                if (ios != "" && NoOut == true)
+                if (ios != "" && NoOut == true && LowercaseWad == false)
                 {
                     int index = realout.LastIndexOf("\\") > realout.LastIndexOf("/") ? realout.LastIndexOf("\\") : realout.LastIndexOf("/");
                     if (File.Exists(realout.Substring(0, index + 1) + ios))
                         File.Delete(realout.Substring(0, index + 1) + ios);
-                    File.Move(Path.Combine(temp, id + "v" + version + ".wad"), realout.Substring(0, index + 1) + ios);
+                    File.Move(Path.Combine(temp, id.ToUpper() + "v" + version + ".wad"), realout.Substring(0, index + 1) + ios);
+                    OperationDone = true;
                 }
-                else if (ios == "" && NoOut == true)
+                else if (ios == "" && NoOut == true && LowercaseWad == false)
                 {
                     if (File.Exists(realout + ".wad"))
                         File.Delete(realout + ".wad");
-                    File.Move(Path.Combine(temp, id + "v" + version + ".wad"), realout + ".wad");
+                    File.Move(Path.Combine(temp, id.ToUpper() + "v" + version + ".wad"), realout + ".wad");
+                    OperationDone = true;
                 }
-                else
+                else if (LowercaseWad == false && OperationDone == false)
                 {
                     if (File.Exists(realout))
                         File.Delete(realout);
-                    File.Move(Path.Combine(temp, id + "v" + version + ".wad"), realout);
+                    File.Move(Path.Combine(temp, id.ToUpper() + "v" + version + ".wad"), realout);
+                    OperationDone = true;
+                }
+                else if (ios != "" && NoOut == true && LowercaseWad == true)
+                {
+                    int index = realout.LastIndexOf("\\") > realout.LastIndexOf("/") ? realout.LastIndexOf("\\") : realout.LastIndexOf("/");
+                    if (File.Exists(realout.Substring(0, index + 1) + ios))
+                        File.Delete(realout.Substring(0, index + 1) + ios);
+                    File.Move(Path.Combine(temp, id.ToLower() + "v" + version + ".wad"), realout.Substring(0, index + 1) + ios);
+                    OperationDone = true;
+                }
+                else if (ios == "" && NoOut == true && LowercaseWad == true)
+                {
+                    if (File.Exists(realout + ".wad"))
+                        File.Delete(realout + ".wad");
+                    File.Move(Path.Combine(temp, id.ToLower() + "v" + version + ".wad"), realout + ".wad");
+                    OperationDone = true;
+                }
+                else if (LowercaseWad == true && OperationDone == false)
+                {
+                    if (File.Exists(realout))
+                        File.Delete(realout);
+                    File.Move(Path.Combine(temp, id.ToLower() + "v" + version + ".wad"), realout);
+                    OperationDone = true;
                 }
                 DeleteADir.DeleteDirectory(temp);
             }
-            else if (ios != "")
+            else if (ios != "" && LowercaseWad == false)
             {
                 if (output.Substring(output.Length - 1, 1) == "\\" || output.Substring(output.Length - 1, 1) == "/")
                     output = output.Substring(output.Length - 1, 1);
-                if (File.Exists(Path.Combine(output, id + "v" + version + ".wad")))
+                if (File.Exists(Path.Combine(output, id.ToUpper() + "v" + version + ".wad")))
                 {
                     if (File.Exists(Path.Combine(output, ios)))
                         File.Delete(Path.Combine(output, ios));
-                    File.Move(Path.Combine(output, id + "v" + version + ".wad"), Path.Combine(output, ios));
+                    File.Move(Path.Combine(output, id.ToUpper() + "v" + version + ".wad"), Path.Combine(output, ios));
+                }
+            }
+            else if (ios != "" && LowercaseWad == true)
+            {
+                if (output.Substring(output.Length - 1, 1) == "\\" || output.Substring(output.Length - 1, 1) == "/")
+                    output = output.Substring(output.Length - 1, 1);
+                if (File.Exists(Path.Combine(output, id.ToLower() + "v" + version + ".wad")))
+                {
+                    if (File.Exists(Path.Combine(output, ios)))
+                        File.Delete(Path.Combine(output, ios));
+                    File.Move(Path.Combine(output, id.ToLower() + "v" + version + ".wad"), Path.Combine(output, ios));
                 }
             }
         }
-
         public static void NUS_help()
         {
             Console.WriteLine("");
@@ -379,7 +442,7 @@ namespace Sharpii
             Console.WriteLine("");
             Console.WriteLine("  Usage:");
             Console.WriteLine("");
-            Console.WriteLine("       Sharpii.exe NUSD [-id titleID | -ios IOS] [-v version] [-o otput] [-all]");
+            Console.WriteLine("       Sharpii.exe NUSD [-id titleID | -ios IOS] [-v version] [-o output] [-all]");
             Console.WriteLine("                        [-wad] [-decrypt] [-encrypt] [-local] [-s content]");
             Console.WriteLine("");
             Console.WriteLine("");
