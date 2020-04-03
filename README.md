@@ -10,7 +10,7 @@ Sharpii is a command line app for windows that person66 made and was ported to .
 - Convert an image file to a .tpl, and vice versa
 - Send a .dol or .wad to the Homebrew Channel over Wi-Fi
 
-For more details see the readme.txt in the sharpii folder or visit the official Sharpii thread at: http://gbatemp.net/topic/309756-sharpii/
+For more details see the readme.txt in the sharpii folder or visit the Sharpii-NetCore thread at: https://gbatemp.net/threads/sharpii-netcore-a-mod-and-port-of-sharpii.559849/. Any issues should be reported here for quick notice though.
 
 ## Download
 You can download the latest version of Sharpii on the project's releases page: https://github.com/TheShadowEevee/Sharpii-NetCore/releases/
