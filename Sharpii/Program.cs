@@ -129,18 +129,6 @@ namespace Sharpii
                 gotSomewhere = true;
             }
 
-            if (Function == "INSTALL")
-            {
-                Install();
-                gotSomewhere = true;
-            }
-
-            if (Function == "UNINSTALL")
-            {
-                Uninstall();
-                gotSomewhere = true;
-            }
-
             if (Function == "ERRORS")
             {
                 ERROR_Stuff.ERROR(args);
@@ -152,15 +140,6 @@ namespace Sharpii
                 ERRORCODE_Stuff.ERRORCODE(args);
                 gotSomewhere = true;
             }
-
-            if (Function == "WHICH CAME FIRST" || Function == "WHICH CAME FIRST?" || 
-            (Function == "WHICH" && args[1].ToUpper() == "CAME" && args[2].Substring(0,5).ToUpper() == "FIRST"))
-            {
-                InconspicuousNotEasterEggThingamajig();
-                gotSomewhere = true;
-            }
-
-
 
             if (gotSomewhere == false)
             {
@@ -183,101 +162,6 @@ namespace Sharpii
                 DeleteADir.DeleteDirectory(temp);
 
             Environment.Exit(0);
-        }
-
-        private static void Install()
-        {
-            try
-            {
-                if (BeQuiet.quiet > 1)
-                    Console.WriteLine("Installing Sharpii...");
-                if (BeQuiet.quiet > 1)
-                    Console.WriteLine("Adding Variables");
-                Environment.SetEnvironmentVariable("PATH", Path.Combine(Environment.GetEnvironmentVariable("PATH", EnvironmentVariableTarget.Machine), ";", Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles), "Sharpii"), EnvironmentVariableTarget.Machine);
-
-                if (BeQuiet.quiet > 1)
-                    Console.WriteLine("Creating Directory");
-                if (Directory.Exists(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles), "Sharpii")))
-                    DeleteADir.DeleteDirectory(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles), "Sharpii"));
-                Directory.CreateDirectory(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles), "Sharpii"));
-
-                if (BeQuiet.quiet > 1)
-                    Console.WriteLine("Copying Files");
-                File.Copy(AppDomain.CurrentDomain.BaseDirectory, Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles) + "\\Sharpii\\Sharpii.exe");
-                if (File.Exists(Path.Combine(Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory), "libWiiSharp.dll")))
-                    File.Copy(Path.Combine(Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory), "libWiiSharp.dll"), Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles), "Sharpii", "libWiiSharp.dll"));
-                if (File.Exists(Path.Combine(Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory), "WadInstaller.dll")))
-                    File.Copy(Path.Combine(Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory), "WadInstaller.dll"), Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles), "Sharpii", "WadInstaller.dll"));
-
-                if (BeQuiet.quiet > 1)
-                {
-                    Console.WriteLine("Sharpii was successfully installed to: {0}", Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles) + "\\Sharpii\\");
-                    Console.WriteLine("You can now use Sharpii in any directory!");
-                    Console.WriteLine("\nNOTE: You may need to restart your computer for this to take effect");
-                }
-                return;
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("An unknown error occured, please try again\n\nERROR DETAILS: {0}", ex.Message);
-                if (OperatingSystem.Windows())
-                {
-                    Environment.Exit(0x00003E82);
-                }
-                else
-                {
-                    Environment.Exit(0x00000004);
-                }
-                return;
-            }
-        }
-
-        private static void Uninstall()
-        {
-            try
-            {
-                if (BeQuiet.quiet > 1)
-                    Console.WriteLine("Uninstalling Sharpii...");
-                string path = Environment.GetEnvironmentVariable("PATH", EnvironmentVariableTarget.Machine);
-                Environment.SetEnvironmentVariable("PATH", path.Replace(";" + Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles) + "\\Sharpii\\", ""), EnvironmentVariableTarget.Machine);
-                Process.Start("cmd.exe", "/C mode con:cols=50 lines=4 & color 0B & echo Finishing Uninstallation... & sleep 2 & rmdir /s /q " + '"' + 
-                Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles) + "\\Sharpii\\" + '"' + " & CLS & echo Sharpii has been successfully uninstalled! & echo. & pause");
-                Environment.Exit(0);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("An unknown error occured, please try again\n\nERROR DETAILS: {0}", ex.Message);
-                if (OperatingSystem.Windows())
-                {
-                    Environment.Exit(0x00003E82);
-                }
-                else
-                {
-                    Environment.Exit(0x00000004);
-                }
-                return;
-            }
-        }
-
-        private static void InconspicuousNotEasterEggThingamajig()
-        {
-            WebClient egg = new WebClient(); string all = "";
-            try { all = egg.DownloadString("http://sites.google.com/site/person66files/home/EASTEREGG.txt"); }
-            catch (Exception) { Console.WriteLine("\n Easter eggs are more fun if you has internetz"); return; }
-            int width = Console.WindowWidth; int height = Console.WindowHeight; int bwidth = Console.BufferWidth; int bheight = Console.BufferHeight;
-            ConsoleKeyInfo key; Console.Clear(); Console.CursorVisible = false; Console.SetWindowSize(75, 5); Console.SetBufferSize(75, 5);
-            Console.WriteLine("Complete the following: \n\n   UP, __ , __ , __ , __ , __ , __ , __ , __ , __ , START"); key = Console.ReadKey(true);
-            if (key.Key.ToString() == "UpArrow") { Console.SetCursorPosition(7, 2); Console.Write("UP"); } else { goto ByeBye; }
-            key = Console.ReadKey(true); if (key.Key.ToString() == "DownArrow") { Console.SetCursorPosition(12, 2); Console.Write("DOWN , __ , __ , __ , __ , __ , __ , __ , START"); } else { goto ByeBye; }
-            key = Console.ReadKey(true); if (key.Key.ToString() == "DownArrow") { Console.SetCursorPosition(19, 2); Console.Write("DOWN , __ , __ , __ , __ , __ , __ , START"); } else { goto ByeBye; }
-            key = Console.ReadKey(true); if (key.Key.ToString() == "LeftArrow") { Console.SetCursorPosition(26, 2); Console.Write("LEFT , __ , __ , __ , __ , __ , START"); } else { goto ByeBye; }
-            key = Console.ReadKey(true); if (key.Key.ToString() == "RightArrow") { Console.SetCursorPosition(33, 2); Console.Write("RIGHT , __ , __ , __ , __ , START"); } else { goto ByeBye; }
-            key = Console.ReadKey(true); if (key.Key.ToString() == "LeftArrow") { Console.SetCursorPosition(41, 2); Console.Write("LEFT , __ , __ , __ , START"); } else { goto ByeBye; }
-            key = Console.ReadKey(true); if (key.Key.ToString() == "RightArrow") { Console.SetCursorPosition(48, 2); Console.Write("RIGHT , __ , __ , START"); } else { goto ByeBye; }
-            key = Console.ReadKey(true); if (key.Key.ToString() == "B") { Console.SetCursorPosition(56, 2); Console.Write("B , __ , START   "); } else { goto ByeBye; }
-            key = Console.ReadKey(true); if (key.Key.ToString() == "A") { Console.SetCursorPosition(60, 2); Console.Write("A , START   "); } else { goto ByeBye; }
-            Console.SetBufferSize(95, 44); Console.SetWindowSize(95, 44); Console.SetCursorPosition(0, 0); Console.Clear(); Console.Write(all); Console.ReadKey(true);
-            ByeBye: Console.Clear(); Console.CursorVisible = true; Console.SetWindowSize(width, height); Console.SetBufferSize(bwidth, bheight); Environment.Exit(0);                
         }
 
         private static void help()
@@ -309,13 +193,6 @@ namespace Sharpii
             Console.WriteLine("             use 'Sharpii [function] -h'");
             Console.WriteLine("");
             Console.WriteLine("");
-            //Console.WriteLine("  Other Functions:");
-            //Console.WriteLine("");
-            //Console.WriteLine("       Install        Install Sharpii to your computer so you can run it");
-            //Console.WriteLine("                      from anywhere without needing the exe");
-            //Console.WriteLine("       Uninstall      Uninstall Sharpii from your computer");
-            //Console.WriteLine("");
-            //Console.WriteLine("");
             Console.WriteLine("  Global Arguments:");
             Console.WriteLine("");
             Console.WriteLine("       -quiet | -q    Try not to display any output");
