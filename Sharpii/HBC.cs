@@ -466,7 +466,7 @@ namespace Sharpii
             Console.WriteLine("");
             Console.WriteLine("  Usage:");
             Console.WriteLine("");
-            Console.WriteLine("       Sharpii.exe SendWad -ip ip_adress -wad file [-ios IOS | -ahb] [-old]");
+            Console.WriteLine("       ./Sharpii SendWad -ip ip_adress -wad file [-ios IOS | -ahb] [-old]");
             Console.WriteLine("                           [-nocomp] [-saveip]");
             Console.WriteLine("");
             Console.WriteLine("");

@@ -274,7 +274,7 @@ namespace Sharpii
             Console.WriteLine("");
             Console.WriteLine("  Usage:");
             Console.WriteLine("");
-            Console.WriteLine("       Sharpii.exe U8 [-p | -u] input output [arguments]");
+            Console.WriteLine("       ./Sharpii U8 [-p | -u] input output [arguments]");
             Console.WriteLine("");
             Console.WriteLine("");
             Console.WriteLine("  Arguments:");

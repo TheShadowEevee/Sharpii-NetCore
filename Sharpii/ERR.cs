@@ -602,7 +602,7 @@ namespace Sharpii
             Console.WriteLine("");
             Console.WriteLine("  Usage:");
             Console.WriteLine("");
-            Console.WriteLine("       Sharpii ERRORS [Error Text]");
+            Console.WriteLine("       ./Sharpii ERRORS [Error Text]");
             Console.WriteLine("");
             Console.WriteLine("       Ex. \"Sharpii ERRORS SHARPII_NET_CORE_BNS_FILE_ERR_01\"");
             Console.WriteLine("");

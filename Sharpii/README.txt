@@ -26,13 +26,13 @@ libWiiSharp.dll to perform tasks such as:
 /------------------------------>
 
 I won't go in to detail here, but to see all the commands, just start 
-up the command prompt, navigate to the folder containing Sharpii, and type:
+up the terminal, navigate to the folder containing Sharpii, and type:
 
-                                    Sharpii.exe -h
+                                    ./Sharpii (Or your OS's equivalent)
 
 OR, if you want help with a specific function use
 
-                             Sharpii.exe [function] -h
+                             ./Sharpii [function] -h (Or your OS's equivalent)
 
 Where [function] would obviously be replaced with the function you want
 help with.

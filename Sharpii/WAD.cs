@@ -854,7 +854,7 @@ namespace Sharpii
             Console.WriteLine("");
             Console.WriteLine("  Usage:");
             Console.WriteLine("");
-            Console.WriteLine("       Sharpii.exe WAD [-p | -u | -e | -i] input output [arguments]");
+            Console.WriteLine("       ./Sharpii WAD [-p | -u | -e | -i] input output [arguments]");
             Console.WriteLine("");
             Console.WriteLine("");
             Console.WriteLine("  Arguments:");

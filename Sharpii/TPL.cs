@@ -275,7 +275,7 @@ namespace Sharpii
             Console.WriteLine("");
             Console.WriteLine("  Usage:");
             Console.WriteLine("");
-            Console.WriteLine("       Sharpii.exe TPL [-to | -from] input output [arguments]");
+            Console.WriteLine("       ./Sharpii TPL [-to | -from] input output [arguments]");
             Console.WriteLine("");
             Console.WriteLine("");
             Console.WriteLine("  Arguments:");

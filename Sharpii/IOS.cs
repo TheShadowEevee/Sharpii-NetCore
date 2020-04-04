@@ -353,7 +353,7 @@ namespace Sharpii
             Console.WriteLine("");
             Console.WriteLine("  Usage:");
             Console.WriteLine("");
-            Console.WriteLine("       Sharpii.exe IOS input [-o output] [-fs] [-es] [-np] [-vp] [-s slot]");
+            Console.WriteLine("       ./Sharpii IOS input [-o output] [-fs] [-es] [-np] [-vp] [-s slot]");
             Console.WriteLine("                             [-v version]");
             Console.WriteLine("");
             Console.WriteLine("");

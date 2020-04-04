@@ -289,7 +289,7 @@ namespace Sharpii
             Console.WriteLine("");
             Console.WriteLine("  Usage:");
             Console.WriteLine("");
-            Console.WriteLine("       Sharpii [function] [parameters] [-quiet | -q | -lots]");
+            Console.WriteLine("       ./Sharpii [function] [parameters] [-quiet | -q | -lots]");
             Console.WriteLine("");
             Console.WriteLine("");
             Console.WriteLine("  Functions:");

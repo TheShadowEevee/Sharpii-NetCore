@@ -561,7 +561,7 @@ namespace Sharpii
             Console.WriteLine("");
             Console.WriteLine("  Usage:");
             Console.WriteLine("");
-            Console.WriteLine("       Sharpii.exe NUSD [-id titleID | -ios IOS] [-v version] [-o output] [-all]");
+            Console.WriteLine("       ./Sharpii NUSD [-id titleID | -ios IOS] [-v version] [-o output] [-all]");
             Console.WriteLine("                        [-wad] [-decrypt] [-encrypt] [-local] [-s content]");
             Console.WriteLine("");
             Console.WriteLine("");

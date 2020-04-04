@@ -375,7 +375,7 @@ namespace Sharpii
             Console.WriteLine("");
             Console.WriteLine("  Usage:");
             Console.WriteLine("");
-            Console.WriteLine("       Sharpii EXITCODES [Exit]");
+            Console.WriteLine("       ./Sharpii EXITCODES [Exit]");
             Console.WriteLine("");
             Console.WriteLine("       Ex. \"Sharpii EXITCODES 16001\"");
             Console.WriteLine("");

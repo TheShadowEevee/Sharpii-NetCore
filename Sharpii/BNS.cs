@@ -224,7 +224,7 @@ namespace Sharpii
             Console.WriteLine("");
             Console.WriteLine("  Usage:");
             Console.WriteLine("");
-            Console.WriteLine("       Sharpii BNS [-to | -from] input.wav output.bns [-l/-loop] [-m/-mono]");
+            Console.WriteLine("       ./Sharpii BNS [-to | -from] input.wav output.bns [-l/-loop] [-m/-mono]");
             Console.WriteLine("");
             Console.WriteLine("");
             Console.WriteLine("  Arguments:");
