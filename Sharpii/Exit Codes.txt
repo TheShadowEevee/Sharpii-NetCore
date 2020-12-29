@@ -116,7 +116,7 @@ You used the -IMET flag, but no title was provided.
 Provide a proper title.
 
 Exit Code: 16022/24
-IMET and IMD5 Flags were used, but only one can be used. (SHARPII_NET_CORE_U8_TWO_HEADERS
+IMET and IMD5 Flags were used, but only one can be used. (SHARPII_NET_CORE_U8_TWO_HEADERS)
 You used the -IMET and -IMD5 flags, but you can't use two headers.
 Provide only one flag.
 

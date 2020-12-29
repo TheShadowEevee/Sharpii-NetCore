@@ -189,7 +189,7 @@ namespace Sharpii
             Console.WriteLine("       Errors         Get a Sharpii error's description");
             Console.WriteLine("       ExitCodes      List of all Sharpii exit codes");
             Console.WriteLine("");
-            Console.WriteLine("       NOTE: Too see more detailed descriptions of any of the above,");
+            Console.WriteLine("       NOTE: To see more detailed descriptions of any of the above,");
             Console.WriteLine("             use 'Sharpii [function] -h'");
             Console.WriteLine("");
             Console.WriteLine("");
@@ -236,7 +236,7 @@ public class BeQuiet
 }
 public class ProgramVersion
 {
-    public static string version = "1.1.1; .Net Core Port (Based on Sharpii 1.7.3)";
+    public static string version = "1.1.3; .Net Core Port (Based on Sharpii 1.7.3)";
 }
 public class Logging
 {
