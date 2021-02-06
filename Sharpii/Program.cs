@@ -65,9 +65,6 @@ namespace Sharpii
                     case "-LOTS":
                         BeQuiet.quiet = 3;
                         break;
-                    case "-NOLOG":
-                        Logging.log = 0;
-                        break;
                 }
             }
 
@@ -229,23 +226,14 @@ public class DeleteADir
 }
 public class BeQuiet
 {
-    //1 = little
-    //2 = normal
-    //3 = lots
+    //Little output = 1;
+    //Normal output = 2;
+    //Lots of output = 3;
     public static int quiet = 2;
 }
 public class ProgramVersion
 {
-    public static string version = "1.1.4; .Net Core Port (Based on Sharpii 1.7.3)";
-}
-public class Logging
-{
-    //By default, Sharpii should create a log.
-    //Using the option -NoLog will disable it.
-    //Everything should check this when it checks the BeQuiet.Quiet variable.
-
-    //This isn't used yet.
-    public static int log = 1;
+    public static string version = "1.1.5; .Net Core Port (Based on Sharpii 1.7.3)";
 }
 
 public static class OperatingSystem
