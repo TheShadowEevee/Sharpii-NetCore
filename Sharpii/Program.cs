@@ -35,23 +35,6 @@ namespace Sharpii
                 Environment.Exit(0);
             }
 
-            if (!File.Exists(Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory) + Path.DirectorySeparatorChar + "libWiiSharp.dll"))
-            {
-                Console.WriteLine("ERROR: libWiiSharp.dll not found");
-                Console.WriteLine("This should not appear on the .Net Core port.");
-                Console.WriteLine("If you see this, report how you got here on https://github.com/TheShadowEevee/Sharpii-NetCore/issues.");
-                Console.WriteLine("Error: SHARPII_NET_CORE_MAIN_MISSING_DLL_LIBWIISHARP_01");
-                if (OperatingSystem.Windows())
-                {
-                    Environment.Exit(0x00003E8F);
-                }
-                else
-                {
-                    Environment.Exit(0x00000011);
-                }
-                return;
-            }
-
             for (int i = 1; i < args.Length; i++)
             {
                 switch (args[i].ToUpper())
