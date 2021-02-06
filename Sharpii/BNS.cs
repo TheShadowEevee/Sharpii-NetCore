@@ -86,7 +86,7 @@ namespace Sharpii
                     Console.Write("Saving wav...");
 
                 if (output.Substring(output.Length - 4, 4).ToUpper() != ".WAV")
-                    output = output + ".wav";
+                    output += ".wav";
 
                 WavFile.Save(output);
 
@@ -187,7 +187,7 @@ namespace Sharpii
                 WavFile.Convert();
 
                 if (output.Substring(output.Length - 4, 4).ToUpper() != ".BNS")
-                    output = output + ".bns";
+                    output += ".bns";
 
                 WavFile.Save(output);
 
