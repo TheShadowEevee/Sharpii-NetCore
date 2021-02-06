@@ -81,7 +81,7 @@ namespace Sharpii
 
             //If tuser gets here, they entered something wrong
             Console.WriteLine("ERROR: The argument {0} is invalid", args[1]);
-            Console.WriteLine("Error: SHARPII_NET_CORE_WAD_INVALID_ARG_01");
+            Console.WriteLine("Error: SHARPII_NET_CORE_WAD_INVALID_ARG");
             if (OperatingSystem.Windows())
             {
                 Environment.Exit(0x00003E90);
@@ -105,7 +105,7 @@ namespace Sharpii
             {
                 Console.WriteLine("ERROR: Unable to open file: {0}", input);
                 Console.WriteLine("Either the file doesn't exist, or Sharpii doesn't have permission to open it.");
-                Console.WriteLine("Error: SHARPII_NET_CORE_WAD_FILE_ERR_01");
+                Console.WriteLine("Error: SHARPII_NET_CORE_WAD_FILE_ERR");
                 if (OperatingSystem.Windows())
                 {
                     Environment.Exit(0x00003E81);
@@ -125,7 +125,7 @@ namespace Sharpii
                         if (i + 1 >= args.Length)
                         {
                             Console.WriteLine("ERROR: No output set");
-                            Console.WriteLine("Error: SHARPII_NET_CORE_WAD_NO_OUTPUT_01");
+                            Console.WriteLine("Error: SHARPII_NET_CORE_WAD_NO_OUTPUT");
                             if (OperatingSystem.Windows())
                             {
                                 Environment.Exit(0x00003E8D);
@@ -142,7 +142,7 @@ namespace Sharpii
                         if (i + 1 >= args.Length)
                         {
                             Console.WriteLine("ERROR: No output set");
-                            Console.WriteLine("Error: SHARPII_NET_CORE_WAD_NO_OUTPUT_01");
+                            Console.WriteLine("Error: SHARPII_NET_CORE_WAD_NO_OUTPUT");
                             if (OperatingSystem.Windows())
                             {
                                 Environment.Exit(0x00003E8D);
@@ -243,7 +243,7 @@ namespace Sharpii
                 Console.WriteLine("An unknown error occured, please try again");
                 Console.WriteLine("");
                 Console.WriteLine("ERROR DETAILS: {0}", ex.Message);
-                Console.WriteLine("Error: SHARPII_NET_CORE_WAD_UNKNOWN_01");
+                Console.WriteLine("Error: SHARPII_NET_CORE_WAD_UNKNOWN");
                 if (OperatingSystem.Windows())
                 {
                     Environment.Exit(0x00003E82);
@@ -277,7 +277,7 @@ namespace Sharpii
                 {
                     Console.WriteLine("ERROR: Unable to open file: {0}", input);
                     Console.WriteLine("Either the file doesn't exist, or Sharpii doesn't have permission to open it.");
-                    Console.WriteLine("Error: SHARPII_NET_CORE_WAD_FILE_ERR_01");
+                    Console.WriteLine("Error: SHARPII_NET_CORE_WAD_FILE_ERR");
                     if (OperatingSystem.Windows())
                     {
                         Environment.Exit(0x00003E81);
@@ -293,7 +293,7 @@ namespace Sharpii
                 {
                     Console.WriteLine("ERROR: Unable to open folder: {0}", input);
                     Console.WriteLine("Either the folder doesn't exist, or Sharpii doesn't have permission to open it.");
-                    Console.WriteLine("Error: SHARPII_NET_CORE_WAD_FOLDER_ERR_01");
+                    Console.WriteLine("Error: SHARPII_NET_CORE_WAD_FOLDER_ERR");
                     if (OperatingSystem.Windows())
                     {
                         Environment.Exit(0x00003E94);
@@ -316,7 +316,7 @@ namespace Sharpii
                         if (i + 1 >= args.Length)
                         {
                             Console.WriteLine("ERROR: No ID set");
-                            Console.WriteLine("Error: SHARPII_NET_CORE_WAD_NO_ID_01");
+                            Console.WriteLine("Error: SHARPII_NET_CORE_WAD_NO_ID");
                             if (OperatingSystem.Windows())
                             {
                                 Environment.Exit(0x00003E8E);
@@ -331,7 +331,7 @@ namespace Sharpii
                         if (id.Length < 4)
                         {
                             Console.WriteLine("ERROR: ID too short");
-                            Console.WriteLine("Error: SHARPII_NET_CORE_WAD_SHORT_ID_01");
+                            Console.WriteLine("Error: SHARPII_NET_CORE_WAD_SHORT_ID");
                             if (OperatingSystem.Windows())
                             {
                                 Environment.Exit(0x00003E97);
@@ -348,7 +348,7 @@ namespace Sharpii
                         if (i + 1 >= args.Length)
                         {
                             Console.WriteLine("ERROR: No type set");
-                            Console.WriteLine("Error: SHARPII_NET_CORE_WAD_NO_TYPE_01");
+                            Console.WriteLine("Error: SHARPII_NET_CORE_WAD_NO_TYPE");
                             if (OperatingSystem.Windows())
                             {
                                 Environment.Exit(0x00003E98);
@@ -363,7 +363,7 @@ namespace Sharpii
                         if (lwrid != "CHANNEL" && lwrid != "DLC" && lwrid != "GAMECHANNEL" && lwrid != "HIDDENCHANNELS" && lwrid != "SYSTEMCHANNELS" && lwrid != "SYSTEMTITLES")
                         {
                             Console.WriteLine("ERROR: Unknown WAD type: {0}", args[i + 1]);
-                            Console.WriteLine("Error: SHARPII_NET_CORE_WAD_UNKNOWN_TYPE_01");
+                            Console.WriteLine("Error: SHARPII_NET_CORE_WAD_UNKNOWN_TYPE");
                             if (OperatingSystem.Windows())
                             {
                                 Environment.Exit(0x00003E99);
@@ -379,7 +379,7 @@ namespace Sharpii
                         if (i + 1 >= args.Length)
                         {
                             Console.WriteLine("ERROR: No type set");
-                            Console.WriteLine("Error: SHARPII_NET_CORE_WAD_NO_TYPE_01");
+                            Console.WriteLine("Error: SHARPII_NET_CORE_WAD_NO_TYPE");
                             if (OperatingSystem.Windows())
                             {
                                 Environment.Exit(0x00003E98);
@@ -393,7 +393,7 @@ namespace Sharpii
                         if (!int.TryParse(args[i + 1], out ios))
                         {
                             Console.WriteLine("Invalid slot {0}...", args[i + 1]);
-                            Console.WriteLine("Error: SHARPII_NET_CORE_WAD_INVALID_SLOT_01");
+                            Console.WriteLine("Error: SHARPII_NET_CORE_WAD_INVALID_SLOT");
                             if (OperatingSystem.Windows())
                             {
                                 Environment.Exit(0x00003E8A);
@@ -407,7 +407,7 @@ namespace Sharpii
                         if (ios < 0 || ios > 255)
                         {
                             Console.WriteLine("Invalid slot {0}...", ios);
-                            Console.WriteLine("Error: SHARPII_NET_CORE_WAD_INVALID_SLOT_01");
+                            Console.WriteLine("Error: SHARPII_NET_CORE_WAD_INVALID_SLOT");
                             Environment.Exit(0x00003E8A);
                             return;
                         }
@@ -416,7 +416,7 @@ namespace Sharpii
                         if (i + 1 >= args.Length)
                         {
                             Console.WriteLine("ERROR: No title set");
-                            Console.WriteLine("Error: SHARPII_NET_CORE_WAD_NO_TITLE_01");
+                            Console.WriteLine("Error: SHARPII_NET_CORE_WAD_NO_TITLE");
                             Environment.Exit(0x00003E95);
                             return;
                         }
@@ -426,7 +426,7 @@ namespace Sharpii
                         if (i + 1 >= args.Length)
                         {
                             Console.WriteLine("ERROR: No sound set");
-                            Console.WriteLine("Error: SHARPII_NET_CORE_WAD_NO_SOUND_01");
+                            Console.WriteLine("Error: SHARPII_NET_CORE_WAD_NO_SOUND");
                             if (OperatingSystem.Windows())
                             {
                                 Environment.Exit(0x00003E9A);
@@ -442,7 +442,7 @@ namespace Sharpii
                         {
                             Console.WriteLine("ERROR: Unable to find sound wad");
                             Console.WriteLine("Either the file doesn't exist, or Sharpii doesn't have permission to open it.");
-                            Console.WriteLine("Error: SHARPII_NET_CORE_WAD_FILE_ERR_01");
+                            Console.WriteLine("Error: SHARPII_NET_CORE_WAD_FILE_ERR");
                             if (OperatingSystem.Windows())
                             {
                                 Environment.Exit(0x00003E81);
@@ -458,7 +458,7 @@ namespace Sharpii
                         if (i + 1 >= args.Length)
                         {
                             Console.WriteLine("ERROR: No banner set");
-                            Console.WriteLine("Error: SHARPII_NET_CORE_WAD_NO_BANNER_01");
+                            Console.WriteLine("Error: SHARPII_NET_CORE_WAD_NO_BANNER");
                             if (OperatingSystem.Windows())
                             {
                                 Environment.Exit(0x00003E9B);
@@ -474,7 +474,7 @@ namespace Sharpii
                         {
                             Console.WriteLine("ERROR: Unable to find banner wad");
                             Console.WriteLine("Either the file doesn't exist, or Sharpii doesn't have permission to open it.");
-                            Console.WriteLine("Error: SHARPII_NET_CORE_WAD_FILE_ERR_01");
+                            Console.WriteLine("Error: SHARPII_NET_CORE_WAD_FILE_ERR");
                             if (OperatingSystem.Windows())
                             {
                                 Environment.Exit(0x00003E81);
@@ -490,7 +490,7 @@ namespace Sharpii
                         if (i + 1 >= args.Length)
                         {
                             Console.WriteLine("ERROR: No sound set");
-                            Console.WriteLine("Error: SHARPII_NET_CORE_WAD_NO_SOUND_01");
+                            Console.WriteLine("Error: SHARPII_NET_CORE_WAD_NO_SOUND");
                             if (OperatingSystem.Windows())
                             {
                                 Environment.Exit(0x00003E9A);
@@ -506,7 +506,7 @@ namespace Sharpii
                         {
                             Console.WriteLine("ERROR: Unable to find icon wad");
                             Console.WriteLine("Either the file doesn't exist, or Sharpii doesn't have permission to open it.");
-                            Console.WriteLine("Error: SHARPII_NET_CORE_WAD_FILE_ERR_01");
+                            Console.WriteLine("Error: SHARPII_NET_CORE_WAD_FILE_ERR");
                             if (OperatingSystem.Windows())
                             {
                                 Environment.Exit(0x00003E81);
@@ -522,7 +522,7 @@ namespace Sharpii
                         if (i + 1 >= args.Length)
                         {
                             Console.WriteLine("ERROR: No dol set");
-                            Console.WriteLine("Error: SHARPII_NET_CORE_WAD_NO_DOL_01");
+                            Console.WriteLine("Error: SHARPII_NET_CORE_WAD_NO_DOL");
                             if (OperatingSystem.Windows())
                             {
                                 Environment.Exit(0x00003E84);
@@ -538,7 +538,7 @@ namespace Sharpii
                         {
                             Console.WriteLine("ERROR: Unable to find dol wad/file");
                             Console.WriteLine("Either the file doesn't exist, or Sharpii doesn't have permission to open it.");
-                            Console.WriteLine("Error: SHARPII_NET_CORE_WAD_FILE_ERR_01");
+                            Console.WriteLine("Error: SHARPII_NET_CORE_WAD_FILE_ERR");
                             if (OperatingSystem.Windows())
                             {
                                 Environment.Exit(0x00003E81);
@@ -739,7 +739,7 @@ namespace Sharpii
                 {
                     Console.WriteLine("You need to have all the required .app files, a tmd file, a tik file, and a cert file to do this.");
                     Console.WriteLine("");
-                    Console.WriteLine("Error: SHARPII_NET_CORE_NUSD_MISSING_FILES_01");
+                    Console.WriteLine("Error: SHARPII_NET_CORE_NUSD_MISSING_FILES");
                     ExceptionListRan = 1;
                     if (OperatingSystem.Windows())
                     {
@@ -755,7 +755,7 @@ namespace Sharpii
                     Console.WriteLine("An unknown error occured, please try again");
                     Console.WriteLine("");
                     Console.WriteLine("ERROR DETAILS: {0}", ex.Message);
-                    Console.WriteLine("Error: SHARPII_NET_CORE_WAD_UNKNOWN_01");
+                    Console.WriteLine("Error: SHARPII_NET_CORE_WAD_UNKNOWN");
                     if (OperatingSystem.Windows())
                     {
                         Environment.Exit(0x00003E82);
@@ -780,7 +780,7 @@ namespace Sharpii
             {
                 Console.WriteLine("ERROR: Unable to open file: {0}", input);
                 Console.WriteLine("Either the file doesn't exist, or Sharpii doesn't have permission to open it.");
-                Console.WriteLine("Error: SHARPII_NET_CORE_WAD_FILE_ERR_01");
+                Console.WriteLine("Error: SHARPII_NET_CORE_WAD_FILE_ERR");
                 if (OperatingSystem.Windows())
                 {
                     Environment.Exit(0x00003E81);
@@ -832,7 +832,7 @@ namespace Sharpii
                 Console.WriteLine("An unknown error occured, please try again");
                 Console.WriteLine("");
                 Console.WriteLine("ERROR DETAILS: {0}", ex.Message);
-                Console.WriteLine("Error: SHARPII_NET_CORE_WAD_UNKNOWN_01");
+                Console.WriteLine("Error: SHARPII_NET_CORE_WAD_UNKNOWN");
                 if (OperatingSystem.Windows())
                 {
                     Environment.Exit(0x00003E82);

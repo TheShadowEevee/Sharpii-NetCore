@@ -122,7 +122,7 @@ namespace Sharpii
             {
                 //If the user gets here, they entered something wrong
                 Console.WriteLine("ERROR: The argument {0} is invalid", args[0]);
-                Console.WriteLine("Error: SHARPII_NET_CORE_MAIN_INVALID_ARG_01");
+                Console.WriteLine("Error: SHARPII_NET_CORE_MAIN_INVALID_ARG");
                 if (OperatingSystem.Windows())
                 {
                     Environment.Exit(0x00003E90);

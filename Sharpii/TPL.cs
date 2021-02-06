@@ -48,7 +48,7 @@ namespace Sharpii
 
             //If tuser gets here, they entered something wrong
             Console.WriteLine("ERROR: The argument {0} is invalid", args[1]);
-            Console.WriteLine("Error: SHARPII_NET_CORE_TPL_INVALID_ARG_01");
+            Console.WriteLine("Error: SHARPII_NET_CORE_TPL_INVALID_ARG");
             if (OperatingSystem.Windows())
             {
                 Environment.Exit(0x00003E90);
@@ -71,7 +71,7 @@ namespace Sharpii
             {
                 Console.WriteLine("ERROR: Unable to open file: {0}", input);
                 Console.WriteLine("Either the file doesn't exist, or Sharpii doesn't have permission to open it.");
-                Console.WriteLine("Error: SHARPII_NET_CORE_TPL_FILE_ERR_01");
+                Console.WriteLine("Error: SHARPII_NET_CORE_TPL_FILE_ERR");
                 if (OperatingSystem.Windows())
                 {
                     Environment.Exit(0x00003E81);
@@ -112,7 +112,7 @@ namespace Sharpii
                 Console.WriteLine("An unknown error occured, please try again");
                 Console.WriteLine("");
                 Console.WriteLine("ERROR DETAILS: {0}", ex.Message);
-                Console.WriteLine("Error: SHARPII_NET_CORE_TPL_UNKNOWN_01");
+                Console.WriteLine("Error: SHARPII_NET_CORE_TPL_UNKNOWN");
                 if (OperatingSystem.Windows())
                 {
                     Environment.Exit(0x00003E81);
@@ -137,7 +137,7 @@ namespace Sharpii
             {
                 Console.WriteLine("ERROR: Unable to open file: {0}", input);
                 Console.WriteLine("Either the file doesn't exist, or Sharpii doesn't have permission to open it.");
-                Console.WriteLine("Error: SHARPII_NET_CORE_TPL_FILE_ERR_01");
+                Console.WriteLine("Error: SHARPII_NET_CORE_TPL_FILE_ERR");
                 if (OperatingSystem.Windows())
                 {
                     Environment.Exit(0x00003E81);
@@ -158,7 +158,7 @@ namespace Sharpii
                         if (i + 1 >= args.Length)
                         {
                             Console.WriteLine("ERROR: No format set");
-                            Console.WriteLine("Error: SHARPII_NET_CORE_TPL_NO_FORMAT_01");
+                            Console.WriteLine("Error: SHARPII_NET_CORE_TPL_NO_FORMAT");
                             if (OperatingSystem.Windows())
                             {
                                 Environment.Exit(0x00003E91);
@@ -175,7 +175,7 @@ namespace Sharpii
                         if (i + 1 >= args.Length)
                         {
                             Console.WriteLine("ERROR: No format set");
-                            Console.WriteLine("Error: SHARPII_NET_CORE_TPL_NO_FORMAT_01");
+                            Console.WriteLine("Error: SHARPII_NET_CORE_TPL_NO_FORMAT");
                             if (OperatingSystem.Windows())
                             {
                                 Environment.Exit(0x00003E91);
@@ -195,7 +195,7 @@ namespace Sharpii
             if (tplFormat != "I4" & tplFormat != "I8" & tplFormat != "IA4" & tplFormat != "IA8" & tplFormat != "RGB565" & tplFormat != "RGB5A3" & tplFormat != "RGBA8")
             {
                 Console.WriteLine("ERROR: Unknown format type: {0}", tplFormat);
-                Console.WriteLine("Error: SHARPII_NET_CORE_TPL_UNKNOWN_FORMAT_01");
+                Console.WriteLine("Error: SHARPII_NET_CORE_TPL_UNKNOWN_FORMAT");
                 Environment.Exit(0x00003E92);
                 return;
             }
@@ -253,7 +253,7 @@ namespace Sharpii
                 Console.WriteLine("An unknown error occured, please try again");
                 Console.WriteLine("");
                 Console.WriteLine("ERROR DETAILS: {0}", ex.Message);
-                Console.WriteLine("Error: SHARPII_NET_CORE_TPL_UNKNOWN_01");
+                Console.WriteLine("Error: SHARPII_NET_CORE_TPL_UNKNOWN");
                 if (OperatingSystem.Windows())
                 {
                     Environment.Exit(0x00003E82);

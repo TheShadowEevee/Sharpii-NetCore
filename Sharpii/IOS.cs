@@ -45,7 +45,7 @@ namespace Sharpii
             {
                 Console.WriteLine("ERROR: Unable to open file: {0}", input);
                 Console.WriteLine("Either the file doesn't exist, or Sharpii doesn't have permission to open it.");
-                Console.WriteLine("Error: SHARPII_NET_CORE_IOS_FILE_ERR_01");
+                Console.WriteLine("Error: SHARPII_NET_CORE_IOS_FILE_ERR");
                 if (OperatingSystem.Windows())
                 {
                     Environment.Exit(0x00003E81);
@@ -78,7 +78,7 @@ namespace Sharpii
                         if (i + 1 >= args.Length)
                         {
                             Console.WriteLine("ERROR: No slot set");
-                            Console.WriteLine("Error: SHARPII_NET_CORE_IOS_NO_SLOT_01");
+                            Console.WriteLine("Error: SHARPII_NET_CORE_IOS_NO_SLOT");
                             if (OperatingSystem.Windows())
                             {
                                 Environment.Exit(0x00003E89);
@@ -92,7 +92,7 @@ namespace Sharpii
                         if (!int.TryParse(args[i + 1], out slot))
                         { 
                             Console.WriteLine("Invalid slot {0}...", args[i + 1]);
-                            Console.WriteLine("Error: SHARPII_NET_CORE_IOS_INVALID_SLOT_01");
+                            Console.WriteLine("Error: SHARPII_NET_CORE_IOS_INVALID_SLOT");
                             if (OperatingSystem.Windows())
                             {
                                 Environment.Exit(0x00003E8A);
@@ -106,7 +106,7 @@ namespace Sharpii
                         if (slot < 3 || slot > 255)
                         { 
                             Console.WriteLine("Invalid slot {0}...", slot);
-                            Console.WriteLine("Error: SHARPII_NET_CORE_IOS_INVALID_SLOT_01");
+                            Console.WriteLine("Error: SHARPII_NET_CORE_IOS_INVALID_SLOT");
                             if (OperatingSystem.Windows())
                             {
                                 Environment.Exit(0x00003E8A);
@@ -122,7 +122,7 @@ namespace Sharpii
                         if (i + 1 >= args.Length)
                         {
                             Console.WriteLine("ERROR: No slot set");
-                            Console.WriteLine("Error: SHARPII_NET_CORE_IOS_NO_SLOT_01");
+                            Console.WriteLine("Error: SHARPII_NET_CORE_IOS_NO_SLOT");
                             if (OperatingSystem.Windows())
                             {
                                 Environment.Exit(0x00003E89);
@@ -136,7 +136,7 @@ namespace Sharpii
                         if (!int.TryParse(args[i + 1], out slot))
                         {
                             Console.WriteLine("Invalid slot {0}...", args[i + 1]);
-                            Console.WriteLine("Error: SHARPII_NET_CORE_IOS_INVALID_SLOT_01");
+                            Console.WriteLine("Error: SHARPII_NET_CORE_IOS_INVALID_SLOT");
                             if (OperatingSystem.Windows())
                             {
                                 Environment.Exit(0x00003E8A);
@@ -150,7 +150,7 @@ namespace Sharpii
                         if (slot < 3 || slot > 255)
                         {
                             Console.WriteLine("Invalid slot {0}...", slot);
-                            Console.WriteLine("Error: SHARPII_NET_CORE_IOS_INVALID_SLOT_01");
+                            Console.WriteLine("Error: SHARPII_NET_CORE_IOS_INVALID_SLOT");
                             if (OperatingSystem.Windows())
                             {
                                 Environment.Exit(0x00003E8A);
@@ -166,7 +166,7 @@ namespace Sharpii
                         if (i + 1 >= args.Length)
                         {
                             Console.WriteLine("ERROR: No version set");
-                            Console.WriteLine("Error: SHARPII_NET_CORE_IOS_NO_VERSION_01");
+                            Console.WriteLine("Error: SHARPII_NET_CORE_IOS_NO_VERSION");
                             if (OperatingSystem.Windows())
                             {
                                 Environment.Exit(0x00003E8B);
@@ -180,7 +180,7 @@ namespace Sharpii
                         if (!int.TryParse(args[i + 1], out version))
                         { 
                             Console.WriteLine("Invalid version {0}...", args[i + 1]);
-                            Console.WriteLine("Error: SHARPII_NET_CORE_IOS_INVALID_VERSION_01");
+                            Console.WriteLine("Error: SHARPII_NET_CORE_IOS_INVALID_VERSION");
                             if (OperatingSystem.Windows())
                             {
                                 Environment.Exit(0x00003E8C);
@@ -194,7 +194,7 @@ namespace Sharpii
                         if (version < 0 || version > 65535)
                         { 
                             Console.WriteLine("Invalid version {0}...", version);
-                            Console.WriteLine("Error: SHARPII_NET_CORE_IOS_INVALID_VERSION_01");
+                            Console.WriteLine("Error: SHARPII_NET_CORE_IOS_INVALID_VERSION");
                             if (OperatingSystem.Windows())
                             {
                                 Environment.Exit(0x00003E8C);
@@ -210,7 +210,7 @@ namespace Sharpii
                         if (i + 1 >= args.Length)
                         {
                             Console.WriteLine("ERROR: No output set");
-                            Console.WriteLine("Error: SHARPII_NET_CORE_IOS_NO_OUTPUT_01");
+                            Console.WriteLine("Error: SHARPII_NET_CORE_IOS_NO_OUTPUT");
                             if (OperatingSystem.Windows())
                             {
                                 Environment.Exit(0x00003E8D);
@@ -330,7 +330,7 @@ namespace Sharpii
                 Console.WriteLine("An unknown error occured, please try again");
                 Console.WriteLine("");
                 Console.WriteLine("ERROR DETAILS: {0}", ex.Message);
-                Console.WriteLine("Error: SHARPII_NET_CORE_IOS_UNKNOWN_01");
+                Console.WriteLine("Error: SHARPII_NET_CORE_IOS_UNKNOWN");
                 if (OperatingSystem.Windows())
                 {
                     Environment.Exit(0x00003E82);
