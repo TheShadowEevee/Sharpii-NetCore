@@ -18,9 +18,6 @@
 
 using System;
 using System.IO;
-using System.Net;
-using libWiiSharp;
-using System.Diagnostics;
 using System.Runtime.InteropServices;
 
 namespace Sharpii

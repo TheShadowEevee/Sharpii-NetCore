@@ -320,6 +320,23 @@ namespace Sharpii
                     }
                     return;
                 }
+                if (ex.Message == "The remote server returned an error: (404) Not Found.")
+                {
+                    Console.WriteLine("");
+                    Console.WriteLine("The remote server returned a 404 error. Check your Title ID.");
+                    Console.WriteLine("");
+                    Console.WriteLine("Error: SHARPII_NET_CORE_NUSD_REMOTE_404");
+                    Console.WriteLine("");
+                    if (OperatingSystem.Windows())
+                    {
+                        Environment.Exit(0x00003E9E);
+                    }
+                    else
+                    {
+                        Environment.Exit(0x00000020);
+                    }
+                    return;
+                }
                 if (ExceptionListRan == 0)
                 {
                     Console.WriteLine("An unknown error occured, please try again");
