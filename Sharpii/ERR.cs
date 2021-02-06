@@ -17,8 +17,6 @@
 */
 
 using System;
-using System.IO;
-using libWiiSharp;
 
 namespace Sharpii
 {
