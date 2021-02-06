@@ -25,6 +25,7 @@ namespace Sharpii
 {
     partial class NUS_Stuff
     {
+        public static int ExceptionListRan = 0;
         public static void NUS(string[] args)
         {
             if (args.Length < 2)
@@ -319,20 +320,19 @@ namespace Sharpii
                     }
                     return;
                 }
-                if (ex.Message == "The remote server returned an error: (404) Not Found.")
+                if (ExceptionListRan == 0)
                 {
+                    Console.WriteLine("An unknown error occured, please try again");
                     Console.WriteLine("");
-                    Console.WriteLine("The ID is not a valid title ID");
-                    Console.WriteLine("");
-                    Console.WriteLine("Error: SHARPII_NET_CORE_NUSD_BAD_ID_01");
-                    Console.WriteLine("");
+                    Console.WriteLine("ERROR DETAILS: {0}", ex.Message);
+                    Console.WriteLine("Error: SHARPII_NET_CORE_NUSD_UNKNOWN_01");
                     if (OperatingSystem.Windows())
                     {
-                        Environment.Exit(0x00003E9C);
+                        Environment.Exit(0x00003E82);
                     }
                     else
                     {
-                        Environment.Exit(0x0000001E);
+                        Environment.Exit(0x00000004);
                     }
                     return;
                 }
@@ -394,11 +394,11 @@ namespace Sharpii
                 {
                     if (BeQuiet.quiet > 1)
                         Console.Write("Downloading title...");
-                    
+
                     string realout = output;
                     if (wad == true)
                         output = temp;
-                    
+
                     nus.DownloadTitle(id, version, output, store.ToArray());
 
                     WadIosNamingStuff(wad, temp, id, version, ios, NoOut, output, realout);
@@ -412,19 +412,71 @@ namespace Sharpii
             }
             catch (Exception ex)
             {
-                Console.WriteLine("An unknown error occured, please try again");
-                Console.WriteLine("");
-                Console.WriteLine("ERROR DETAILS: {0}", ex.Message);
-                Console.WriteLine("Error: SHARPII_NET_CORE_NUSD_UNKNOWN_01");
-                if (OperatingSystem.Windows())
+                if (ex.Message == "CETK Doesn't Exist and Downloading Ticket Failed:\nThe remote server returned an error: (404) Not Found.")
                 {
-                    Environment.Exit(0x00003E82);
+                    Console.WriteLine("");
+                    Console.WriteLine("The remote server returned a 404 error. Check your Title ID.");
+                    Console.WriteLine("If you have a CETK file, please place it in the same directory as Sharpii saves the NUS Files to.");
+                    Console.WriteLine("Error: SHARPII_NET_CORE_NUSD_REMOTE_404");
+                    Console.WriteLine("");
+                    if (OperatingSystem.Windows())
+                    {
+                        Environment.Exit(0x00003E9E);
+                    }
+                    else
+                    {
+                        Environment.Exit(0x00000020);
+                    }
+                    return;
                 }
-                else
+                if (ex.Message == "Title ID must be 16 characters long!")
                 {
-                    Environment.Exit(0x00000004);
+                    Console.WriteLine("");
+                    Console.WriteLine("The ID needs to be 16 Characters.");
+                    Console.WriteLine("");
+                    Console.WriteLine("Error: SHARPII_NET_CORE_NUSD_BAD_ID_01");
+                    Console.WriteLine("");
+                    if (OperatingSystem.Windows())
+                    {
+                        Environment.Exit(0x00003E9C);
+                    }
+                    else
+                    {
+                        Environment.Exit(0x0000001E);
+                    }
+                    return;
                 }
-                return;
+                if (ex.Message == "Index was outside the bounds of the array.")
+                {
+                    Console.WriteLine("A WebRequest Error occurred. This usually means that Sharpii can not properly download the file.");
+                    Console.WriteLine("Please ensure you have the proper permissions.");
+                    Console.WriteLine("Error: SHARPII_NET_CORE_NUSD_MISSING_FILES_01");
+                    ExceptionListRan = 1;
+                    if (OperatingSystem.Windows())
+                    {
+                        Environment.Exit(0x00003E9D);
+                    }
+                    else
+                    {
+                        Environment.Exit(0x0000001F);
+                    }
+                }
+                if (ExceptionListRan == 0)
+                {
+                    Console.WriteLine("An unknown error occured, please try again");
+                    Console.WriteLine("");
+                    Console.WriteLine("ERROR DETAILS: {0}", ex.Message);
+                    Console.WriteLine("Error: SHARPII_NET_CORE_NUSD_UNKNOWN_01");
+                    if (OperatingSystem.Windows())
+                    {
+                        Environment.Exit(0x00003E82);
+                    }
+                    else
+                    {
+                        Environment.Exit(0x00000004);
+                    }
+                    return;
+                }
             }
 
             return;

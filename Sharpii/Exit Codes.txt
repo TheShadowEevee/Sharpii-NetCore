@@ -154,3 +154,8 @@ Exit Code: 16029/31
 Not all files needed to pack a wad are present. (SHARPII_NET_CORE_NUSD_MISSING_FILES_01)
 You need to have all the required .app files, a tmd file, a tik file, and a cert file to pack a wad.
 Ensure all files are present.
+
+Exit Code: 16030/32
+Invalid ID or Missing CETK (SHARPII_NET_CORE_NUSD_REMOTE_404)
+The remote server returned a 404 error. Check your Title ID.
+If you have a CETK file, please place it in the same directory as Sharpii saves the NUS Files to.
