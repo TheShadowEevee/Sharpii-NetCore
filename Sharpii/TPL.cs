@@ -238,7 +238,7 @@ namespace Sharpii
                     Console.Write("Saving tpl file...");
 
                 if (output.Substring(output.Length - 4, 4).ToUpper() != ".TPL")
-                    output = output + ".tpl";
+                    output += ".tpl";
 
                 tplfile.Save(output);
 

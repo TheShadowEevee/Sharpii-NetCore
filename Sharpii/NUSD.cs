@@ -379,7 +379,7 @@ namespace Sharpii
             if (output == "")
             {
                 NoOut = true;
-                output = ios == "" ? id + "v" + version : ios.Substring(0, ios.Length - 4);
+                output = ios == "" ? id + "v" + version : ios[0..^4];
                 if (BeQuiet.quiet > 2)
                     Console.WriteLine("No output specified, using {0}", output);
             }
@@ -558,21 +558,18 @@ namespace Sharpii
                     if (File.Exists(realout.Substring(0, index + 1) + ios))
                         File.Delete(realout.Substring(0, index + 1) + ios);
                     File.Move(Path.Combine(temp, id.ToUpper() + "v" + version + ".wad"), realout.Substring(0, index + 1) + ios);
-                    OperationDone = true;
                 }
                 else if (ios == "" && NoOut == true && LowercaseWad == false)
                 {
                     if (File.Exists(realout + ".wad"))
                         File.Delete(realout + ".wad");
                     File.Move(Path.Combine(temp, id.ToUpper() + "v" + version + ".wad"), realout + ".wad");
-                    OperationDone = true;
                 }
                 else if (LowercaseWad == false && OperationDone == false)
                 {
                     if (File.Exists(realout))
                         File.Delete(realout);
                     File.Move(Path.Combine(temp, id.ToUpper() + "v" + version + ".wad"), realout);
-                    OperationDone = true;
                 }
                 else if (ios != "" && NoOut == true && LowercaseWad == true)
                 {
@@ -580,21 +577,18 @@ namespace Sharpii
                     if (File.Exists(realout.Substring(0, index + 1) + ios))
                         File.Delete(realout.Substring(0, index + 1) + ios);
                     File.Move(Path.Combine(temp, id.ToLower() + "v" + version + ".wad"), realout.Substring(0, index + 1) + ios);
-                    OperationDone = true;
                 }
                 else if (ios == "" && NoOut == true && LowercaseWad == true)
                 {
                     if (File.Exists(realout + ".wad"))
                         File.Delete(realout + ".wad");
                     File.Move(Path.Combine(temp, id.ToLower() + "v" + version + ".wad"), realout + ".wad");
-                    OperationDone = true;
                 }
                 else if (LowercaseWad == true && OperationDone == false)
                 {
                     if (File.Exists(realout))
                         File.Delete(realout);
                     File.Move(Path.Combine(temp, id.ToLower() + "v" + version + ".wad"), realout);
-                    OperationDone = true;
                 }
                 DeleteADir.DeleteDirectory(temp);
             }

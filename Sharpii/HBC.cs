@@ -108,8 +108,8 @@ namespace Sharpii
                         {
                             for (int n = i + 2; n < args.Length; n++)
                             {
-                                arguments = arguments + "\x0000";
-                                arguments = arguments + args[n];
+                                arguments += "\x0000";
+                                arguments += args[n];
                             }
                         }
                         break;

@@ -229,8 +229,10 @@ namespace Sharpii
             //Main part (most of it was borrowed from PatchIOS)
             try
             {
-                WAD ios = new WAD();
-                ios.KeepOriginalFooter = true;
+                WAD ios = new WAD
+                {
+                    KeepOriginalFooter = true
+                };
 
                 if (BeQuiet.quiet > 2)
                     Console.Write("Loading File...");
@@ -312,7 +314,7 @@ namespace Sharpii
                     if (output != "")
                     {
                         if (output.Substring(output.Length - 4, 4).ToUpper() != ".WAD")
-                            output = output + ".wad";
+                            output += ".wad";
                     }
 
                     ios.Save(input);

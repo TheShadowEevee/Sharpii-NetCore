@@ -28,7 +28,7 @@ namespace Sharpii
         {
             if (args.Length < 1)
             {
-                help();
+                Help();
                 Environment.Exit(0);
             }
 
@@ -53,7 +53,7 @@ namespace Sharpii
 
             if (Function == "-H" || Function == "-HELP" || Function == "H" || Function == "HELP")
             {
-                help();
+                Help();
                 gotSomewhere = true;
             }
 
@@ -141,7 +141,7 @@ namespace Sharpii
             Environment.Exit(0);
         }
 
-        private static void help()
+        private static void Help()
         {
             Console.WriteLine("");
             Console.WriteLine("Sharpii {0} - A tool by person66, using libWiiSharp.dll by leathl", ProgramVersion.version);

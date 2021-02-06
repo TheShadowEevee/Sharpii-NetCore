@@ -192,7 +192,7 @@ namespace Sharpii
                         Console.WriteLine("   Korean: {0}\n", wad.ChannelTitles[7]);
                     }
                     Console.WriteLine("Title ID: {0}", wad.UpperTitleID);
-                    Console.WriteLine("Full Title ID: {0}", wad.TitleID.ToString("X16").Substring(0, 8) + "-" + wad.TitleID.ToString("X16").Substring(8));
+                    Console.WriteLine("Full Title ID: {0}", wad.TitleID.ToString("X16").Substring(0, 8) + "-" + wad.TitleID.ToString("X16")[8..]);
                     Console.WriteLine("IOS: {0}", ((int)wad.StartupIOS).ToString());
                     Console.WriteLine("Region: {0}", wad.Region);
                     Console.WriteLine("Version: {0}", wad.TitleVersion);
@@ -204,7 +204,7 @@ namespace Sharpii
                         Console.Write("Saving file...");
 
                     if (output.Substring(output.Length - 4, 4).ToUpper() != ".TXT")
-                        output = output + ".txt";
+                        output += ".txt";
                     
                     TextWriter txt = new StreamWriter(output);
                     txt.WriteLine("WAD Info:");
@@ -224,7 +224,7 @@ namespace Sharpii
                         txt.WriteLine("     Korean: {0}", wad.ChannelTitles[7]);
                     }
                     txt.WriteLine("Title ID: {0}", wad.UpperTitleID);
-                    txt.WriteLine("Full Title ID: {0}", wad.TitleID.ToString("X16").Substring(0, 8) + "-" + wad.TitleID.ToString("X16").Substring(8));
+                    txt.WriteLine("Full Title ID: {0}", wad.TitleID.ToString("X16").Substring(0, 8) + "-" + wad.TitleID.ToString("X16")[8..]);
                     txt.WriteLine("IOS: {0}", ((int)wad.StartupIOS).ToString());
                     txt.WriteLine("Region: {0}", wad.Region);
                     txt.WriteLine("Version: {0}", wad.TitleVersion);
@@ -723,7 +723,7 @@ namespace Sharpii
                     Console.Write("Saving file...");
 
                 if (output.Substring(output.Length - 4, 4).ToUpper() != ".WAD")
-                    output = output + ".wad";
+                    output += ".wad";
 
                 wad.Save(output);
 
