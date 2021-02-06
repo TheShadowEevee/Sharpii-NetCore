@@ -446,19 +446,19 @@ namespace Sharpii
                     }
                     return;
                 }
-                if (ex.Message == "Index was outside the bounds of the array.")
+                if (ex.Message == "ERROR DETAILS: Downloading Content Failed:\nAn exception occurred during a WebClient request.")
                 {
-                    Console.WriteLine("A WebRequest Error occurred. This usually means that Sharpii can not properly download the file.");
+                    Console.WriteLine("A WebClient Request Error occurred. This usually means that Sharpii can not properly download the file.");
                     Console.WriteLine("Please ensure you have the proper permissions.");
-                    Console.WriteLine("Error: SHARPII_NET_CORE_NUSD_MISSING_FILES_01");
+                    Console.WriteLine("Error: SHARPII_NET_CORE_NUSD_WEBREQUEST_FAIL");
                     ExceptionListRan = 1;
                     if (OperatingSystem.Windows())
                     {
-                        Environment.Exit(0x00003E9D);
+                        Environment.Exit(0x00003E9F);
                     }
                     else
                     {
-                        Environment.Exit(0x0000001F);
+                        Environment.Exit(0x00000021);
                     }
                 }
                 if (ExceptionListRan == 0)

@@ -159,3 +159,8 @@ Exit Code: 16030/32
 Invalid ID or Missing CETK (SHARPII_NET_CORE_NUSD_REMOTE_404)
 The remote server returned a 404 error. Check your Title ID.
 If you have a CETK file, please place it in the same directory as Sharpii saves the NUS Files to.
+
+Exit Code: 16031/33
+A WebRequest error has occured and stopped a NUS download. (SHARPII_NET_CORE_NUSD_WEBREQUEST_FAIL)
+A WebRequest Error occurred. This usually means that Sharpii can not properly download and save the file.
+Please ensure you have the proper permissions to use the current folder or files.
