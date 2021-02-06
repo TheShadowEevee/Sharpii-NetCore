@@ -143,7 +143,7 @@ namespace Sharpii
 
             if (gotSomewhere == false)
             {
-                //If tuser gets here, they entered something wrong
+                //If the user gets here, they entered something wrong
                 Console.WriteLine("ERROR: The argument {0} is invalid", args[0]);
                 Console.WriteLine("Error: SHARPII_NET_CORE_MAIN_INVALID_ARG_01");
                 if (OperatingSystem.Windows())
@@ -236,7 +236,7 @@ public class BeQuiet
 }
 public class ProgramVersion
 {
-    public static string version = "1.1.3; .Net Core Port (Based on Sharpii 1.7.3)";
+    public static string version = "1.1.4; .Net Core Port (Based on Sharpii 1.7.3)";
 }
 public class Logging
 {
