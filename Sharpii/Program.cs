@@ -89,7 +89,7 @@ namespace Sharpii
 
             if (Function == "NUS" || Function == "NUSD")
             {
-                NUS_Stuff.NUS(args);
+                NUS_Stuff.NUS(args, false);
                 gotSomewhere = true;
             }
 

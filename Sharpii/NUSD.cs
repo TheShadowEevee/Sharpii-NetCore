@@ -26,7 +26,8 @@ namespace Sharpii
     partial class NUS_Stuff
     {
         public static int ExceptionListRan = 0;
-        public static void NUS(string[] args)
+        public static bool SecondRun;
+        public static void NUS(string[] args, bool SecondRun)
         {
             if (args.Length < 2)
             {
@@ -52,6 +53,13 @@ namespace Sharpii
             bool NoOut = false;
             string ios = "";
             string temp = Path.GetTempPath() + "Sharpii.tmp";
+            bool ContinueWithoutTicket = false;
+
+            //Remove need for CETK
+            if (SecondRun == true)
+            {
+                ContinueWithoutTicket = true;
+            }
 
             //Get arguments
             for (int i = 1; i < args.Length; i++)
@@ -395,7 +403,13 @@ namespace Sharpii
                         Console.WriteLine("Using local files if present...");
                     nus.UseLocalFiles = true;
                 }
-
+                
+                if (ContinueWithoutTicket == true)
+                {
+                    if (BeQuiet.quiet > 2)
+                        Console.WriteLine("Attempting Download without ticket");
+                    nus.ContinueWithoutTicket = true;
+                }
 
                 if (content != "")
                 {
@@ -410,32 +424,41 @@ namespace Sharpii
                 else
                 {
                     if (BeQuiet.quiet > 1)
-                        Console.Write("Downloading title...");
+                        Console.Write("Downloading title...\n");
 
                     string realout = output;
-                    if (wad == true)
+                    if (wad == true && !SecondRun)
                         output = temp;
 
                     nus.DownloadTitle(id, version, output, store.ToArray());
 
-                    WadIosNamingStuff(wad, temp, id, version, ios, NoOut, output, realout);
+                    WadIosNamingStuff(wad, temp, id, version, ios, NoOut, output, realout, SecondRun);
 
                     if (BeQuiet.quiet > 1)
                         Console.Write("Done!\n");
                 }
 
                 if (BeQuiet.quiet > 1)
-                    Console.WriteLine("Operation completed succesfully!");
+                    Console.WriteLine("Operation completed succesfully!\n");
             }
             catch (Exception ex)
             {
                 if (ex.Message == "CETK Doesn't Exist and Downloading Ticket Failed:\nThe remote server returned an error: (404) Not Found.")
                 {
-                    Console.WriteLine("");
+                    if (!SecondRun)
+                    {
+                        Console.WriteLine("It appears that there is no ticket for this app on the remote server, and there is no CETK file provided.");
+                        Console.WriteLine("Attempting to redownload without a ticket.");
+                        Console.WriteLine("The -WAD and -Decrypt commands will not work.");
+                        NUS_Stuff.NUS(args, true);
+                    }
+
+                    Console.WriteLine("{0}", ex);
                     Console.WriteLine("The remote server returned a 404 error. Check your Title ID.");
                     Console.WriteLine("If you have a CETK file, please place it in the same directory as Sharpii saves the NUS Files to.");
                     Console.WriteLine("Error: SHARPII_NET_CORE_NUSD_REMOTE_404");
                     Console.WriteLine("");
+
                     if (OperatingSystem.Windows())
                     {
                         Environment.Exit(0x00003E9E);
@@ -500,11 +523,11 @@ namespace Sharpii
 
         }
 
-        private static void WadIosNamingStuff(bool wad, string temp, string id, string version, string ios, bool NoOut, string output, string realout)
+        private static void WadIosNamingStuff(bool wad, string temp, string id, string version, string ios, bool NoOut, string output, string realout, bool SecondRun)
         {
             bool LowercaseWad = false;
             bool OperationDone = false;
-            if (wad == true)
+            if (wad == true && !SecondRun)
             {
                 try
                 {
@@ -517,7 +540,7 @@ namespace Sharpii
                             if (!File.Exists(Path.Combine(temp, id.ToLower() + "v" + version + ".wad")))
                             {
                                 Console.WriteLine("ERROR: Can't find WAD {0}", id.ToLower());
-                                Console.WriteLine("Try running with out the -WAD or -ALL tag. If it still doesn't work, open an issue on Github.");
+                                Console.WriteLine("Try running without the -WAD or -ALL tag. If it still doesn't work, open an issue on Github.");
                                 Console.WriteLine("Error: SHARPII_NET_CORE_NUSD_FILE_ERR");
                                 if (OperatingSystem.Windows())
                                 {
@@ -613,6 +636,10 @@ namespace Sharpii
                         File.Delete(Path.Combine(output, ios));
                     File.Move(Path.Combine(output, id.ToLower() + "v" + version + ".wad"), Path.Combine(output, ios));
                 }
+            }
+            if (wad == true && SecondRun)
+            {
+                Console.WriteLine("A Wad was not created, as no CETK could be downloaded or was provided.");
             }
         }
         public static void NUS_help()
