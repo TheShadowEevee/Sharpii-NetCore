@@ -445,6 +445,7 @@ namespace Sharpii
             {
                 if (ex.Message == "CETK Doesn't Exist and Downloading Ticket Failed:\nThe remote server returned an error: (404) Not Found.")
                 {
+                    /*
                     if (!SecondRun)
                     {
                         Console.WriteLine("It appears that there is no ticket for this app on the remote server, and there is no CETK file provided.");
@@ -452,8 +453,8 @@ namespace Sharpii
                         Console.WriteLine("The -WAD and -Decrypt commands will not work.");
                         NUS_Stuff.NUS(args, true);
                     }
+                    */
 
-                    Console.WriteLine("{0}", ex);
                     Console.WriteLine("The remote server returned a 404 error. Check your Title ID.");
                     Console.WriteLine("If you have a CETK file, please place it in the same directory as Sharpii saves the NUS Files to.");
                     Console.WriteLine("Error: SHARPII_NET_CORE_NUSD_REMOTE_404");
