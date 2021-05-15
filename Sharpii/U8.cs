@@ -268,8 +268,8 @@ namespace Sharpii
         public static void U8_help()
         {
             Console.WriteLine("");
-            Console.WriteLine("Sharpii {0} - U8 - A tool by person66, using libWiiSharp.dll by leathl", ProgramVersion.version);
-            Console.WriteLine("Sharpii .Net Core Port by TheShadowEevee");
+            Console.WriteLine("Sharpii {0} - Ported and Maintained by TheShadowEevee, originally by person66", ProgramVersion.version);
+            Console.WriteLine("Using a modified version of libWiiSharp, originally made by leathl");
             Console.WriteLine("");
             Console.WriteLine("");
             Console.WriteLine("  Usage:");

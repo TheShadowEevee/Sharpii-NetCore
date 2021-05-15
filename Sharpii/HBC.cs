@@ -433,8 +433,8 @@ namespace Sharpii
         private static void SendDol_help()
         {
             Console.WriteLine("");
-            Console.WriteLine("Sharpii {0} - SendDol - A tool by person66, using libWiiSharp.dll by leathl", ProgramVersion.version);
-            Console.WriteLine("Sharpii .Net Core Port by TheShadowEevee");
+            Console.WriteLine("Sharpii {0} - Ported and Maintained by TheShadowEevee, originally by person66", ProgramVersion.version);
+            Console.WriteLine("Using a modified version of libWiiSharp, originally made by leathl");
             Console.WriteLine("");
             Console.WriteLine("");
             Console.WriteLine("  Usage:");
@@ -459,9 +459,9 @@ namespace Sharpii
         public static void SendWad_help()
         {
             Console.WriteLine("");
-            Console.WriteLine("Sharpii {0} - SendWad - A tool by person66, using libWiiSharp.dll by leathl,", ProgramVersion.version);
+            Console.WriteLine("Sharpii {0} - Ported and Maintained by TheShadowEevee, originally by person66", ProgramVersion.version);
             Console.WriteLine("                          and CRAP's installer by WiiCrazy/I.R.on");
-            Console.WriteLine("Sharpii .Net Core Port by TheShadowEevee");
+            Console.WriteLine("Using a modified version of libWiiSharp, originally made by leathl");
             Console.WriteLine("");
             Console.WriteLine("  Usage:");
             Console.WriteLine("");
