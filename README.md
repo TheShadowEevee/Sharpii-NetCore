@@ -14,6 +14,13 @@ Sharpii is a command line app for windows that person66 made and was ported to .
 You can download the latest version of Sharpii on the project's releases page: https://github.com/TheShadowEevee/Sharpii-NetCore/releases/
 Releases will have certain executables pre-made. If an executable you need isn't there, you can follow the compilation instructions in the wiki. I will compile this myself for certain people if asked via Discord (Usually for projects such as RC24's Linux patcher.) 
 
+## Compiling
+To compile, do the following:
+1. Ensure you have the .Net Core SDK installed. Sharpii-NetCore is compiled normally with the latest v5.
+2. Run `git clone https://github.com/TheShadowEevee/Sharpii-NetCore`
+3. Move into the new directory and run `dotnet publish -c {type} -r {RID}` replacing `{type}` with Debug or Release and `{RID}` with a valid RID from (here)[https://docs.microsoft.com/en-us/dotnet/core/rid-catalog] or (here)[https://github.com/dotnet/runtime/blob/main/src/libraries/Microsoft.NETCore.Platforms/src/runtime.json].
+4. Binaries are shipped as .7z files on ultra compression.
+
 ## Issues/Pull Requests
 All issues with this version of Sharpii should go in this fork's issue tracker. I will look into any issue whether it's caused by the port or a remenant from the original iteration of Sharpii. Pull requests are appreciated if they fix an issue, but it may take a bit to review.
 
