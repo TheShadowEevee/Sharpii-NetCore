@@ -12,6 +12,8 @@ Sharpii is a command line app for windows that person66 made and was ported to .
 - Convert an image file to a .tpl, and vice versa
 - Send a .dol or .wad to the Homebrew Channel over Wi-Fi
 
+.Net was renamed from .Net Core awhile back but Sharpii .Net doesn't sound as good and much more would be pointless "rebranding" so the name will stay.
+
 ## Download
 
 You can download the latest version of Sharpii on the project's releases page: <https://github.com/TheShadowEevee/Sharpii-NetCore/releases/>
@@ -21,7 +23,7 @@ Releases will have certain executables pre-made. If an executable you need isn't
 
 To compile, do the following:
 
-1. Ensure you have the [.Net SDK](https://github.com/dotnet/core) installed. Sharpii-NetCore is compiled normally with v5. v6 is currently being tested.
+1. Ensure you have the [.Net SDK](https://github.com/dotnet/core) installed. Sharpii-NetCore is compiled normally with .Net v6.
 2. Run `git clone https://github.com/TheShadowEevee/Sharpii-NetCore`
 3. Move into the new directory and run `dotnet publish -c {type} -r {RID}` replacing `{type}` with Debug or Release and `{RID}` with a valid RID from [here](https://docs.microsoft.com/en-us/dotnet/core/rid-catalog) or [here](https://github.com/dotnet/runtime/blob/main/src/libraries/Microsoft.NETCore.Platforms/src/runtime.json).
 4. Binaries are shipped as .7z files on ultra compression.
