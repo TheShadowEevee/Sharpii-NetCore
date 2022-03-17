@@ -156,9 +156,10 @@ You need to have all the required .app files, a tmd file, a tik file, and a cert
 Ensure all files are present.
 
 Exit Code: 16030/32
-Invalid ID or Missing CETK (SHARPII_NET_CORE_NUSD_REMOTE_404)
-The remote server returned a 404 error. Check your Title ID.
+Invalid ID or Missing CETK (SHARPII_NET_CORE_NUSD_SERVER_ERROR)
+The remote server returned an HTTP error. Check your Title ID.
 If you have a CETK file, please place it in the same directory as Sharpii saves the NUS Files to.
+The server may also actually be having issues.
 
 Exit Code: 16031/33
 A WebRequest Error has occured and stopped a NUS download. (SHARPII_NET_CORE_NUSD_WEBREQUEST_FAIL)
