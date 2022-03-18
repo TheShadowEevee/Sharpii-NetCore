@@ -144,7 +144,7 @@ namespace Sharpii
         private static void Help()
         {
             Console.WriteLine("");
-            Console.WriteLine("Sharpii {0} - Ported and Maintained by TheShadowEevee, originally by person66", ProgramVersion.version);
+            Console.WriteLine("Sharpii v{0} - Updated and Maintained by TheShadowEevee, originally by person66", ProgramVersion.version);
             Console.WriteLine("Using a modified version of libWiiSharp, originally made by leathl");
             Console.WriteLine("");
             Console.WriteLine("");
@@ -213,7 +213,7 @@ public class BeQuiet
 }
 public class ProgramVersion
 {
-    public static string version = "1.1.6; .Net Core Port (Based on Sharpii 1.7.3)";
+    public static string version = "1.1.7";
 }
 
 public static class OperatingSystem
