@@ -349,7 +349,7 @@ namespace Sharpii
         public static void IOS_help()
         {
             Console.WriteLine("");
-            Console.WriteLine("Sharpii {0} - Ported and Maintained by TheShadowEevee, originally by person66", ProgramVersion.version);
+            Console.WriteLine("Sharpii .Net Core v{0} - Ported and Maintained by TheShadowEevee, originally by person66", ProgramVersion.version);
             Console.WriteLine("                      Code based off PatchIOS by leathl");
             Console.WriteLine("Using a modified version of libWiiSharp, originally made by leathl");
             Console.WriteLine("");

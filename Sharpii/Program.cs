@@ -144,7 +144,7 @@ namespace Sharpii
         private static void Help()
         {
             Console.WriteLine("");
-            Console.WriteLine("Sharpii v{0} - Updated and Maintained by TheShadowEevee, originally by person66", ProgramVersion.version);
+            Console.WriteLine("Sharpii .Net Core v{0} - Updated and Maintained by TheShadowEevee, originally by person66", ProgramVersion.version);
             Console.WriteLine("Using a modified version of libWiiSharp, originally made by leathl");
             Console.WriteLine("");
             Console.WriteLine("");

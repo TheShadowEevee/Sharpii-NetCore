@@ -459,7 +459,7 @@ namespace Sharpii
         public static void SendWad_help()
         {
             Console.WriteLine("");
-            Console.WriteLine("Sharpii {0} - Ported and Maintained by TheShadowEevee, originally by person66", ProgramVersion.version);
+            Console.WriteLine("Sharpii .Net Core v{0} - Ported and Maintained by TheShadowEevee, originally by person66", ProgramVersion.version);
             Console.WriteLine("                          and CRAP's installer by WiiCrazy/I.R.on");
             Console.WriteLine("Using a modified version of libWiiSharp, originally made by leathl");
             Console.WriteLine("");
