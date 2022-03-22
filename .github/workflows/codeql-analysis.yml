@@ -58,7 +58,7 @@ jobs:
     #    uses a compiled language
 
     - run: |
-       dotnet publish -c Debug -r linux-x64
+       dotnet publish -c Debug -r linux-x64 /p:UseSharedCompilation=false
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v1
