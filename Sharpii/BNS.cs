@@ -16,9 +16,9 @@
 * along with Sharpii. If not, see <http://www.gnu.org/licenses/>.
 */
 
+using libWiiSharp;
 using System;
 using System.IO;
-using libWiiSharp;
 
 namespace Sharpii
 {

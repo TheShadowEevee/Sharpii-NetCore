@@ -16,9 +16,9 @@
  * along with Sharpii. If not, see <http://www.gnu.org/licenses/>.
  */
 
+using libWiiSharp;
 using System;
 using System.IO;
-using libWiiSharp;
 
 namespace Sharpii
 {
@@ -42,7 +42,7 @@ namespace Sharpii
             //********************* From TPL *********************
             if (args[1] == "-from")
             {
-                From(args);            
+                From(args);
                 return;
             }
 

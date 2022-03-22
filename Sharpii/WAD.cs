@@ -16,9 +16,9 @@
  * along with Sharpii. If not, see <http://www.gnu.org/licenses/>.
  */
 
+using libWiiSharp;
 using System;
 using System.IO;
-using libWiiSharp;
 
 namespace Sharpii
 {
@@ -32,7 +32,7 @@ namespace Sharpii
                 WAD_help();
                 return;
             }
-            
+
             //********************* PACK *********************
             if (args[1] == "-p")
             {
@@ -68,7 +68,7 @@ namespace Sharpii
                     return;
                 }
 
-                Editor(args, true);           
+                Editor(args, true);
                 return;
             }
 
@@ -205,7 +205,7 @@ namespace Sharpii
 
                     if (output.Substring(output.Length - 4, 4).ToUpper() != ".TXT")
                         output += ".txt";
-                    
+
                     TextWriter txt = new StreamWriter(output);
                     txt.WriteLine("WAD Info:");
                     txt.WriteLine("");
@@ -230,7 +230,7 @@ namespace Sharpii
                     txt.WriteLine("Version: {0}", wad.TitleVersion);
                     txt.WriteLine("Blocks: {0}", wad.NandBlocks);
                     txt.Close();
-                    
+
                     if (BeQuiet.quiet > 2)
                         Console.Write("Done!\n");
 
@@ -764,7 +764,7 @@ namespace Sharpii
                     {
                         Environment.Exit(0x00000004);
                     }
-                }  
+                }
             }
         }
 

@@ -16,9 +16,9 @@
  * along with Sharpii. If not, see <http://www.gnu.org/licenses/>.
  */
 
+using libWiiSharp;
 using System;
 using System.IO;
-using libWiiSharp;
 
 namespace Sharpii
 {
@@ -89,7 +89,7 @@ namespace Sharpii
                 }
                 return;
             }
-           
+
             //Run main part, and check for exceptions
             try
             {
@@ -208,7 +208,7 @@ namespace Sharpii
             try
             {
                 U8 U8folder = new U8();
-                
+
                 if (BeQuiet.quiet > 2)
                     Console.Write("Loading folder...");
 
@@ -243,7 +243,7 @@ namespace Sharpii
                     Console.WriteLine("Saving file");
 
                 U8folder.Save(output);
-                
+
                 if (BeQuiet.quiet > 1)
                     Console.WriteLine("Operation completed succesfully!");
             }

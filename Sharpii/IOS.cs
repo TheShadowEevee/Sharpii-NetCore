@@ -16,9 +16,9 @@
  * along with Sharpii. If not, see <http://www.gnu.org/licenses/>.
  */
 
+using libWiiSharp;
 using System;
 using System.IO;
-using libWiiSharp;
 
 namespace Sharpii
 {
@@ -90,7 +90,7 @@ namespace Sharpii
                             return;
                         }
                         if (!int.TryParse(args[i + 1], out slot))
-                        { 
+                        {
                             Console.WriteLine("Invalid slot {0}...", args[i + 1]);
                             Console.WriteLine("Error: SHARPII_NET_CORE_IOS_INVALID_SLOT");
                             if (OperatingSystem.Windows())
@@ -101,10 +101,10 @@ namespace Sharpii
                             {
                                 Environment.Exit(0x0000000C);
                             }
-                            return; 
+                            return;
                         }
                         if (slot < 3 || slot > 255)
-                        { 
+                        {
                             Console.WriteLine("Invalid slot {0}...", slot);
                             Console.WriteLine("Error: SHARPII_NET_CORE_IOS_INVALID_SLOT");
                             if (OperatingSystem.Windows())
@@ -115,7 +115,7 @@ namespace Sharpii
                             {
                                 Environment.Exit(0x0000000C);
                             }
-                            return; 
+                            return;
                         }
                         break;
                     case "-S":
@@ -178,7 +178,7 @@ namespace Sharpii
                             return;
                         }
                         if (!int.TryParse(args[i + 1], out version))
-                        { 
+                        {
                             Console.WriteLine("Invalid version {0}...", args[i + 1]);
                             Console.WriteLine("Error: SHARPII_NET_CORE_IOS_INVALID_VERSION");
                             if (OperatingSystem.Windows())
@@ -189,10 +189,10 @@ namespace Sharpii
                             {
                                 Environment.Exit(0x0000000E);
                             }
-                            return; 
+                            return;
                         }
                         if (version < 0 || version > 65535)
-                        { 
+                        {
                             Console.WriteLine("Invalid version {0}...", version);
                             Console.WriteLine("Error: SHARPII_NET_CORE_IOS_INVALID_VERSION");
                             if (OperatingSystem.Windows())
@@ -203,7 +203,7 @@ namespace Sharpii
                             {
                                 Environment.Exit(0x0000000E);
                             }
-                            return; 
+                            return;
                         }
                         break;
                     case "-O":
@@ -236,9 +236,9 @@ namespace Sharpii
 
                 if (BeQuiet.quiet > 2)
                     Console.Write("Loading File...");
-                
+
                 ios.LoadFile(input);
-                
+
                 if (BeQuiet.quiet > 2)
                     Console.Write("Done!\n");
 

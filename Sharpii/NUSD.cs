@@ -16,10 +16,10 @@
  * along with Sharpii. If not, see <http://www.gnu.org/licenses/>.
  */
 
-using System;
-using System.IO;
-using System.Collections.Generic;
 using libWiiSharp;
+using System;
+using System.Collections.Generic;
+using System.IO;
 
 namespace Sharpii
 {
@@ -389,7 +389,7 @@ namespace Sharpii
             {
                 wad = true;
                 if (Directory.Exists(temp) == true)
-                    DeleteADir.DeleteDirectory(temp);                
+                    DeleteADir.DeleteDirectory(temp);
 
                 Directory.CreateDirectory(temp);
             }
@@ -413,7 +413,7 @@ namespace Sharpii
                         Console.WriteLine("Using local files if present...");
                     nus.UseLocalFiles = true;
                 }
-                
+
                 if (ContinueWithoutTicket == true)
                 {
                     if (BeQuiet.quiet > 2)
@@ -426,9 +426,12 @@ namespace Sharpii
                     if (BeQuiet.quiet > 1)
                         Console.Write("Downloading content...");
 
-                    if (url != "") {
+                    if (url != "")
+                    {
                         nus.DownloadSingleContent(id, version, content, output, url);
-                    } else {
+                    }
+                    else
+                    {
                         nus.DownloadSingleContent(id, version, content, output);
                     }
 
@@ -441,16 +444,20 @@ namespace Sharpii
                         Console.Write("Downloading title...\n");
 
                     string realout = output;
-                    if (wad == true) {
+                    if (wad == true)
+                    {
                         output = temp;
                     }
 
-                    if (url != "") {
+                    if (url != "")
+                    {
                         nus.DownloadTitle(id, version, output, url, store.ToArray());
-                    } else {
+                    }
+                    else
+                    {
                         nus.DownloadTitle(id, version, output, store.ToArray());
                     }
-                    
+
 
                     WadIosNamingStuff(wad, temp, id, version, ios, NoOut, output, realout);
 

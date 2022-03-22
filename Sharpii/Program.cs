@@ -177,8 +177,8 @@ namespace Sharpii
             Console.WriteLine("");
         }
 
-        }
     }
+}
 public class DeleteADir
 {
     public static bool DeleteDirectory(string target_dir)

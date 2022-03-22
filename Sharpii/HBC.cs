@@ -16,9 +16,9 @@
  * along with Sharpii. If not, see <http://www.gnu.org/licenses/>.
  */
 
+using libWiiSharp;
 using System;
 using System.IO;
-using libWiiSharp;
 
 namespace Sharpii
 {
@@ -151,7 +151,7 @@ namespace Sharpii
                 }
                 if (noip == true && BeQuiet.quiet > 2)
                     Console.WriteLine("No IP set, using {0}", ip);
-                
+
                 libWiiSharp.Protocol proto = Protocol.JODI;
 
                 if (BeQuiet.quiet > 2 && protocol == "HAXX")
@@ -164,16 +164,16 @@ namespace Sharpii
                     Console.Write("Loading File...");
 
                 HbcTransmitter file = new HbcTransmitter(proto, ip);
-                
+
                 if (BeQuiet.quiet > 2)
                     Console.Write("Done!\n");
 
 
                 if (BeQuiet.quiet > 2 && compress == true)
                     Console.Write("Compressing File...");
-                
+
                 file.Compress = compress;
-                
+
                 if (BeQuiet.quiet > 2 && compress == true)
                     Console.Write("Done!\n");
 

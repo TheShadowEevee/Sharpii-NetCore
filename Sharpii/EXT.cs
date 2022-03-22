@@ -17,9 +17,6 @@
 */
 
 using System;
-using System.IO;
-using System.Numerics;
-using libWiiSharp;
 
 namespace Sharpii
 {
@@ -59,7 +56,7 @@ namespace Sharpii
                     Console.WriteLine("");
                     ErrCodeFound = 1;
                 }
-                
+
                 if (args[1] == "16003")
                 {
                     Console.WriteLine("");
