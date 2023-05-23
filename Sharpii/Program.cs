@@ -213,7 +213,7 @@ public class BeQuiet
 }
 public class ProgramVersion
 {
-    public static string version = "1.1.8";
+    public static string version = "1.1.9";
 }
 
 public static class OperatingSystem
