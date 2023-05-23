@@ -1,6 +1,6 @@
 ﻿/* This file is part of Sharpii.
 * Copyright (C) 2013 Person66
-* Copyright (C) 2020-2022 Sharpii-NetCore Contributors
+* Copyright (C) 2020-2023 Sharpii-NetCore Contributors
 *
 * Sharpii is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by

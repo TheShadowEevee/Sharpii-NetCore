@@ -11,7 +11,7 @@
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <RepositoryUrl>https://github.com/TheShadowEevee/Sharpii-NetCore</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <Copyright>Copyright (C) 2013 Person66, Copyright (C) 2020-2022 TheShadowEevee and Sharpii-NetCore Contributors</Copyright>
+    <Copyright>Copyright (C) 2013 Person66, Copyright (C) 2020-2023 TheShadowEevee and Sharpii-NetCore Contributors</Copyright>
   </PropertyGroup>
 
   <ItemGroup>
