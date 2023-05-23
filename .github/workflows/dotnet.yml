@@ -1,0 +1,88 @@
+# This workflow will build a .NET project
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-net
+
+name: Publish Builds
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    
+    # Setup Build Environment
+    - uses: actions/checkout@v3
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: 7.0.x
+        
+    # Create Builds
+    - name: Publish Windows x64 Build
+      run: dotnet publish -c Release -r win-x64 -o win-x64
+    - name: Publish Linux x64 Build
+      run: dotnet publish -c Release -r linux-x64 -o linux-x64
+    - name: Publish Linux ARM Build
+      run: dotnet publish -c Release -r linux-arm -o linux-arm
+    - name: Publish Linux ARM64 Build
+      run: dotnet publish -c Release -r linux-arm64 -o linux-arm64
+    - name: Publish MacOSX x64 Build
+      run: dotnet publish -c Release -r osx-x64 -o osx-x64
+    - name: Publish MacOSX ARM64 Build
+      run: dotnet publish -c Release -r osx-arm64 -o osx-arm64
+      
+    # Package Binaries Into 7zip Archives
+    - name: Archive Windows x64 Build
+      run: 7z a -t7z -mx=9 Sharpii-Net-Core-${{ github.ref_name }}-Windows.7z /home/runner/work/Sharpii-NetCore/Sharpii-NetCore/win-x64/Sharpii.exe
+    - name: Archive Linux x64 Build
+      run: 7z a -t7z -mx=9 Sharpii-Net-Core-${{ github.ref_name }}-Linux-x64.7z /home/runner/work/Sharpii-NetCore/Sharpii-NetCore/linux-x64/Sharpii
+    - name: Archive Linux ARM Build
+      run: 7z a -t7z -mx=9 Sharpii-Net-Core-${{ github.ref_name }}-Linux-arm.7z /home/runner/work/Sharpii-NetCore/Sharpii-NetCore/linux-arm/Sharpii
+    - name: Archive Linux ARM64 Build
+      run: 7z a -t7z -mx=9 Sharpii-Net-Core-${{ github.ref_name }}-Linux-arm64.7z /home/runner/work/Sharpii-NetCore/Sharpii-NetCore/linux-arm64/Sharpii
+    - name: Archive MacOSX x64 Build
+      run: 7z a -t7z -mx=9 Sharpii-Net-Core-${{ github.ref_name }}-MacOSX-x64.7z /home/runner/work/Sharpii-NetCore/Sharpii-NetCore/osx-x64/Sharpii
+    - name: Archive MacOSX ARM64 Build
+      run: 7z a -t7z -mx=9 Sharpii-Net-Core-${{ github.ref_name }}-MacOSX-arm64.7z /home/runner/work/Sharpii-NetCore/Sharpii-NetCore/osx-arm64/Sharpii
+
+      
+    # Preform Release Actions
+    - name: GH Release
+      uses: softprops/action-gh-release@v0.1.15
+      with:
+        fail_on_unmatched_files: true
+        name: Sharpii .Net Core ${{ github.ref_name }}
+        body: |
+          ***A port for the program Sharpii that maintains it and allows it to run on multiple OS's***
+
+          If you can't open the 7z archive, Use 7-zip on Windows. Most unix-like distros should be able to unpack this with `zip`
+
+          <details>
+          <summary>Platform Support and Contribution Info</summary>
+
+          **OS Support:**
+          Windows 7 and up
+          Mac/OSX 10.12 and up (Sierra [2016] and up) including M1 Silicon Computers
+          Most up-to-date x64, arm, and arm64 Linux distros
+
+          **Issues and Pull requests:**
+          When using Sharpii, you may run into errors. If you can't fix the error or can't find a fix, open an issue and I will get to it as soon as possible! If you think an issue is with the original Sharpii, I recommend opening it here anyway as I *might* be able to fix it, and I don't think the original Sharpii will be updated in any way at this point. Pull requests are also accepted and appreciated, as long as they actually fix something.
+
+          Most issues are likely with libWiiSharp instead of Sharpii. If you can tell the difference, feel free to open an issue/PR over at https://github.com/TheShadowEevee/libWiiSharp
+
+          </details>
+        generate_release_notes: true
+        token: ${{ secrets.CUSTOM_GITHUB_TOKEN }}
+        draft: true
+        files: |
+          Sharpii-Net-Core-${{ github.ref_name }}-Windows.7z
+          Sharpii-Net-Core-${{ github.ref_name }}-Linux-x64.7z
+          Sharpii-Net-Core-${{ github.ref_name }}-Linux-arm.7z
+          Sharpii-Net-Core-${{ github.ref_name }}-Linux-arm64.7z
+          Sharpii-Net-Core-${{ github.ref_name }}-MacOSX-x64.7z
+          Sharpii-Net-Core-${{ github.ref_name }}-MacOSX-arm64.7z

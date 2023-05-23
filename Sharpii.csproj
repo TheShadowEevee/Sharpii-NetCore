@@ -14,7 +14,6 @@
     <Copyright>Copyright (C) 2013 Person66, Copyright (C) 2020-2022 TheShadowEevee and Sharpii-NetCore Contributors</Copyright>
   </PropertyGroup>
 
-
   <ItemGroup>
     <PackageReference Include="System.Drawing.Common" Version="7.0.0" />
   </ItemGroup>

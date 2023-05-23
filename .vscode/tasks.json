@@ -1,0 +1,101 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Publish Windows x64",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "publish",
+                "${workspaceFolder}/Sharpii.csproj",
+                "-c",
+                "Release",
+                "-r",
+                "win-x64",
+                "-o",
+                "${workspaceFolder}/Releases/Sharpii-Windows-x64"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "Publish Linux x64",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "publish",
+                "${workspaceFolder}/Sharpii.csproj",
+                "-c",
+                "Release",
+                "-r",
+                "linux-x64",
+                "-o",
+                "${workspaceFolder}/Releases/Sharpii-Linux-x64"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "Publish Linux ARM",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "publish",
+                "${workspaceFolder}/Sharpii.csproj",
+                "-c",
+                "Release",
+                "-r",
+                "linux-arm",
+                "-o",
+                "${workspaceFolder}/Releases/Sharpii-Linux-ARM"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "Publish Linux ARM64",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "publish",
+                "${workspaceFolder}/Sharpii.csproj",
+                "-c",
+                "Release",
+                "-r",
+                "linux-arm64",
+                "-o",
+                "${workspaceFolder}/Releases/Sharpii-Linux-ARM64"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "Publish MacOSX x64",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "publish",
+                "${workspaceFolder}/Sharpii.csproj",
+                "-c",
+                "Release",
+                "-r",
+                "osx-x64",
+                "-o",
+                "${workspaceFolder}/Releases/Sharpii-OSX-x64"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "Publish MacOSX ARM64",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "publish",
+                "${workspaceFolder}/Sharpii.csproj",
+                "-c",
+                "Release",
+                "-r",
+                "osx-arm64",
+                "-o",
+                "${workspaceFolder}/Releases/Sharpii-OSX-ARM64"
+            ],
+            "problemMatcher": "$msCompile"
+        }
+    ]
+}
