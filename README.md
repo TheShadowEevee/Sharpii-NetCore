@@ -23,7 +23,7 @@ Releases will have certain executables pre-made. If an executable you need isn't
 
 To compile, do the following:
 
-1. Ensure you have the [.Net SDK](https://github.com/dotnet/core) installed. Sharpii-NetCore is compiled normally with .Net v6.
+1. Ensure you have the [.Net SDK](https://github.com/dotnet/core) installed. Sharpii-NetCore is compiled normally with .Net v7.
 2. Run `git clone https://github.com/TheShadowEevee/Sharpii-NetCore`
 3. Move into the new directory and run `dotnet publish -c {type} -r {RID}` replacing `{type}` with Debug or Release and `{RID}` with a valid RID from [here](https://docs.microsoft.com/en-us/dotnet/core/rid-catalog) or [here](https://github.com/dotnet/runtime/blob/main/src/libraries/Microsoft.NETCore.Platforms/src/runtime.json).
 4. Binaries are shipped as .7z files on ultra compression.
