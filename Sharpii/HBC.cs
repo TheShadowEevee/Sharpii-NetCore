@@ -219,22 +219,6 @@ namespace Sharpii
                 return false;
             }
 
-            if (!File.Exists(Path.Combine(Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory), "WadInstaller.dll")))
-            {
-                Console.WriteLine("ERROR: WadInstaller.dll not found");
-                Console.WriteLine("This should not appear on the .Net Core port.");
-                Console.WriteLine("If you see this, report how you got here on https://github.com/TheShadowEevee/Sharpii-NetCore/issues.");
-                Console.WriteLine("Error: SHARPII_NET_CORE_HBC_MISSING_DLL_WADINSTALLER");
-                if (OperatingSystem.Windows())
-                {
-                    Environment.Exit(0x00003E85);
-                }
-                else
-                {
-                    Environment.Exit(0x00000007);
-                }
-            }
-
             return true;
         }
 
@@ -439,14 +423,15 @@ namespace Sharpii
             Console.WriteLine("");
             Console.WriteLine("  Usage:");
             Console.WriteLine("");
-            Console.WriteLine("       Sharpii.exe SendDol -ip ip_adress [-old] [-nocomp] [-saveip]");
-            Console.WriteLine("                            -dol file [args]");
+            Console.WriteLine("       Sharpii.exe SendDol -ip ip_address [-old] [-nocomp] [-saveip]");
+            Console.WriteLine("                            [-dol/-wad] file [args]");
             Console.WriteLine("");
             Console.WriteLine("");
             Console.WriteLine("  Arguments:");
             Console.WriteLine("");
             Console.WriteLine("       -dol file      The dol file to send");
-            Console.WriteLine("       -ip ip_adress  The IP address of your wii");
+            Console.WriteLine("       -wad file      The wad file to send");
+            Console.WriteLine("       -ip ip_address  The IP address of your wii");
             Console.WriteLine("       -saveip        Save entered IP address for future use");
             Console.WriteLine("       -old           Use for the old (1.0.4 and below) HBC");
             Console.WriteLine("       -nocomp        Disable compression");
