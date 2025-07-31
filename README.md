@@ -19,6 +19,11 @@ Sharpii is a command line app for windows that person66 made and was ported to .
 You can download the latest version of Sharpii on the project's releases page: <https://github.com/TheShadowEevee/Sharpii-NetCore/releases/>
 Releases will have certain executables pre-made. If an executable you need isn't there, you can follow the compilation instructions in the wiki. I will compile this myself for certain people if asked via Discord (Usually for projects such as RC24's Linux patcher.)
 
+> [!IMPORTANT]  
+> MacOS users may need to run the following command in the directory Sharpii is downloaded to. See [this issue](https://github.com/TheShadowEevee/Sharpii-NetCore/issues/11) for more information.  
+> `codesign --sign - --force --preserve-metadata=entitlements,requirements,flags,runtime ./Sharpii`  
+> Please ensure you replace `./Sharpii` with the full name of the downloaded binary.  
+
 ## Compiling
 
 To compile, do the following:
