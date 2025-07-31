@@ -357,7 +357,7 @@ namespace Sharpii
                 }
                 if (ExceptionListRan == 0)
                 {
-                    Console.WriteLine("An unknown error occured, please try again");
+                    Console.WriteLine("An unknown error occurred, please try again");
                     Console.WriteLine("");
                     Console.WriteLine("ERROR DETAILS: {0}", ex.Message);
                     Console.WriteLine("Error: SHARPII_NET_CORE_NUSD_UNKNOWN");
@@ -471,7 +471,7 @@ namespace Sharpii
                 }
 
                 if (BeQuiet.quiet > 1)
-                    Console.WriteLine("Operation completed succesfully!\n");
+                    Console.WriteLine("Operation completed successfully!\n");
             }
             catch (Exception ex)
             {
@@ -527,7 +527,7 @@ namespace Sharpii
                 }
                 if (ExceptionListRan == 0)
                 {
-                    Console.WriteLine("An unknown error occured, please try again");
+                    Console.WriteLine("An unknown error occurred, please try again");
                     Console.WriteLine("");
                     Console.WriteLine("ERROR DETAILS: {0}", ex.Message);
                     Console.WriteLine("Error: SHARPII_NET_CORE_NUSD_UNKNOWN");

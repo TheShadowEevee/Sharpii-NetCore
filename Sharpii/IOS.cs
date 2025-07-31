@@ -323,11 +323,11 @@ namespace Sharpii
                         Console.Write("Done!\n");
                 }
                 if (BeQuiet.quiet > 1)
-                    Console.WriteLine("Operation completed succesfully!");
+                    Console.WriteLine("Operation completed successfully!");
             }
             catch (Exception ex)
             {
-                Console.WriteLine("An unknown error occured, please try again");
+                Console.WriteLine("An unknown error occurred, please try again");
                 Console.WriteLine("");
                 Console.WriteLine("ERROR DETAILS: {0}", ex.Message);
                 Console.WriteLine("Error: SHARPII_NET_CORE_IOS_UNKNOWN");

@@ -49,7 +49,7 @@ namespace Sharpii
                 {
                     Console.WriteLine("");
                     Console.WriteLine("Unknown Error/Untracked Error. (SHARPII_NET_CORE_xxx_UNKNOWN)");
-                    Console.WriteLine("An untracked error has occured.");
+                    Console.WriteLine("An untracked error has occurred.");
                     Console.WriteLine("Use the error text to self-diagnose.");
                     Console.WriteLine("If that doesn't help, open an issue on GitHub!");
                     Console.WriteLine("https://github.com/TheShadowEevee/Sharpii-NetCore/issues");

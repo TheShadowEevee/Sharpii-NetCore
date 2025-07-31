@@ -104,7 +104,7 @@ namespace Sharpii
                 if (args[1] == "SHARPII_NET_CORE_BNS_UNKNOWN")
                 {
                     Console.WriteLine("");
-                    Console.WriteLine("An untracked error has occured.");
+                    Console.WriteLine("An untracked error has occurred.");
                     Console.WriteLine("Use the error text to self-diagnose.");
                     Console.WriteLine("If that doesn't help, open an issue on GitHub!");
                     Console.WriteLine("https://github.com/TheShadowEevee/Sharpii-NetCore/issues");
@@ -114,7 +114,7 @@ namespace Sharpii
                 if (args[1] == "SHARPII_NET_CORE_HBC_UNKNOWN")
                 {
                     Console.WriteLine("");
-                    Console.WriteLine("An untracked error has occured.");
+                    Console.WriteLine("An untracked error has occurred.");
                     Console.WriteLine("Use the error text to self-diagnose.");
                     Console.WriteLine("If that doesn't help, open an issue on GitHub!");
                     Console.WriteLine("https://github.com/TheShadowEevee/Sharpii-NetCore/issues");
@@ -124,7 +124,7 @@ namespace Sharpii
                 if (args[1] == "SHARPII_NET_CORE_IOS_UNKNOWN")
                 {
                     Console.WriteLine("");
-                    Console.WriteLine("An untracked error has occured.");
+                    Console.WriteLine("An untracked error has occurred.");
                     Console.WriteLine("Use the error text to self-diagnose.");
                     Console.WriteLine("If that doesn't help, open an issue on GitHub!");
                     Console.WriteLine("https://github.com/TheShadowEevee/Sharpii-NetCore/issues");
@@ -134,7 +134,7 @@ namespace Sharpii
                 if (args[1] == "SHARPII_NET_CORE_NUSD_UNKNOWN")
                 {
                     Console.WriteLine("");
-                    Console.WriteLine("An untracked error has occured.");
+                    Console.WriteLine("An untracked error has occurred.");
                     Console.WriteLine("Use the error text to self-diagnose.");
                     Console.WriteLine("If that doesn't help, open an issue on GitHub!");
                     Console.WriteLine("https://github.com/TheShadowEevee/Sharpii-NetCore/issues");
@@ -144,7 +144,7 @@ namespace Sharpii
                 if (args[1] == "SHARPII_NET_CORE_MAIN_UNKNOWN")
                 {
                     Console.WriteLine("");
-                    Console.WriteLine("An untracked error has occured.");
+                    Console.WriteLine("An untracked error has occurred.");
                     Console.WriteLine("Use the error text to self-diagnose.");
                     Console.WriteLine("If that doesn't help, open an issue on GitHub!");
                     Console.WriteLine("https://github.com/TheShadowEevee/Sharpii-NetCore/issues");
@@ -154,7 +154,7 @@ namespace Sharpii
                 if (args[1] == "SHARPII_NET_CORE_TPL_UNKNOWN")
                 {
                     Console.WriteLine("");
-                    Console.WriteLine("An untracked error has occured.");
+                    Console.WriteLine("An untracked error has occurred.");
                     Console.WriteLine("Use the error text to self-diagnose.");
                     Console.WriteLine("If that doesn't help, open an issue on GitHub!");
                     Console.WriteLine("https://github.com/TheShadowEevee/Sharpii-NetCore/issues");
@@ -164,7 +164,7 @@ namespace Sharpii
                 if (args[1] == "SHARPII_NET_CORE_U8_UNKNOWN")
                 {
                     Console.WriteLine("");
-                    Console.WriteLine("An untracked error has occured.");
+                    Console.WriteLine("An untracked error has occurred.");
                     Console.WriteLine("Use the error text to self-diagnose.");
                     Console.WriteLine("If that doesn't help, open an issue on GitHub!");
                     Console.WriteLine("https://github.com/TheShadowEevee/Sharpii-NetCore/issues");
@@ -174,7 +174,7 @@ namespace Sharpii
                 if (args[1] == "SHARPII_NET_CORE_WAD_UNKNOWN")
                 {
                     Console.WriteLine("");
-                    Console.WriteLine("An untracked error has occured.");
+                    Console.WriteLine("An untracked error has occurred.");
                     Console.WriteLine("Use the error text to self-diagnose.");
                     Console.WriteLine("If that doesn't help, open an issue on GitHub!");
                     Console.WriteLine("https://github.com/TheShadowEevee/Sharpii-NetCore/issues");

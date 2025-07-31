@@ -187,7 +187,7 @@ namespace Sharpii
             }
             catch (Exception ex)
             {
-                Console.WriteLine("An unknown error occured, please try again");
+                Console.WriteLine("An unknown error occurred, please try again");
                 Console.WriteLine("");
                 Console.WriteLine("ERROR DETAILS: {0}", ex.Message);
                 Console.WriteLine("Error: SHARPII_NET_CORE_HBC_UNKNOWN");
@@ -395,7 +395,7 @@ namespace Sharpii
             }
             catch (Exception ex)
             {
-                Console.WriteLine("An unknown error occured, please try again");
+                Console.WriteLine("An unknown error occurred, please try again");
                 Console.WriteLine("");
                 Console.WriteLine("ERROR DETAILS: {0}", ex.Message);
                 Console.WriteLine("Error: SHARPII_NET_CORE_HBC_UNKNOWN");
@@ -450,14 +450,14 @@ namespace Sharpii
             Console.WriteLine("");
             Console.WriteLine("  Usage:");
             Console.WriteLine("");
-            Console.WriteLine("       ./Sharpii SendWad -ip ip_adress -wad file [-ios IOS | -ahb] [-old]");
+            Console.WriteLine("       ./Sharpii SendWad -ip ip_address -wad file [-ios IOS | -ahb] [-old]");
             Console.WriteLine("                           [-nocomp] [-saveip]");
             Console.WriteLine("");
             Console.WriteLine("");
             Console.WriteLine("  Arguments:");
             Console.WriteLine("");
             Console.WriteLine("       -dol file      The dol file to send");
-            Console.WriteLine("       -ip ip_adress  The IP address of your wii");
+            Console.WriteLine("       -ip ip_address  The IP address of your wii");
             Console.WriteLine("       -ios ios       The ios to use to install the wad");
             Console.WriteLine("       -ahb           Use HW_AHBPROT to install the wad");
             Console.WriteLine("       -saveip        Save entered IP address for future use");

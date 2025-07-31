@@ -46,7 +46,7 @@ namespace Sharpii
                 return;
             }
 
-            //If tuser gets here, they entered something wrong
+            //If the user gets here, they entered something wrong
             Console.WriteLine("ERROR: The argument {0} is invalid", args[1]);
             Console.WriteLine("Error: SHARPII_NET_CORE_U8_INVALID_ARG");
             if (OperatingSystem.Windows())
@@ -113,11 +113,11 @@ namespace Sharpii
                     Console.Write("Done!\n");
 
                 if (BeQuiet.quiet > 1)
-                    Console.WriteLine("Operation completed succesfully!");
+                    Console.WriteLine("Operation completed successfully!");
             }
             catch (Exception ex)
             {
-                Console.WriteLine("An unknown error occured, please try again");
+                Console.WriteLine("An unknown error occurred, please try again");
                 Console.WriteLine("");
                 Console.WriteLine("ERROR DETAILS: {0}", ex.Message);
                 Console.WriteLine("Error: SHARPII_NET_CORE_U8_UNKNOWN");
@@ -233,7 +233,7 @@ namespace Sharpii
 
                 if (lz77 == true)
                 {
-                    //Yeah, I know this isnt where it actually compresses it
+                    //Yeah, I know this isn't where it actually compresses it
                     if (BeQuiet.quiet > 2)
                         Console.WriteLine("Compressing U8 archive");
                     U8folder.Lz77Compress = true;
@@ -245,11 +245,11 @@ namespace Sharpii
                 U8folder.Save(output);
 
                 if (BeQuiet.quiet > 1)
-                    Console.WriteLine("Operation completed succesfully!");
+                    Console.WriteLine("Operation completed successfully!");
             }
             catch (Exception ex)
             {
-                Console.WriteLine("An unknown error occured, please try again");
+                Console.WriteLine("An unknown error occurred, please try again");
                 Console.WriteLine("");
                 Console.WriteLine("ERROR DETAILS: {0}", ex.Message);
                 Console.WriteLine("Error: SHARPII_NET_CORE_U8_UNKNOWN");

@@ -46,7 +46,7 @@ namespace Sharpii
                 return;
             }
 
-            //If tuser gets here, they entered something wrong
+            //If the user gets here, they entered something wrong
             Console.WriteLine("ERROR: The argument {0} is invalid", args[1]);
             Console.WriteLine("Error: SHARPII_NET_CORE_TPL_INVALID_ARG");
             if (OperatingSystem.Windows())
@@ -105,11 +105,11 @@ namespace Sharpii
                     Console.Write("Done!\n");
 
                 if (BeQuiet.quiet > 1)
-                    Console.WriteLine("Operation completed succesfully!");
+                    Console.WriteLine("Operation completed successfully!");
             }
             catch (Exception ex)
             {
-                Console.WriteLine("An unknown error occured, please try again");
+                Console.WriteLine("An unknown error occurred, please try again");
                 Console.WriteLine("");
                 Console.WriteLine("ERROR DETAILS: {0}", ex.Message);
                 Console.WriteLine("Error: SHARPII_NET_CORE_TPL_UNKNOWN");
@@ -246,11 +246,11 @@ namespace Sharpii
                     Console.Write("Done!\n");
 
                 if (BeQuiet.quiet > 1)
-                    Console.WriteLine("Operation completed succesfully!");
+                    Console.WriteLine("Operation completed successfully!");
             }
             catch (Exception ex)
             {
-                Console.WriteLine("An unknown error occured, please try again");
+                Console.WriteLine("An unknown error occurred, please try again");
                 Console.WriteLine("");
                 Console.WriteLine("ERROR DETAILS: {0}", ex.Message);
                 Console.WriteLine("Error: SHARPII_NET_CORE_TPL_UNKNOWN");
