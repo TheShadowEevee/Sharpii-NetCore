@@ -35,7 +35,7 @@ To compile, do the following:
 
 ## Issues/Pull Requests
 
-All issues with this version of Sharpii should go in this fork's issue tracker. I will look into any issue whether it's caused by the port or a remenant from the original iteration of Sharpii. Pull requests are appreciated if they fix an issue, but it may take a bit to review.
+All issues with this version of Sharpii should go in this fork's issue tracker. I will look into any issue whether it's caused by the port or a remnant from the original iteration of Sharpii. Pull requests are appreciated if they fix an issue, but it may take a bit to review.
 
 ## Giving Credit
 

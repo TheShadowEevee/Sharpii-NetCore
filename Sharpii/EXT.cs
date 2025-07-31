@@ -1,6 +1,6 @@
 ﻿/* This file is part of Sharpii.
 * Copyright (C) 2013 Person66
-* Copyright (C) 2020-2023 Sharpii-NetCore Contributors
+* Copyright (C) 2020-2025 Sharpii-NetCore Contributors
 *
 * Sharpii is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -49,7 +49,7 @@ namespace Sharpii
                 {
                     Console.WriteLine("");
                     Console.WriteLine("Unknown Error/Untracked Error. (SHARPII_NET_CORE_xxx_UNKNOWN)");
-                    Console.WriteLine("An untracked error has occured.");
+                    Console.WriteLine("An untracked error has occurred.");
                     Console.WriteLine("Use the error text to self-diagnose.");
                     Console.WriteLine("If that doesn't help, open an issue on GitHub!");
                     Console.WriteLine("https://github.com/TheShadowEevee/Sharpii-NetCore/issues");

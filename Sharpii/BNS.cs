@@ -1,6 +1,6 @@
 ﻿/* This file is part of Sharpii.
 * Copyright (C) 2013 Person66
-* Copyright (C) 2020-2023 Sharpii-NetCore Contributors
+* Copyright (C) 2020-2025 Sharpii-NetCore Contributors
 *
 * Sharpii is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -85,7 +85,7 @@ namespace Sharpii
                 if (BeQuiet.quiet > 2)
                     Console.Write("Saving wav...");
 
-                if (output.Substring(output.Length - 4, 4).ToUpper() != ".WAV")
+                if (!output.EndsWith(".wav", StringComparison.OrdinalIgnoreCase))
                     output += ".wav";
 
                 WavFile.Save(output);
@@ -94,11 +94,11 @@ namespace Sharpii
                     Console.Write("Done!\n");
 
                 if (BeQuiet.quiet > 1)
-                    Console.WriteLine("Operation completed succesfully!");
+                    Console.WriteLine("Operation completed successfully!");
             }
             catch (Exception ex)
             {
-                Console.WriteLine("An unknown error occured, please try again");
+                Console.WriteLine("An unknown error occurred, please try again");
                 Console.WriteLine("");
                 Console.WriteLine("ERROR DETAILS: {0}", ex.Message);
                 Console.WriteLine("Error: SHARPII_NET_CORE_BNS_UNKNOWN");
@@ -186,7 +186,7 @@ namespace Sharpii
 
                 WavFile.Convert();
 
-                if (output.Substring(output.Length - 4, 4).ToUpper() != ".BNS")
+                if (!output.EndsWith(".bns", StringComparison.OrdinalIgnoreCase))
                     output += ".bns";
 
                 WavFile.Save(output);
@@ -195,11 +195,11 @@ namespace Sharpii
                     Console.Write("Done!\n");
 
                 if (BeQuiet.quiet > 1)
-                    Console.WriteLine("Operation completed succesfully!");
+                    Console.WriteLine("Operation completed successfully!");
             }
             catch (Exception ex)
             {
-                Console.WriteLine("An unknown error occured, please try again");
+                Console.WriteLine("An unknown error occurred, please try again");
                 Console.WriteLine("");
                 Console.WriteLine("ERROR DETAILS: {0}", ex.Message);
                 Console.WriteLine("Error: SHARPII_NET_CORE_BNS_UNKNOWN");

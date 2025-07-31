@@ -1,6 +1,6 @@
 ﻿/* This file is part of Sharpii.
  * Copyright (C) 2013 Person66
- * Copyright (C) 2020-2023 Sharpii-NetCore Contributors
+ * Copyright (C) 2020-2025 Sharpii-NetCore Contributors
  *
  * Sharpii is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -79,7 +79,7 @@ namespace Sharpii
                 return;
             }
 
-            //If tuser gets here, they entered something wrong
+            //If the user gets here, they entered something wrong
             Console.WriteLine("ERROR: The argument {0} is invalid", args[1]);
             Console.WriteLine("Error: SHARPII_NET_CORE_WAD_INVALID_ARG");
             if (OperatingSystem.Windows())
@@ -203,8 +203,8 @@ namespace Sharpii
                     if (BeQuiet.quiet > 2)
                         Console.Write("Saving file...");
 
-                    if (output.Substring(output.Length - 4, 4).ToUpper() != ".TXT")
-                        output += ".txt";
+                if (!output.EndsWith(".txt", StringComparison.OrdinalIgnoreCase))
+                    output += ".txt";
 
                     TextWriter txt = new StreamWriter(output);
                     txt.WriteLine("WAD Info:");
@@ -235,12 +235,12 @@ namespace Sharpii
                         Console.Write("Done!\n");
 
                     if (BeQuiet.quiet > 1)
-                        Console.WriteLine("Operation completed succesfully!");
+                        Console.WriteLine("Operation completed successfully!");
                 }
             }
             catch (Exception ex)
             {
-                Console.WriteLine("An unknown error occured, please try again");
+                Console.WriteLine("An unknown error occurred, please try again");
                 Console.WriteLine("");
                 Console.WriteLine("ERROR DETAILS: {0}", ex.Message);
                 Console.WriteLine("Error: SHARPII_NET_CORE_WAD_UNKNOWN");
@@ -642,7 +642,7 @@ namespace Sharpii
                         if (BeQuiet.quiet > 2)
                             Console.Write("Grabbing dol...");
 
-                        if (app.Substring(app.Length - 4, 4) == ".dol")
+                        if (app.EndsWith(".dol", StringComparison.OrdinalIgnoreCase))
                         {
                             Directory.CreateDirectory(Path.Combine(temp, "dol"));
                             File.Copy(app, Path.Combine(temp, "dol", "00000001.app"));
@@ -722,7 +722,7 @@ namespace Sharpii
                 if (BeQuiet.quiet > 2)
                     Console.Write("Saving file...");
 
-                if (output.Substring(output.Length - 4, 4).ToUpper() != ".WAD")
+                if (!output.EndsWith(".wad", StringComparison.OrdinalIgnoreCase))
                     output += ".wad";
 
                 wad.Save(output);
@@ -731,7 +731,7 @@ namespace Sharpii
                     Console.Write("Done!\n");
 
                 if (BeQuiet.quiet > 1)
-                    Console.WriteLine("Operation completed succesfully!");
+                    Console.WriteLine("Operation completed successfully!");
             }
             catch (Exception ex)
             {
@@ -752,7 +752,7 @@ namespace Sharpii
                 }
                 if (ExceptionListRan == 0)
                 {
-                    Console.WriteLine("An unknown error occured, please try again");
+                    Console.WriteLine("An unknown error occurred, please try again");
                     Console.WriteLine("");
                     Console.WriteLine("ERROR DETAILS: {0}", ex.Message);
                     Console.WriteLine("Error: SHARPII_NET_CORE_WAD_UNKNOWN");
@@ -825,11 +825,11 @@ namespace Sharpii
                     Console.Write("Done!\n");
 
                 if (BeQuiet.quiet > 1)
-                    Console.WriteLine("Operation completed succesfully!");
+                    Console.WriteLine("Operation completed successfully!");
             }
             catch (Exception ex)
             {
-                Console.WriteLine("An unknown error occured, please try again");
+                Console.WriteLine("An unknown error occurred, please try again");
                 Console.WriteLine("");
                 Console.WriteLine("ERROR DETAILS: {0}", ex.Message);
                 Console.WriteLine("Error: SHARPII_NET_CORE_WAD_UNKNOWN");

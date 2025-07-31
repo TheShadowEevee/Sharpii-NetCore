@@ -1,6 +1,6 @@
-﻿/* This file is part of Sharpii.
+/* This file is part of Sharpii.
  * Copyright (C) 2013 Person66
- * Copyright (C) 2020-2023 Sharpii-NetCore Contributors
+ * Copyright (C) 2020-2025 Sharpii-NetCore Contributors
  *
  * Sharpii is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -313,7 +313,7 @@ namespace Sharpii
 
                     if (output != "")
                     {
-                        if (output.Substring(output.Length - 4, 4).ToUpper() != ".WAD")
+                        if (!output.EndsWith(".wad", StringComparison.OrdinalIgnoreCase))
                             output += ".wad";
                     }
 
@@ -323,11 +323,11 @@ namespace Sharpii
                         Console.Write("Done!\n");
                 }
                 if (BeQuiet.quiet > 1)
-                    Console.WriteLine("Operation completed succesfully!");
+                    Console.WriteLine("Operation completed successfully!");
             }
             catch (Exception ex)
             {
-                Console.WriteLine("An unknown error occured, please try again");
+                Console.WriteLine("An unknown error occurred, please try again");
                 Console.WriteLine("");
                 Console.WriteLine("ERROR DETAILS: {0}", ex.Message);
                 Console.WriteLine("Error: SHARPII_NET_CORE_IOS_UNKNOWN");
@@ -343,7 +343,6 @@ namespace Sharpii
             }
 
             return;
-
         }
 
         public static void IOS_help()

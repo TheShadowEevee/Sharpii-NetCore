@@ -1,6 +1,6 @@
-﻿/* This file is part of Sharpii.
+/* This file is part of Sharpii.
  * Copyright (C) 2013 Person66
- * Copyright (C) 2020-2023 Sharpii-NetCore Contributors
+ * Copyright (C) 2020-2025 Sharpii-NetCore Contributors
  *
  * Sharpii is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -357,7 +357,7 @@ namespace Sharpii
                 }
                 if (ExceptionListRan == 0)
                 {
-                    Console.WriteLine("An unknown error occured, please try again");
+                    Console.WriteLine("An unknown error occurred, please try again");
                     Console.WriteLine("");
                     Console.WriteLine("ERROR DETAILS: {0}", ex.Message);
                     Console.WriteLine("Error: SHARPII_NET_CORE_NUSD_UNKNOWN");
@@ -385,7 +385,12 @@ namespace Sharpii
             if (id.Length == 16 && Convert.ToInt32(id.Substring(14, 2), 16) >= 3 && Convert.ToInt32(id.Substring(14, 2), 16) <= 255 && id.Substring(0, 14) == "00000001000000")
                 ios = "IOS" + Convert.ToInt32(id.Substring(14, 2), 16) + "-64-" + version + ".wad";
 
-            if ((((output.Length >= 4 && output.Substring(output.Length - 4, 4).ToUpper() == ".WAD") || output == "") && Array.IndexOf(store.ToArray(), StoreType.WAD) != -1 && store.ToArray().Length == 1) || (output == "" && ios != "" && Array.IndexOf(store.ToArray(), StoreType.WAD) != -1 && store.ToArray().Length == 1))
+            bool isWadOutput = output.EndsWith(".wad", StringComparison.OrdinalIgnoreCase);
+            bool isOutputEmpty = string.IsNullOrEmpty(output);
+            bool hasOnlyWadStore = store.Count == 1 && store.Contains(StoreType.WAD);
+            bool hasIos = !string.IsNullOrEmpty(ios);
+
+            if (((isWadOutput || isOutputEmpty) && hasOnlyWadStore) || (isOutputEmpty && hasIos && hasOnlyWadStore))
             {
                 wad = true;
                 if (Directory.Exists(temp) == true)
@@ -466,13 +471,12 @@ namespace Sharpii
                 }
 
                 if (BeQuiet.quiet > 1)
-                    Console.WriteLine("Operation completed succesfully!\n");
+                    Console.WriteLine("Operation completed successfully!\n");
             }
             catch (Exception ex)
             {
                 if (ex.Message == "CETK Doesn't Exist and Downloading Ticket Failed:\nThe remote server returned an error: (404) Not Found.")
                 {
-
                     Console.WriteLine("The remote server returned a 404 error. Check your Title ID.");
                     Console.WriteLine("If you have a CETK file, please place it in the same directory as Sharpii saves the NUS Files to.");
                     Console.WriteLine("Error: SHARPII_NET_CORE_NUSD_REMOTE_404");
@@ -522,7 +526,7 @@ namespace Sharpii
                 }
                 if (ExceptionListRan == 0)
                 {
-                    Console.WriteLine("An unknown error occured, please try again");
+                    Console.WriteLine("An unknown error occurred, please try again");
                     Console.WriteLine("");
                     Console.WriteLine("ERROR DETAILS: {0}", ex.Message);
                     Console.WriteLine("Error: SHARPII_NET_CORE_NUSD_UNKNOWN");
@@ -539,7 +543,6 @@ namespace Sharpii
             }
 
             return;
-
         }
 
         private static void WadIosNamingStuff(bool wad, string temp, string id, string version, string ios, bool NoOut, string output, string realout)

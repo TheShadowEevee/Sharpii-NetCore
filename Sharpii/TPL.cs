@@ -1,6 +1,6 @@
-﻿/* This file is part of Sharpii.
+/* This file is part of Sharpii.
  * Copyright (C) 2013 Person66
- * Copyright (C) 2020-2023 Sharpii-NetCore Contributors
+ * Copyright (C) 2020-2025 Sharpii-NetCore Contributors
  *
  * Sharpii is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -46,7 +46,7 @@ namespace Sharpii
                 return;
             }
 
-            //If tuser gets here, they entered something wrong
+            //If the user gets here, they entered something wrong
             Console.WriteLine("ERROR: The argument {0} is invalid", args[1]);
             Console.WriteLine("Error: SHARPII_NET_CORE_TPL_INVALID_ARG");
             if (OperatingSystem.Windows())
@@ -58,7 +58,6 @@ namespace Sharpii
                 Environment.Exit(0x00000012);
             }
             return;
-
         }
 
         private static void From(string[] args)
@@ -105,11 +104,11 @@ namespace Sharpii
                     Console.Write("Done!\n");
 
                 if (BeQuiet.quiet > 1)
-                    Console.WriteLine("Operation completed succesfully!");
+                    Console.WriteLine("Operation completed successfully!");
             }
             catch (Exception ex)
             {
-                Console.WriteLine("An unknown error occured, please try again");
+                Console.WriteLine("An unknown error occurred, please try again");
                 Console.WriteLine("");
                 Console.WriteLine("ERROR DETAILS: {0}", ex.Message);
                 Console.WriteLine("Error: SHARPII_NET_CORE_TPL_UNKNOWN");
@@ -237,7 +236,7 @@ namespace Sharpii
                 if (BeQuiet.quiet > 2)
                     Console.Write("Saving tpl file...");
 
-                if (output.Substring(output.Length - 4, 4).ToUpper() != ".TPL")
+                if (!output.EndsWith(".tpl", StringComparison.OrdinalIgnoreCase))
                     output += ".tpl";
 
                 tplfile.Save(output);
@@ -246,11 +245,11 @@ namespace Sharpii
                     Console.Write("Done!\n");
 
                 if (BeQuiet.quiet > 1)
-                    Console.WriteLine("Operation completed succesfully!");
+                    Console.WriteLine("Operation completed successfully!");
             }
             catch (Exception ex)
             {
-                Console.WriteLine("An unknown error occured, please try again");
+                Console.WriteLine("An unknown error occurred, please try again");
                 Console.WriteLine("");
                 Console.WriteLine("ERROR DETAILS: {0}", ex.Message);
                 Console.WriteLine("Error: SHARPII_NET_CORE_TPL_UNKNOWN");
