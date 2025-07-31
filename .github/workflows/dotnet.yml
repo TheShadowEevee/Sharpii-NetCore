@@ -25,6 +25,10 @@ jobs:
     # Create Builds
     - name: Publish Windows x64 Build
       run: dotnet publish -c Release -r win-x64 -o win-x64
+    - name: Publish Windows ARM Build
+      run: dotnet publish -c Release -r win-arm -o win-arm
+    - name: Publish Windows ARM64 Build
+      run: dotnet publish -c Release -r win-arm64 -o win-arm64
     - name: Publish Linux x64 Build
       run: dotnet publish -c Release -r linux-x64 -o linux-x64
     - name: Publish Linux ARM Build
@@ -39,6 +43,10 @@ jobs:
     # Package Binaries Into 7zip Archives
     - name: Archive Windows x64 Build
       run: 7z a -t7z -mx=9 Sharpii-Net-Core-${{ github.ref_name }}-Windows.7z /home/runner/work/Sharpii-NetCore/Sharpii-NetCore/win-x64/Sharpii.exe
+    - name: Archive Windows ARM Build
+      run: 7z a -t7z -mx=9 Sharpii-Net-Core-${{ github.ref_name }}-Windows-arm.7z /home/runner/work/Sharpii-NetCore/Sharpii-NetCore/win-arm/Sharpii.exe
+    - name: Archive Windows ARM64 Build
+      run: 7z a -t7z -mx=9 Sharpii-Net-Core-${{ github.ref_name }}-Windows-arm64.7z /home/runner/work/Sharpii-NetCore/Sharpii-NetCore/win-arm64/Sharpii.exe
     - name: Archive Linux x64 Build
       run: 7z a -t7z -mx=9 Sharpii-Net-Core-${{ github.ref_name }}-Linux-x64.7z /home/runner/work/Sharpii-NetCore/Sharpii-NetCore/linux-x64/Sharpii
     - name: Archive Linux ARM Build
@@ -62,6 +70,11 @@ jobs:
 
           If you can't open the 7z archive, Use 7-zip on Windows. Most unix-like distros should be able to unpack this with `zip`
 
+          > [!IMPORTANT]  
+          > MacOS users may need to run the following command in the directory Sharpii is downloaded to. See [this issue](https://github.com/TheShadowEevee/Sharpii-NetCore/issues/11) for more information.  
+          > `codesign --sign - --force --preserve-metadata=entitlements,requirements,flags,runtime ./Sharpii`  
+          > Please ensure you replace `./Sharpii` with the full name of the downloaded binary.  
+
           <details>
           <summary>Platform Support and Contribution Info</summary>
 
@@ -81,6 +94,8 @@ jobs:
         draft: true
         files: |
           Sharpii-Net-Core-${{ github.ref_name }}-Windows.7z
+          Sharpii-Net-Core-${{ github.ref_name }}-Windows-arm.7z
+          Sharpii-Net-Core-${{ github.ref_name }}-Windows-arm64.7z
           Sharpii-Net-Core-${{ github.ref_name }}-Linux-x64.7z
           Sharpii-Net-Core-${{ github.ref_name }}-Linux-arm.7z
           Sharpii-Net-Core-${{ github.ref_name }}-Linux-arm64.7z
