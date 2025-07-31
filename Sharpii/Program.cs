@@ -1,4 +1,4 @@
-﻿/* This file is part of Sharpii.
+/* This file is part of Sharpii.
  * Copyright (C) 2013 Person66
  * Copyright (C) 2020-2025 Sharpii-NetCore Contributors
  *
@@ -176,7 +176,6 @@ namespace Sharpii
             Console.WriteLine("       -lots          Display lots of output");
             Console.WriteLine("");
         }
-
     }
 }
 public class DeleteADir

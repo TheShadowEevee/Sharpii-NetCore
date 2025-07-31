@@ -1,4 +1,4 @@
-﻿/* This file is part of Sharpii.
+/* This file is part of Sharpii.
  * Copyright (C) 2013 Person66
  * Copyright (C) 2020-2025 Sharpii-NetCore Contributors
  *
@@ -58,7 +58,6 @@ namespace Sharpii
                 Environment.Exit(0x00000012);
             }
             return;
-
         }
 
         private static void From(string[] args)

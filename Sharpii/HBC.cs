@@ -1,4 +1,4 @@
-﻿/* This file is part of Sharpii.
+/* This file is part of Sharpii.
  * Copyright (C) 2013 Person66
  * Copyright (C) 2020-2025 Sharpii-NetCore Contributors
  *
@@ -203,7 +203,6 @@ namespace Sharpii
             }
 
             return;
-
         }
 
         public static bool SendWad_Check(string[] args)
@@ -411,7 +410,6 @@ namespace Sharpii
             }
 
             return;
-
         }
 
         private static void SendDol_help()

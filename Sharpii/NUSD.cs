@@ -1,4 +1,4 @@
-﻿/* This file is part of Sharpii.
+/* This file is part of Sharpii.
  * Copyright (C) 2013 Person66
  * Copyright (C) 2020-2025 Sharpii-NetCore Contributors
  *
@@ -477,7 +477,6 @@ namespace Sharpii
             {
                 if (ex.Message == "CETK Doesn't Exist and Downloading Ticket Failed:\nThe remote server returned an error: (404) Not Found.")
                 {
-
                     Console.WriteLine("The remote server returned a 404 error. Check your Title ID.");
                     Console.WriteLine("If you have a CETK file, please place it in the same directory as Sharpii saves the NUS Files to.");
                     Console.WriteLine("Error: SHARPII_NET_CORE_NUSD_REMOTE_404");
@@ -544,7 +543,6 @@ namespace Sharpii
             }
 
             return;
-
         }
 
         private static void WadIosNamingStuff(bool wad, string temp, string id, string version, string ios, bool NoOut, string output, string realout)
