@@ -237,7 +237,7 @@ namespace Sharpii
                 if (BeQuiet.quiet > 2)
                     Console.Write("Saving tpl file...");
 
-                if (output.Substring(output.Length - 4, 4).ToUpper() != ".TPL")
+                if (!output.EndsWith(".tpl", StringComparison.OrdinalIgnoreCase))
                     output += ".tpl";
 
                 tplfile.Save(output);

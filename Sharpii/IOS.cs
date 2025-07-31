@@ -313,7 +313,7 @@ namespace Sharpii
 
                     if (output != "")
                     {
-                        if (output.Substring(output.Length - 4, 4).ToUpper() != ".WAD")
+                        if (!output.EndsWith(".wad", StringComparison.OrdinalIgnoreCase))
                             output += ".wad";
                     }
 

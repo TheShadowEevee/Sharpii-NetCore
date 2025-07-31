@@ -203,8 +203,8 @@ namespace Sharpii
                     if (BeQuiet.quiet > 2)
                         Console.Write("Saving file...");
 
-                    if (output.Substring(output.Length - 4, 4).ToUpper() != ".TXT")
-                        output += ".txt";
+                if (!output.EndsWith(".txt", StringComparison.OrdinalIgnoreCase))
+                    output += ".txt";
 
                     TextWriter txt = new StreamWriter(output);
                     txt.WriteLine("WAD Info:");
@@ -642,7 +642,7 @@ namespace Sharpii
                         if (BeQuiet.quiet > 2)
                             Console.Write("Grabbing dol...");
 
-                        if (app.Substring(app.Length - 4, 4) == ".dol")
+                        if (app.EndsWith(".dol", StringComparison.OrdinalIgnoreCase))
                         {
                             Directory.CreateDirectory(Path.Combine(temp, "dol"));
                             File.Copy(app, Path.Combine(temp, "dol", "00000001.app"));
@@ -722,7 +722,7 @@ namespace Sharpii
                 if (BeQuiet.quiet > 2)
                     Console.Write("Saving file...");
 
-                if (output.Substring(output.Length - 4, 4).ToUpper() != ".WAD")
+                if (!output.EndsWith(".wad", StringComparison.OrdinalIgnoreCase))
                     output += ".wad";
 
                 wad.Save(output);

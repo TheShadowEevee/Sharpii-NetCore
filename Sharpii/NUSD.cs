@@ -385,7 +385,12 @@ namespace Sharpii
             if (id.Length == 16 && Convert.ToInt32(id.Substring(14, 2), 16) >= 3 && Convert.ToInt32(id.Substring(14, 2), 16) <= 255 && id.Substring(0, 14) == "00000001000000")
                 ios = "IOS" + Convert.ToInt32(id.Substring(14, 2), 16) + "-64-" + version + ".wad";
 
-            if ((((output.Length >= 4 && output.Substring(output.Length - 4, 4).ToUpper() == ".WAD") || output == "") && Array.IndexOf(store.ToArray(), StoreType.WAD) != -1 && store.ToArray().Length == 1) || (output == "" && ios != "" && Array.IndexOf(store.ToArray(), StoreType.WAD) != -1 && store.ToArray().Length == 1))
+            bool isWadOutput = output.EndsWith(".wad", StringComparison.OrdinalIgnoreCase);
+            bool isOutputEmpty = string.IsNullOrEmpty(output);
+            bool hasOnlyWadStore = store.Count == 1 && store.Contains(StoreType.WAD);
+            bool hasIos = !string.IsNullOrEmpty(ios);
+
+            if (((isWadOutput || isOutputEmpty) && hasOnlyWadStore) || (isOutputEmpty && hasIos && hasOnlyWadStore))
             {
                 wad = true;
                 if (Directory.Exists(temp) == true)
